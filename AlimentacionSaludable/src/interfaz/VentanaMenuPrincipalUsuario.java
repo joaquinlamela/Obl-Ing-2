@@ -6,6 +6,7 @@ import dominio.PlanAlimentacion;
 import dominio.Profesional;
 import dominio.Sistema;
 import dominio.Usuario;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -35,8 +36,9 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
         this.lblNuevoAlimentoVacio.setVisible(false);
         this.lblDatosIncorrectos2.setVisible(false);
         this.nombreDelPlan = "";
+        SimpleDateFormat formatoFecha = new SimpleDateFormat ("dd.MM.yyyy");
         Date fechaActual = new Date();
-        this.lblFechaAlimentoIngerido.setText(fechaActual.toString());    
+        this.lblFechaAlimentoIngerido.setText(formatoFecha.format(fechaActual));    
         this.primeraVez = true;
         this.primeraIngesta = true;
         this.panelVacio.setVisible(true);
