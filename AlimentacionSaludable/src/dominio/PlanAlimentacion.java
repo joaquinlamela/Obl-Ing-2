@@ -12,26 +12,25 @@ public final class PlanAlimentacion implements Serializable {
     public boolean fueAtendidoElPlan;
     private String[][] planDiaADia;
 
-    public PlanAlimentacion(String np,
-            Usuario usu,
-            Profesional pro,
-            boolean fueAtendido,
-            String[][] unPlan) {
-
-        setNombreDelPlan(np);
-        setUsuario(usu);
-        setProfesional(pro);
-        setFueAtendidoElPlan(fueAtendido);
-        setPlanDiaADia(unPlan);
+    public PlanAlimentacion(String unNombreDelPlan, Usuario unUsuario, Profesional unProfesional, boolean fueAtendido, String[][] unPlan) {
+        this.setNombreDelPlan(unNombreDelPlan);
+        this.setUsuario(unUsuario);
+        this.setProfesional(unProfesional);
+        this.setFueAtendidoElPlan(fueAtendido);
+        this.setPlanDiaADia(unPlan);
     }
 
     public Persona getUsuario() {
-        return usuario;
+        return this.usuario;
     }
 
     public void setUsuario(Usuario unUsuario) {
-        usuario = unUsuario;
-        
+        if (unUsuario == null) {
+            this.usuario = new Usuario(null, null, null, null, null, null, null, null);
+        }
+        else {
+            this.usuario = unUsuario;
+        }
     }
 
     public Profesional getProfesional() {
@@ -59,7 +58,12 @@ public final class PlanAlimentacion implements Serializable {
     }
 
     public void setPlanDiaADia(String[][] unPlan) {
-        this.planDiaADia = unPlan;
+        if (unPlan == null) {
+            this.planDiaADia = new String[0][0];
+        }
+        else {
+            this.planDiaADia = unPlan;
+        }
     }
 
     public String getNombreDelPlan() {
@@ -67,8 +71,12 @@ public final class PlanAlimentacion implements Serializable {
     }
 
     public void setNombreDelPlan(String unNombreDelPlan) {
-        nombreDelPlan = unNombreDelPlan;
-       
+        if (unNombreDelPlan == null || unNombreDelPlan.isEmpty()) {
+            this.nombreDelPlan = "Plan de alimentaci\u00f3n";
+        }
+        else {
+            this.nombreDelPlan = unNombreDelPlan;
+        } 
     }
 
     @Override
