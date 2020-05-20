@@ -10,9 +10,9 @@ public final class Ingesta implements Serializable {
     public String fechaDeIngesta;
     private ArrayList<Alimento> listaAlimentosPorFecha;
 
-    public Ingesta(String f, ArrayList<Alimento> LA) {
+    public Ingesta(String f, ArrayList<Alimento> listaAlimento) {
         setFechaDeIngesta(f);
-        setLAPF(LA);
+        setListaAlimentosPorFecha(listaAlimento);
     }
 
     public String getFechaDeIngesta() {
@@ -20,7 +20,12 @@ public final class Ingesta implements Serializable {
     }
 
     public void setFechaDeIngesta(String unaFecha) {
-        this.fechaDeIngesta = unaFecha;
+        if (unaFecha == null || unaFecha.isEmpty()) {
+            this.fechaDeIngesta = "Fecha de ingesta no registrada";
+        }
+        else {
+            this.fechaDeIngesta = unaFecha;
+        }
     }
 
     public ArrayList<Alimento> getListaAlimentosPorFecha() {
@@ -31,11 +36,12 @@ public final class Ingesta implements Serializable {
         }
     }
 
-    public void setLAPF(ArrayList<Alimento> list) {
-        if (list == null || list.isEmpty()) {
-            this.listaAlimentosPorFecha = new ArrayList<>();
-        } else {
-            this.listaAlimentosPorFecha = list;
+    public void setListaAlimentosPorFecha(final ArrayList<Alimento> listaAlimentos) {
+        if (listaAlimentos == null || listaAlimentos.isEmpty()) {
+            this.listaAlimentosPorFecha = new ArrayList<Alimento>();
+        }
+        else {
+            this.listaAlimentosPorFecha = listaAlimentos;
         }
     }
 
