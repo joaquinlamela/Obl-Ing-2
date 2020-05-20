@@ -16,11 +16,11 @@ public final class InformacionMensaje implements Serializable {
     }
 
     public String getMensaje() {
-        return mensaje;
+        return this.mensaje;
     }
 
     public void setMensaje(String elMensaje) {
-        mensaje = elMensaje;
+        this.mensaje = elMensaje;
     }
 
     public String getDestinatario() {
@@ -28,8 +28,12 @@ public final class InformacionMensaje implements Serializable {
     }
 
     public void setDestinatario(String elDestinatario) {
-        destinatario = elDestinatario;
-
+        if (elDestinatario == null || elDestinatario.isEmpty()) {
+            this.destinatario = "Destinatario no ingresado";
+        }
+        else {
+            this.destinatario = elDestinatario;
+        }
     }
 
     public String getRemitente() {
@@ -37,7 +41,12 @@ public final class InformacionMensaje implements Serializable {
     }
 
     public void setRemitente(String elRemitente) {
-        this.remitente = elRemitente;
+        if (elRemitente == null || elRemitente.isEmpty()) {
+            this.remitente = "Remitente no ingresado";
+        }
+        else {
+            this.remitente = elRemitente;
+        }
     }
 
     public void intercambiarRemitente() {
