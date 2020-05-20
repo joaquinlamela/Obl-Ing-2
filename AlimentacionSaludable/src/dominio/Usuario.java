@@ -35,9 +35,12 @@ public final class Usuario extends Persona {
     }
 
     public void setNacionalidad(String unaNacionalidad) {
-       
-        nacionalidad = unaNacionalidad;
-       
+        if (unaNacionalidad == null || unaNacionalidad.isEmpty()) {
+            this.nacionalidad = "Nacionalidad no ingresada";
+        }
+        else {
+            this.nacionalidad = unaNacionalidad;
+        }
     }
 
     public ArrayList<String> getPreferencias() {
@@ -78,25 +81,25 @@ public final class Usuario extends Persona {
     }
 
     public String[] getArrayAlimentosIngeridos() {
-        String[] retorno = new String[getAlimentosIngeridos().size()];
-        for (int i = 0; i < getAlimentosIngeridos().size(); i++) {
-            retorno[i] = getAlimentosIngeridos().get(i).toString();
+        final String[] retorno = new String[this.getAlimentosIngeridos().size()];
+        for (int i = 0; i < this.getAlimentosIngeridos().size(); ++i) {
+            retorno[i] = this.getAlimentosIngeridos().get(i).toString();
         }
         return retorno;
     }
-
+    
     public String[] getArrayRestricciones() {
-        String[] retorno = new String[getRestricciones().size()];
-        for (int i = 0; i < getRestricciones().size(); i++) {
-            retorno[i] = getRestricciones().get(i);
+        final String[] retorno = new String[this.getRestricciones().size()];
+        for (int i = 0; i < this.getRestricciones().size(); ++i) {
+            retorno[i] = this.getRestricciones().get(i);
         }
         return retorno;
     }
-
+    
     public String[] getArrayPreferencias() {
-        String[] retorno = new String[getPreferencias().size()];
-        for (int i = 0; i < getPreferencias().size(); i++) {
-            retorno[i] = getPreferencias().get(i);
+        final String[] retorno = new String[this.getPreferencias().size()];
+        for (int i = 0; i < this.getPreferencias().size(); ++i) {
+            retorno[i] = this.getPreferencias().get(i);
         }
         return retorno;
     }
@@ -106,11 +109,11 @@ public final class Usuario extends Persona {
         return super.toString();
     }
 
-    public void actualizarPreferenciasUsuario(Usuario usuario, ArrayList<String> pr) {
-        usuario.setPreferencias(pr);
+    public void actualizarPreferenciasUsuario(final Usuario usuario, final ArrayList<String> preferencias) {
+        usuario.setPreferencias(preferencias);
     }
-
-    public void actualizarRestriccionesUsuario(Usuario usuario, ArrayList<String> restricciones) {
+    
+    public void actualizarRestriccionesUsuario(final Usuario usuario, final ArrayList<String> restricciones) {
         usuario.setRestricciones(restricciones);
     }
 }
