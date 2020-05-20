@@ -2,7 +2,6 @@ package dominio;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public final class Conversacion implements Serializable {
 
@@ -11,9 +10,9 @@ public final class Conversacion implements Serializable {
     public Persona profesional;
     private boolean fueAtendidaConsulta;
 
-    public Conversacion(Persona user, Persona pr, ArrayList<InformacionMensaje> lista) {
+    public Conversacion(Persona user, Persona profesional, ArrayList<InformacionMensaje> lista) {
         setUsuario(user);
-        setProfesional(pr);
+        setProfesional(profesional);
         setListaMensajes(lista);
         setFueAtendidaConsulta(false);
     }
@@ -27,6 +26,9 @@ public final class Conversacion implements Serializable {
     }
 
     public ArrayList<InformacionMensaje> getListaMensajes() {
+        if (this.listaMensajes.isEmpty()) {
+            return new ArrayList<InformacionMensaje>();
+        }
         return this.listaMensajes;
     }
 
