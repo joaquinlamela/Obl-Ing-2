@@ -4,6 +4,7 @@ import dominio.Ingesta;
 import dominio.Sistema;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
@@ -18,6 +19,7 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
 
     public VentanaRegistrarUsuario(Sistema unSistema) {
         initComponents();
+        this.setearFechaMaxYMin();
         this.setLocationRelativeTo(null);
         this.sistema = unSistema;
         this.fotoDePerfilActual = new ImageIcon(getClass().getResource("/Imagenes/fotoDeUsuarioStandard.png"));
@@ -26,8 +28,6 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
         cargarListaPreferencias();
         cargarListaRestricciones();
         cargarListaPaises();
-        Calendar fecha = new GregorianCalendar();
-        this.dateChooserFechaNacimiento.setMaxDate(fecha);
         this.primeraVez = false;
     }
 
@@ -85,7 +85,6 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
         listaNacionalidad = new javax.swing.JComboBox<>();
         lblTxtFechaNac = new javax.swing.JLabel();
         rdBtnIntoleranteLactosa = new javax.swing.JRadioButton();
-        dateChooserFechaNacimiento = new datechooser.beans.DateChooserCombo();
         btnIngresarFotoPerfil = new javax.swing.JButton();
         lblValidarNombre = new javax.swing.JLabel();
         lblValidarApellido = new javax.swing.JLabel();
@@ -95,6 +94,9 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
         lblApellidoVacio = new javax.swing.JLabel();
         lblPaisVacio = new javax.swing.JLabel();
         btnCerrarSistema = new javax.swing.JButton();
+        jDateFechaNacimiento = new com.toedter.calendar.JDateChooser();
+        jLabelFechaNacInvalida = new javax.swing.JLabel();
+        jLabelFechaInvalidaNacimiento = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1060, 800));
@@ -184,13 +186,13 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
         lblNombre.setForeground(new java.awt.Color(255, 255, 255));
         lblNombre.setText("Nombre");
         panel2.add(lblNombre);
-        lblNombre.setBounds(31, 182, 181, 38);
+        lblNombre.setBounds(31, 182, 181, 39);
 
         lblApellido.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
         lblApellido.setForeground(new java.awt.Color(255, 255, 255));
         lblApellido.setText("Apellido");
         panel2.add(lblApellido);
-        lblApellido.setBounds(31, 231, 171, 38);
+        lblApellido.setBounds(31, 231, 171, 39);
 
         txtNombre.setBackground(new java.awt.Color(227, 227, 227));
         txtNombre.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
@@ -220,7 +222,7 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
         lblTxtPreferencias.setForeground(new java.awt.Color(255, 255, 255));
         lblTxtPreferencias.setText("Preferencias");
         panel2.add(lblTxtPreferencias);
-        lblTxtPreferencias.setBounds(31, 423, 265, 38);
+        lblTxtPreferencias.setBounds(31, 423, 265, 39);
 
         rdBtnVerduras.setBackground(new java.awt.Color(51, 51, 51));
         rdBtnVerduras.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
@@ -234,14 +236,14 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
         rdBtnHarinas.setForeground(new java.awt.Color(255, 255, 255));
         rdBtnHarinas.setText("Preferencia 5");
         panel2.add(rdBtnHarinas);
-        rdBtnHarinas.setBounds(31, 620, 153, 34);
+        rdBtnHarinas.setBounds(31, 620, 153, 35);
 
         rdBtnFrutas.setBackground(new java.awt.Color(51, 51, 51));
         rdBtnFrutas.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         rdBtnFrutas.setForeground(new java.awt.Color(255, 255, 255));
         rdBtnFrutas.setText("Preferencia 4");
         panel2.add(rdBtnFrutas);
-        rdBtnFrutas.setBounds(31, 582, 153, 34);
+        rdBtnFrutas.setBounds(31, 582, 153, 35);
 
         rdBtnCarnesRojas.setBackground(new java.awt.Color(51, 51, 51));
         rdBtnCarnesRojas.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
@@ -261,14 +263,14 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
         lblTxtRestricciones.setForeground(new java.awt.Color(255, 255, 255));
         lblTxtRestricciones.setText("Restricciones");
         panel2.add(lblTxtRestricciones);
-        lblTxtRestricciones.setBounds(469, 423, 208, 38);
+        lblTxtRestricciones.setBounds(469, 423, 208, 39);
 
         rdBtnCeliaco.setBackground(new java.awt.Color(51, 51, 51));
         rdBtnCeliaco.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         rdBtnCeliaco.setForeground(new java.awt.Color(255, 255, 255));
         rdBtnCeliaco.setText("Restriccion 4");
         panel2.add(rdBtnCeliaco);
-        rdBtnCeliaco.setBounds(469, 582, 145, 34);
+        rdBtnCeliaco.setBounds(469, 582, 145, 35);
 
         rdBtnDiabetes.setBackground(new java.awt.Color(51, 51, 51));
         rdBtnDiabetes.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
@@ -282,7 +284,7 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
         rdBtnVegano.setForeground(new java.awt.Color(255, 255, 255));
         rdBtnVegano.setText("Restriccion 2");
         panel2.add(rdBtnVegano);
-        rdBtnVegano.setBounds(469, 506, 145, 34);
+        rdBtnVegano.setBounds(469, 506, 145, 35);
 
         btnIngresarUsuarioASistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fotoConfirmar.png"))); // NOI18N
         btnIngresarUsuarioASistema.setBorderPainted(false);
@@ -299,7 +301,7 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
         lblTxtNacionalidad.setForeground(new java.awt.Color(255, 255, 255));
         lblTxtNacionalidad.setText("Nacionalidad");
         panel2.add(lblTxtNacionalidad);
-        lblTxtNacionalidad.setBounds(30, 280, 204, 38);
+        lblTxtNacionalidad.setBounds(30, 280, 173, 39);
 
         listaNacionalidad.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         listaNacionalidad.addItemListener(new java.awt.event.ItemListener() {
@@ -314,7 +316,7 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
         lblTxtFechaNac.setForeground(new java.awt.Color(255, 255, 255));
         lblTxtFechaNac.setText("Fecha de nacimiento");
         panel2.add(lblTxtFechaNac);
-        lblTxtFechaNac.setBounds(30, 340, 328, 38);
+        lblTxtFechaNac.setBounds(30, 340, 328, 39);
 
         rdBtnIntoleranteLactosa.setBackground(new java.awt.Color(51, 51, 51));
         rdBtnIntoleranteLactosa.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
@@ -326,38 +328,38 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
 
         dateChooserFechaNacimiento.setCurrentView(new datechooser.view.appearance.AppearancesList("Swing",
             new datechooser.view.appearance.ViewAppearance("custom",
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Dialog", java.awt.Font.PLAIN, 11),
-                    new java.awt.Color(222, 222, 222),
+                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
+                    new java.awt.Color(0, 0, 0),
                     new java.awt.Color(0, 0, 255),
                     false,
                     true,
                     new datechooser.view.appearance.swing.ButtonPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Dialog", java.awt.Font.PLAIN, 11),
-                    new java.awt.Color(222, 222, 222),
+                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
+                    new java.awt.Color(0, 0, 0),
                     new java.awt.Color(0, 0, 255),
                     true,
                     true,
                     new datechooser.view.appearance.swing.ButtonPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Dialog", java.awt.Font.PLAIN, 11),
+                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
                     new java.awt.Color(0, 0, 255),
                     new java.awt.Color(0, 0, 255),
                     false,
                     true,
                     new datechooser.view.appearance.swing.ButtonPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Dialog", java.awt.Font.PLAIN, 11),
+                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
                     new java.awt.Color(128, 128, 128),
                     new java.awt.Color(0, 0, 255),
                     false,
                     true,
                     new datechooser.view.appearance.swing.LabelPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Dialog", java.awt.Font.PLAIN, 11),
-                    new java.awt.Color(222, 222, 222),
+                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
+                    new java.awt.Color(0, 0, 0),
                     new java.awt.Color(0, 0, 255),
                     false,
                     true,
                     new datechooser.view.appearance.swing.LabelPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Dialog", java.awt.Font.PLAIN, 11),
-                    new java.awt.Color(222, 222, 222),
+                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
+                    new java.awt.Color(0, 0, 0),
                     new java.awt.Color(255, 0, 0),
                     false,
                     false,
@@ -371,74 +373,67 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
     panel2.add(dateChooserFechaNacimiento);
     dateChooserFechaNacimiento.setBounds(370, 340, 150, 30);
 
-    btnIngresarFotoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/agregarFotoUsuario.png"))); // NOI18N
-    btnIngresarFotoPerfil.setBorderPainted(false);
-    btnIngresarFotoPerfil.setContentAreaFilled(false);
-    btnIngresarFotoPerfil.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            btnIngresarFotoPerfilActionPerformed(evt);
-        }
-    });
-    panel2.add(btnIngresarFotoPerfil);
-    btnIngresarFotoPerfil.setBounds(640, 160, 124, 117);
+        lblValidarNombre.setForeground(new java.awt.Color(255, 255, 255));
+        lblValidarNombre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png"))); // NOI18N
+        panel2.add(lblValidarNombre);
+        lblValidarNombre.setBounds(460, 180, 32, 44);
 
-    lblValidarNombre.setForeground(new java.awt.Color(255, 255, 255));
-    lblValidarNombre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png"))); // NOI18N
-    panel2.add(lblValidarNombre);
-    lblValidarNombre.setBounds(460, 180, 32, 44);
+        lblValidarApellido.setForeground(new java.awt.Color(255, 255, 255));
+        lblValidarApellido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png"))); // NOI18N
+        panel2.add(lblValidarApellido);
+        lblValidarApellido.setBounds(460, 230, 32, 44);
 
-    lblValidarApellido.setForeground(new java.awt.Color(255, 255, 255));
-    lblValidarApellido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png"))); // NOI18N
-    panel2.add(lblValidarApellido);
-    lblValidarApellido.setBounds(460, 230, 32, 44);
+        lblValidarNacionalidad.setForeground(new java.awt.Color(255, 255, 255));
+        lblValidarNacionalidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png"))); // NOI18N
+        panel2.add(lblValidarNacionalidad);
+        lblValidarNacionalidad.setBounds(540, 280, 32, 44);
 
-    lblValidarNacionalidad.setForeground(new java.awt.Color(255, 255, 255));
-    lblValidarNacionalidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png"))); // NOI18N
-    panel2.add(lblValidarNacionalidad);
-    lblValidarNacionalidad.setBounds(540, 280, 32, 44);
+        lblDatosIncorrectos.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        lblDatosIncorrectos.setForeground(new java.awt.Color(255, 153, 153));
+        lblDatosIncorrectos.setText("Aún quedan datos incorrectos");
+        panel2.add(lblDatosIncorrectos);
+        lblDatosIncorrectos.setBounds(309, 683, 341, 26);
 
-    lblDatosIncorrectos.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
-    lblDatosIncorrectos.setForeground(new java.awt.Color(255, 153, 153));
-    lblDatosIncorrectos.setText("Aún quedan datos incorrectos");
-    panel2.add(lblDatosIncorrectos);
-    lblDatosIncorrectos.setBounds(309, 683, 341, 26);
+        lblNombreVacio.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
+        lblNombreVacio.setForeground(new java.awt.Color(240, 128, 128));
+        lblNombreVacio.setText("Dato vacío");
+        panel2.add(lblNombreVacio);
+        lblNombreVacio.setBounds(500, 180, 134, 38);
 
-    lblNombreVacio.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
-    lblNombreVacio.setForeground(new java.awt.Color(240, 128, 128));
-    lblNombreVacio.setText("Dato vacío");
-    panel2.add(lblNombreVacio);
-    lblNombreVacio.setBounds(500, 180, 134, 38);
+        lblApellidoVacio.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
+        lblApellidoVacio.setForeground(new java.awt.Color(240, 128, 128));
+        lblApellidoVacio.setText("Dato vacío");
+        panel2.add(lblApellidoVacio);
+        lblApellidoVacio.setBounds(500, 230, 134, 38);
 
-    lblApellidoVacio.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
-    lblApellidoVacio.setForeground(new java.awt.Color(240, 128, 128));
-    lblApellidoVacio.setText("Dato vacío");
-    panel2.add(lblApellidoVacio);
-    lblApellidoVacio.setBounds(500, 230, 134, 38);
+        lblPaisVacio.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
+        lblPaisVacio.setForeground(new java.awt.Color(240, 128, 128));
+        lblPaisVacio.setText("Dato vacío");
+        panel2.add(lblPaisVacio);
+        lblPaisVacio.setBounds(580, 280, 120, 38);
 
-    lblPaisVacio.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
-    lblPaisVacio.setForeground(new java.awt.Color(240, 128, 128));
-    lblPaisVacio.setText("Dato vacío");
-    panel2.add(lblPaisVacio);
-    lblPaisVacio.setBounds(580, 280, 120, 38);
-
-    btnCerrarSistema.setBackground(new java.awt.Color(51, 51, 51));
-    btnCerrarSistema.setForeground(new java.awt.Color(51, 51, 51));
-    btnCerrarSistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Close_Window_48px.png"))); // NOI18N
-    btnCerrarSistema.setBorderPainted(false);
-    btnCerrarSistema.setContentAreaFilled(false);
-    btnCerrarSistema.setFocusPainted(false);
-    btnCerrarSistema.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            btnCerrarSistemaActionPerformed(evt);
-        }
-    });
-    panel2.add(btnCerrarSistema);
-    btnCerrarSistema.setBounds(720, 10, 50, 50);
+        jDateFechaNacimiento.setName("JdateFechaNacimiento"); // NOI18N
+        jDateFechaNacimiento.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jDateFechaNacimientoPropertyChange(evt);
+            }
+        });
+        panel2.add(jDateFechaNacimiento);
+        jDateFechaNacimiento.setBounds(360, 340, 170, 40);
 
     getContentPane().add(panel2);
     panel2.setBounds(275, 0, 950, 800);
 
-    pack();
+        jLabelFechaInvalidaNacimiento.setFont(new java.awt.Font("Arial", 0, 19)); // NOI18N
+        jLabelFechaInvalidaNacimiento.setForeground(new java.awt.Color(240, 128, 128));
+        jLabelFechaInvalidaNacimiento.setText("Fecha invalida");
+        panel2.add(jLabelFechaInvalidaNacimiento);
+        jLabelFechaInvalidaNacimiento.setBounds(580, 350, 130, 30);
+
+        getContentPane().add(panel2);
+        panel2.setBounds(275, 0, 950, 800);
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
@@ -454,10 +449,17 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
         ArrayList<String> restricciones = new ArrayList<>();
         ArrayList<Ingesta> alimentosIngeridosPorFecha = new ArrayList<>();
         String nacionalidad = (String) this.listaNacionalidad.getSelectedItem();
-        String fechaNacimiento = this.dateChooserFechaNacimiento.getText();
-        if (nombre.equals("") || apellido.equals("") || nacionalidad.equals("Seleccione...")) {
+        String fechaNacimiento =""; 
+        try{
+            fechaNacimiento = this.jDateFechaNacimiento.getDate().toString();  
+        }catch(NullPointerException e){
+            this.jLabelFechaNacInvalida.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
+            this.jLabelFechaNacInvalida.setVisible(true);
+            this.jLabelFechaInvalidaNacimiento.setVisible(true);
+        }  
+        if (nombre.equals("") || apellido.equals("") || nacionalidad.equals("Seleccione...") || fechaNacimiento.equals("")) {
             this.lblDatosIncorrectos.setVisible(true);
-            mostrarErrores(nombre, apellido, nacionalidad);
+            mostrarErrores(nombre, apellido, nacionalidad, fechaNacimiento);
         } else {
             this.lblDatosIncorrectos.setVisible(false);
             agregarPreferenciasUsuario(preferencias);
@@ -536,12 +538,6 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
 
     }//GEN-LAST:event_listaNacionalidadItemStateChanged
 
-    private void btnCerrarSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSistemaActionPerformed
-        this.sistema.guardarDatosSistema();
-        this.dispose();
-        System.exit(0);
-    }//GEN-LAST:event_btnCerrarSistemaActionPerformed
-
     void agregarRestriccionesUsuario(ArrayList<String> restricciones) {
         if (this.rdBtnCeliaco.isSelected()) {
             restricciones.add("Celíaco");
@@ -580,8 +576,10 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnIngresarFotoPerfil;
     private javax.swing.JButton btnIngresarUsuarioASistema;
-    private datechooser.beans.DateChooserCombo dateChooserFechaNacimiento;
     private javax.swing.JLabel icono;
+    private com.toedter.calendar.JDateChooser jDateFechaNacimiento;
+    private javax.swing.JLabel jLabelFechaInvalidaNacimiento;
+    private javax.swing.JLabel jLabelFechaNacInvalida;
     private javax.swing.JLabel lblApellido;
     private javax.swing.JLabel lblApellidoVacio;
     private javax.swing.JLabel lblDatosIncorrectos;
@@ -622,6 +620,8 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
         this.lblNombreVacio.setVisible(false);
         this.lblApellidoVacio.setVisible(false);
         this.lblPaisVacio.setVisible(false);
+        this.jLabelFechaNacInvalida.setVisible(false);
+        this.jLabelFechaInvalidaNacimiento.setVisible(false);
     }
 
     private void cargarListaPreferencias() {
@@ -682,7 +682,7 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
         }
     }
 
-    private void mostrarErrores(String nombre, String apellido, String nacionalidad) {
+    private void mostrarErrores(String nombre, String apellido, String nacionalidad, String fechaNacimiento) {
         if (nombre.equals("")) {
             this.lblValidarNombre.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
             this.lblValidarNombre.setVisible(true);
@@ -698,6 +698,19 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
             this.lblValidarNacionalidad.setVisible(true);
             this.lblPaisVacio.setVisible(true);
         }
+        
+        if(fechaNacimiento.equals("")){
+            this.jLabelFechaNacInvalida.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
+            this.jLabelFechaNacInvalida.setVisible(true);
+            this.jLabelFechaInvalidaNacimiento.setVisible(true);
+        }
+    }
+    
+    
+    private void setearFechaMaxYMin(){
+        Date date= new Date(); 
+        this.jDateFechaNacimiento.setMaxSelectableDate(date);
+        this.jDateFechaNacimiento.setDate(date);
     }
 
 }
