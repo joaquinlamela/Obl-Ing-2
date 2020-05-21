@@ -23,7 +23,7 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
             this.panelUsuarios.setVisible(false);
             this.listaUsuariosVentana.setListData(sistema.getListaUsuarios().toArray());
             this.jScrollPane2.setVisible(true);
-            this.lblNoHayUsuarios.setVisible(false);
+            //this.lblNoHayUsuarios.setVisible(false);
             this.listaUsuariosVentana.setVisible(true);
         }
         if (sistema.getListaProfesionales().isEmpty()) {
@@ -64,20 +64,21 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
         lblNuevoUsuario = new javax.swing.JLabel();
         lblIconoNuevoUsuario = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        listaUsuariosVentana = new javax.swing.JList();
         jScrollPane1 = new javax.swing.JScrollPane();
         listaProfesionalesVentana = new javax.swing.JList();
         btnAgregarUsuario = new javax.swing.JLabel();
         btnAgregarProfesional = new javax.swing.JLabel();
+        panelProfesionales = new javax.swing.JPanel();
+        lblNoHayProfesionales = new javax.swing.JLabel();
+        lblNoHayProfesionales1 = new javax.swing.JLabel();
         lblNombre1 = new javax.swing.JLabel();
         btnAgregarProfesional1 = new javax.swing.JLabel();
         btnCerrarSistema = new javax.swing.JButton();
-        lblNoHayProfesionales = new javax.swing.JLabel();
-        lblNoHayUsuarios = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        panelProfesionales = new javax.swing.JPanel();
         panelUsuarios = new javax.swing.JPanel();
+        lblNoHayUsuarios = new javax.swing.JLabel();
+        lblNoHayUsuarios1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        listaUsuariosVentana = new javax.swing.JList();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1060, 800));
@@ -144,23 +145,7 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
         lblNombre.setForeground(new java.awt.Color(255, 255, 255));
         lblNombre.setText("Profesional");
         panel2.add(lblNombre);
-        lblNombre.setBounds(450, 200, 181, 38);
-
-        jScrollPane2.setForeground(new java.awt.Color(51, 51, 51));
-
-        listaUsuariosVentana.setBackground(new java.awt.Color(51, 51, 51));
-        listaUsuariosVentana.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
-        listaUsuariosVentana.setForeground(new java.awt.Color(255, 255, 255));
-        listaUsuariosVentana.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        listaUsuariosVentana.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                listaUsuariosVentanaValueChanged(evt);
-            }
-        });
-        jScrollPane2.setViewportView(listaUsuariosVentana);
-
-        panel2.add(jScrollPane2);
-        jScrollPane2.setBounds(80, 250, 230, 330);
+        lblNombre.setBounds(470, 200, 181, 38);
 
         listaProfesionalesVentana.setBackground(new java.awt.Color(51, 51, 51));
         listaProfesionalesVentana.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
@@ -193,11 +178,49 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
         panel2.add(btnAgregarProfesional);
         btnAgregarProfesional.setBounds(570, 640, 50, 80);
 
+        panelProfesionales.setBackground(new java.awt.Color(51, 51, 51));
+        panelProfesionales.setForeground(new java.awt.Color(51, 51, 51));
+
+        lblNoHayProfesionales.setBackground(new java.awt.Color(51, 51, 51));
+        lblNoHayProfesionales.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        lblNoHayProfesionales.setForeground(new java.awt.Color(255, 255, 255));
+        lblNoHayProfesionales.setText("Registre nuevos profesionales");
+
+        lblNoHayProfesionales1.setBackground(new java.awt.Color(51, 51, 51));
+        lblNoHayProfesionales1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        lblNoHayProfesionales1.setForeground(new java.awt.Color(255, 255, 255));
+        lblNoHayProfesionales1.setText("Aun no hay profesionales");
+
+        javax.swing.GroupLayout panelProfesionalesLayout = new javax.swing.GroupLayout(panelProfesionales);
+        panelProfesionales.setLayout(panelProfesionalesLayout);
+        panelProfesionalesLayout.setHorizontalGroup(
+            panelProfesionalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProfesionalesLayout.createSequentialGroup()
+                .addComponent(lblNoHayProfesionales, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(panelProfesionalesLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(lblNoHayProfesionales1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelProfesionalesLayout.setVerticalGroup(
+            panelProfesionalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProfesionalesLayout.createSequentialGroup()
+                .addContainerGap(113, Short.MAX_VALUE)
+                .addComponent(lblNoHayProfesionales1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblNoHayProfesionales, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(138, 138, 138))
+        );
+
+        panel2.add(panelProfesionales);
+        panelProfesionales.setBounds(380, 240, 330, 350);
+
         lblNombre1.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
         lblNombre1.setForeground(new java.awt.Color(255, 255, 255));
         lblNombre1.setText("Usuario");
         panel2.add(lblNombre1);
-        lblNombre1.setBounds(90, 200, 181, 38);
+        lblNombre1.setBounds(140, 200, 181, 38);
 
         btnAgregarProfesional1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoAgregarProfesional.png"))); // NOI18N
         btnAgregarProfesional1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -222,49 +245,66 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
         panel2.add(btnCerrarSistema);
         btnCerrarSistema.setBounds(730, 10, 50, 50);
 
-        lblNoHayProfesionales.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        lblNoHayProfesionales.setText("Registre nuevos profesionales");
-        panel2.add(lblNoHayProfesionales);
-        lblNoHayProfesionales.setBounds(380, 320, 330, 150);
+        panelUsuarios.setBackground(new java.awt.Color(51, 51, 51));
+        panelUsuarios.setForeground(new java.awt.Color(51, 51, 51));
 
+        lblNoHayUsuarios.setBackground(new java.awt.Color(255, 255, 255));
         lblNoHayUsuarios.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        lblNoHayUsuarios.setForeground(new java.awt.Color(255, 255, 255));
         lblNoHayUsuarios.setText("Registre nuevos usuarios");
-        panel2.add(lblNoHayUsuarios);
-        lblNoHayUsuarios.setBounds(60, 320, 280, 150);
-        lblNoHayUsuarios.getAccessibleContext().setAccessibleParent(jScrollPane2);
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel3.setText("Registre nuevos usuarios");
-        panel2.add(jLabel3);
-        jLabel3.setBounds(60, 320, 280, 150);
-
-        javax.swing.GroupLayout panelProfesionalesLayout = new javax.swing.GroupLayout(panelProfesionales);
-        panelProfesionales.setLayout(panelProfesionalesLayout);
-        panelProfesionalesLayout.setHorizontalGroup(
-            panelProfesionalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
-        );
-        panelProfesionalesLayout.setVerticalGroup(
-            panelProfesionalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
-        );
-
-        panel2.add(panelProfesionales);
-        panelProfesionales.setBounds(370, 240, 350, 350);
+        lblNoHayUsuarios1.setBackground(new java.awt.Color(255, 255, 255));
+        lblNoHayUsuarios1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        lblNoHayUsuarios1.setForeground(new java.awt.Color(255, 255, 255));
+        lblNoHayUsuarios1.setText("Aun no hay usuarios");
 
         javax.swing.GroupLayout panelUsuariosLayout = new javax.swing.GroupLayout(panelUsuarios);
         panelUsuarios.setLayout(panelUsuariosLayout);
         panelUsuariosLayout.setHorizontalGroup(
             panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 290, Short.MAX_VALUE)
+            .addGroup(panelUsuariosLayout.createSequentialGroup()
+                .addGroup(panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelUsuariosLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblNoHayUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelUsuariosLayout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(lblNoHayUsuarios1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelUsuariosLayout.setVerticalGroup(
             panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelUsuariosLayout.createSequentialGroup()
+                .addContainerGap(103, Short.MAX_VALUE)
+                .addComponent(lblNoHayUsuarios1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblNoHayUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(136, 136, 136))
         );
 
+        lblNoHayUsuarios.getAccessibleContext().setAccessibleParent(jScrollPane2);
+        lblNoHayUsuarios1.getAccessibleContext().setAccessibleName("Aun no hay usuarios");
+        lblNoHayUsuarios1.getAccessibleContext().setAccessibleDescription("");
+
         panel2.add(panelUsuarios);
-        panelUsuarios.setBounds(50, 240, 290, 350);
+        panelUsuarios.setBounds(40, 240, 290, 350);
+
+        jScrollPane2.setForeground(new java.awt.Color(51, 51, 51));
+
+        listaUsuariosVentana.setBackground(new java.awt.Color(51, 51, 51));
+        listaUsuariosVentana.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        listaUsuariosVentana.setForeground(new java.awt.Color(255, 255, 255));
+        listaUsuariosVentana.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        listaUsuariosVentana.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaUsuariosVentanaValueChanged(evt);
+            }
+        });
+        jScrollPane2.setViewportView(listaUsuariosVentana);
+
+        panel2.add(jScrollPane2);
+        jScrollPane2.setBounds(80, 250, 230, 330);
+        jScrollPane2.getAccessibleContext().setAccessibleParent(panel2);
 
         getContentPane().add(panel2);
         panel2.setBounds(275, 0, 950, 800);
@@ -321,12 +361,13 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
     private javax.swing.JLabel btnAgregarUsuario;
     private javax.swing.JButton btnCerrarSistema;
     private javax.swing.JLabel icono;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblIconoNuevoUsuario;
     private javax.swing.JLabel lblNoHayProfesionales;
+    private javax.swing.JLabel lblNoHayProfesionales1;
     private javax.swing.JLabel lblNoHayUsuarios;
+    private javax.swing.JLabel lblNoHayUsuarios1;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblNombre1;
     private javax.swing.JLabel lblNuevoUsuario;
