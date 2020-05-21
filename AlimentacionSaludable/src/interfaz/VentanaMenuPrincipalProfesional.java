@@ -2022,7 +2022,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
                 Ingesta ingestaActual = ingeridos.get(i);
                 ArrayList<Alimento> alimentosActuales = ingestaActual.getListaAlimentosPorFecha();
                 for (int j = 0; j < alimentosActuales.size(); j++) {
-                    listaASetear.add(alimentosActuales.get(i).toString());
+                    listaASetear.add(alimentosActuales.get(j).toString());
                 }
             }
             String[] arrayASetear = new String[listaASetear.size()];
