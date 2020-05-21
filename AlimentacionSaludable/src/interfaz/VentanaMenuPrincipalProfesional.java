@@ -301,7 +301,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
                         .addComponent(lblIngresarAlimento)))
                 .addContainerGap(34, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 33, Short.MAX_VALUE)
                 .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuLayout.createSequentialGroup()
                         .addComponent(btnPlanesSolicitados, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -339,7 +339,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
                 .addComponent(lblIngresarAlimento)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblIngresarAlimento2)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         panelDerecho.setBackground(new java.awt.Color(51, 51, 51));
@@ -393,7 +393,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
         lblNohayPlanesTexto1.setForeground(new java.awt.Color(255, 255, 255));
         lblNohayPlanesTexto1.setText("No hay planes de");
         panelNoHayPlanesPendientes.add(lblNohayPlanesTexto1);
-        lblNohayPlanesTexto1.setBounds(200, 260, 344, 77);
+        lblNohayPlanesTexto1.setBounds(200, 260, 323, 77);
 
         lblNoHayAlimentosIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoCaraTriste.png"))); // NOI18N
         panelNoHayPlanesPendientes.add(lblNoHayAlimentosIcono);
@@ -403,7 +403,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
         lblNohayConsultasTexto2.setForeground(new java.awt.Color(255, 255, 255));
         lblNohayConsultasTexto2.setText("alimentación pendientes");
         panelNoHayPlanesPendientes.add(lblNohayConsultasTexto2);
-        lblNohayConsultasTexto2.setBounds(128, 336, 487, 77);
+        lblNohayConsultasTexto2.setBounds(128, 336, 457, 77);
 
         lblNoHayAlimentos.setFont(new java.awt.Font("Century Gothic", 1, 40)); // NOI18N
         lblNoHayAlimentos.setForeground(new java.awt.Color(255, 255, 255));
@@ -923,8 +923,9 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
         panelIzquierdo.setMinimumSize(new java.awt.Dimension(320, 500));
         panelIzquierdo.setPreferredSize(new java.awt.Dimension(320, 500));
 
-        listaPlanesPendientes.setBackground(new java.awt.Color(238, 238, 238));
+        listaPlanesPendientes.setBackground(new java.awt.Color(55, 55, 55));
         listaPlanesPendientes.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
+        listaPlanesPendientes.setForeground(new java.awt.Color(255, 255, 255));
         listaPlanesPendientes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         listaPlanesPendientes.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
@@ -958,7 +959,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
                 .addComponent(lblElijaUnUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         panelDatosUsuario.setBackground(new java.awt.Color(51, 51, 51));
@@ -1120,7 +1121,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
                     .addGroup(panelPerfilDeUsuarioLayout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(lblElaborarPlan)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panelPlanAlimentacionLayout = new javax.swing.GroupLayout(panelPlanAlimentacion);
