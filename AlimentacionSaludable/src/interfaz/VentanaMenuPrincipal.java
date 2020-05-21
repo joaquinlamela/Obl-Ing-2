@@ -14,8 +14,30 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
         initComponents();
         this.setLocationRelativeTo(null);
         this.sistema = unSistema;
-        this.listaUsuariosVentana.setListData(sistema.getListaUsuarios().toArray());
-        this.listaProfesionalesVentana.setListData(sistema.getListaProfesionales().toArray());
+        if (sistema.getListaUsuarios().isEmpty()) {
+            this.panelUsuarios.setVisible(true);
+            this.listaUsuariosVentana.setVisible(false);
+            this.jScrollPane2.setVisible(false);
+            this.lblNoHayUsuarios.setVisible(true);
+        }else{
+            this.panelUsuarios.setVisible(false);
+            this.listaUsuariosVentana.setListData(sistema.getListaUsuarios().toArray());
+            this.jScrollPane2.setVisible(true);
+            this.lblNoHayUsuarios.setVisible(false);
+            this.listaUsuariosVentana.setVisible(true);
+        }
+        if (sistema.getListaProfesionales().isEmpty()) {
+            this.panelProfesionales.setVisible(true);
+            this.listaProfesionalesVentana.setVisible(false);
+            this.jScrollPane1.setVisible(false);
+            this.lblNoHayProfesionales.setVisible(true);
+        }else{
+            this.panelProfesionales.setVisible(false);
+            this.listaProfesionalesVentana.setListData(sistema.getListaProfesionales().toArray());
+            this.jScrollPane1.setVisible(true);
+            this.lblNoHayProfesionales.setVisible(false);
+            this.listaProfesionalesVentana.setVisible(true);
+        }
     }
 
     public Image getIconImage() {
@@ -51,6 +73,11 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
         lblNombre1 = new javax.swing.JLabel();
         btnAgregarProfesional1 = new javax.swing.JLabel();
         btnCerrarSistema = new javax.swing.JButton();
+        lblNoHayProfesionales = new javax.swing.JLabel();
+        lblNoHayUsuarios = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        panelProfesionales = new javax.swing.JPanel();
+        panelUsuarios = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1060, 800));
@@ -119,6 +146,8 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
         panel2.add(lblNombre);
         lblNombre.setBounds(450, 200, 181, 38);
 
+        jScrollPane2.setForeground(new java.awt.Color(51, 51, 51));
+
         listaUsuariosVentana.setBackground(new java.awt.Color(51, 51, 51));
         listaUsuariosVentana.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         listaUsuariosVentana.setForeground(new java.awt.Color(255, 255, 255));
@@ -185,7 +214,6 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
         btnCerrarSistema.setBorderPainted(false);
         btnCerrarSistema.setContentAreaFilled(false);
         btnCerrarSistema.setFocusPainted(false);
-        btnCerrarSistema.setOpaque(false);
         btnCerrarSistema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarSistemaActionPerformed(evt);
@@ -194,8 +222,53 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
         panel2.add(btnCerrarSistema);
         btnCerrarSistema.setBounds(730, 10, 50, 50);
 
+        lblNoHayProfesionales.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        lblNoHayProfesionales.setText("Registre nuevos profesionales");
+        panel2.add(lblNoHayProfesionales);
+        lblNoHayProfesionales.setBounds(380, 320, 330, 150);
+
+        lblNoHayUsuarios.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        lblNoHayUsuarios.setText("Registre nuevos usuarios");
+        panel2.add(lblNoHayUsuarios);
+        lblNoHayUsuarios.setBounds(60, 320, 280, 150);
+        lblNoHayUsuarios.getAccessibleContext().setAccessibleParent(jScrollPane2);
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel3.setText("Registre nuevos usuarios");
+        panel2.add(jLabel3);
+        jLabel3.setBounds(60, 320, 280, 150);
+
+        javax.swing.GroupLayout panelProfesionalesLayout = new javax.swing.GroupLayout(panelProfesionales);
+        panelProfesionales.setLayout(panelProfesionalesLayout);
+        panelProfesionalesLayout.setHorizontalGroup(
+            panelProfesionalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 350, Short.MAX_VALUE)
+        );
+        panelProfesionalesLayout.setVerticalGroup(
+            panelProfesionalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 350, Short.MAX_VALUE)
+        );
+
+        panel2.add(panelProfesionales);
+        panelProfesionales.setBounds(370, 240, 350, 350);
+
+        javax.swing.GroupLayout panelUsuariosLayout = new javax.swing.GroupLayout(panelUsuarios);
+        panelUsuarios.setLayout(panelUsuariosLayout);
+        panelUsuariosLayout.setHorizontalGroup(
+            panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 290, Short.MAX_VALUE)
+        );
+        panelUsuariosLayout.setVerticalGroup(
+            panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 350, Short.MAX_VALUE)
+        );
+
+        panel2.add(panelUsuarios);
+        panelUsuarios.setBounds(50, 240, 290, 350);
+
         getContentPane().add(panel2);
         panel2.setBounds(275, 0, 950, 800);
+        panel2.getAccessibleContext().setAccessibleParent(panel2);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -248,9 +321,12 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
     private javax.swing.JLabel btnAgregarUsuario;
     private javax.swing.JButton btnCerrarSistema;
     private javax.swing.JLabel icono;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblIconoNuevoUsuario;
+    private javax.swing.JLabel lblNoHayProfesionales;
+    private javax.swing.JLabel lblNoHayUsuarios;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblNombre1;
     private javax.swing.JLabel lblNuevoUsuario;
@@ -259,6 +335,8 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
     private javax.swing.JList listaUsuariosVentana;
     private javax.swing.JPanel panel1;
     private javax.swing.JPanel panel2;
+    private javax.swing.JPanel panelProfesionales;
+    private javax.swing.JPanel panelUsuarios;
     // End of variables declaration//GEN-END:variables
 
 }
