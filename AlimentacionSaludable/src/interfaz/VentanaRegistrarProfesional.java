@@ -7,6 +7,7 @@ import java.util.GregorianCalendar;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class VentanaRegistrarProfesional extends javax.swing.JDialog {
@@ -113,7 +114,7 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
                         .addComponent(btnHome)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
-                        .addGap(0, 22, Short.MAX_VALUE)
+                        .addGap(0, 18, Short.MAX_VALUE)
                         .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
                                 .addComponent(icono, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -131,7 +132,7 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
                 .addComponent(lblTituloVentana, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(icono, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(349, Short.MAX_VALUE))
+                .addContainerGap(346, Short.MAX_VALUE))
         );
 
         panel2.setBackground(new java.awt.Color(51, 51, 51));
@@ -155,13 +156,13 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
         lblNombre.setForeground(new java.awt.Color(255, 255, 255));
         lblNombre.setText("Nombre");
         panel2.add(lblNombre);
-        lblNombre.setBounds(30, 180, 134, 38);
+        lblNombre.setBounds(30, 180, 134, 39);
 
         lblApellido.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
         lblApellido.setForeground(new java.awt.Color(255, 255, 255));
         lblApellido.setText("Apellido");
         panel2.add(lblApellido);
-        lblApellido.setBounds(31, 223, 151, 38);
+        lblApellido.setBounds(31, 223, 151, 39);
 
         txtNombre.setBackground(new java.awt.Color(227, 227, 227));
         txtNombre.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
@@ -190,7 +191,7 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
         lblTituloProfesional.setForeground(new java.awt.Color(255, 255, 255));
         lblTituloProfesional.setText("Seleccione el título profesional");
         panel2.add(lblTituloProfesional);
-        lblTituloProfesional.setBounds(31, 377, 446, 38);
+        lblTituloProfesional.setBounds(31, 377, 402, 39);
 
         btnIngresarProfesionalASistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fotoConfirmar.png"))); // NOI18N
         btnIngresarProfesionalASistema.setBorderPainted(false);
@@ -207,7 +208,7 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
         lblPaisGraduacion.setForeground(new java.awt.Color(255, 255, 255));
         lblPaisGraduacion.setText("Seleccione el pais de graduación");
         panel2.add(lblPaisGraduacion);
-        lblPaisGraduacion.setBounds(31, 607, 497, 38);
+        lblPaisGraduacion.setBounds(31, 607, 436, 39);
 
         listaPaisGraduacion.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
         listaPaisGraduacion.addItemListener(new java.awt.event.ItemListener() {
@@ -232,41 +233,41 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
         lblFechaNac.setForeground(new java.awt.Color(255, 255, 255));
         lblFechaNac.setText("Fecha de nacimiento");
         panel2.add(lblFechaNac);
-        lblFechaNac.setBounds(31, 292, 338, 38);
+        lblFechaNac.setBounds(31, 292, 338, 39);
 
         dateChooserFechaNacimiento.setCurrentView(new datechooser.view.appearance.AppearancesList("Swing",
             new datechooser.view.appearance.ViewAppearance("custom",
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
+                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 13),
                     new java.awt.Color(0, 0, 0),
                     new java.awt.Color(0, 0, 255),
                     false,
                     true,
                     new datechooser.view.appearance.swing.ButtonPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
+                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 13),
                     new java.awt.Color(0, 0, 0),
                     new java.awt.Color(0, 0, 255),
                     true,
                     true,
                     new datechooser.view.appearance.swing.ButtonPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
+                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 13),
                     new java.awt.Color(0, 0, 255),
                     new java.awt.Color(0, 0, 255),
                     false,
                     true,
                     new datechooser.view.appearance.swing.ButtonPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
+                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 13),
                     new java.awt.Color(128, 128, 128),
                     new java.awt.Color(0, 0, 255),
                     false,
                     true,
                     new datechooser.view.appearance.swing.LabelPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
+                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 13),
                     new java.awt.Color(0, 0, 0),
                     new java.awt.Color(0, 0, 255),
                     false,
                     true,
                     new datechooser.view.appearance.swing.LabelPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
+                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 13),
                     new java.awt.Color(0, 0, 0),
                     new java.awt.Color(255, 0, 0),
                     false,
@@ -275,7 +276,7 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
                 (datechooser.view.BackRenderer)null,
                 false,
                 true)));
-    dateChooserFechaNacimiento.setFieldFont(new java.awt.Font("Century Gothic", java.awt.Font.PLAIN, 19));
+    dateChooserFechaNacimiento.setFieldFont(new java.awt.Font("Dialog", java.awt.Font.PLAIN, 19));
     dateChooserFechaNacimiento.setMaxDate(new java.util.GregorianCalendar(2017, 10, 9));
     dateChooserFechaNacimiento.setMinDate(new java.util.GregorianCalendar(1917, 10, 1));
     panel2.add(dateChooserFechaNacimiento);
@@ -296,41 +297,41 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
     lblFechaGraduacion.setForeground(new java.awt.Color(255, 255, 255));
     lblFechaGraduacion.setText("Seleccione la fecha de graduación");
     panel2.add(lblFechaGraduacion);
-    lblFechaGraduacion.setBounds(31, 489, 525, 38);
+    lblFechaGraduacion.setBounds(31, 489, 453, 39);
 
     dateChooserFechaGraduacion.setCurrentView(new datechooser.view.appearance.AppearancesList("Swing",
         new datechooser.view.appearance.ViewAppearance("custom",
-            new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
+            new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 13),
                 new java.awt.Color(0, 0, 0),
                 new java.awt.Color(0, 0, 255),
                 false,
                 true,
                 new datechooser.view.appearance.swing.ButtonPainter()),
-            new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
+            new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 13),
                 new java.awt.Color(0, 0, 0),
                 new java.awt.Color(0, 0, 255),
                 true,
                 true,
                 new datechooser.view.appearance.swing.ButtonPainter()),
-            new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
+            new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 13),
                 new java.awt.Color(0, 0, 255),
                 new java.awt.Color(0, 0, 255),
                 false,
                 true,
                 new datechooser.view.appearance.swing.ButtonPainter()),
-            new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
+            new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 13),
                 new java.awt.Color(128, 128, 128),
                 new java.awt.Color(0, 0, 255),
                 false,
                 true,
                 new datechooser.view.appearance.swing.LabelPainter()),
-            new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
+            new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 13),
                 new java.awt.Color(0, 0, 0),
                 new java.awt.Color(0, 0, 255),
                 false,
                 true,
                 new datechooser.view.appearance.swing.LabelPainter()),
-            new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
+            new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 13),
                 new java.awt.Color(0, 0, 0),
                 new java.awt.Color(255, 0, 0),
                 false,
@@ -339,7 +340,7 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
             (datechooser.view.BackRenderer)null,
             false,
             true)));
-dateChooserFechaGraduacion.setFieldFont(new java.awt.Font("Century Gothic", java.awt.Font.PLAIN, 19));
+dateChooserFechaGraduacion.setFieldFont(new java.awt.Font("Dialog", java.awt.Font.PLAIN, 19));
 dateChooserFechaGraduacion.setMaxDate(new java.util.GregorianCalendar(2017, 10, 9));
 dateChooserFechaGraduacion.setMinDate(new java.util.GregorianCalendar(1917, 10, 1));
 panel2.add(dateChooserFechaGraduacion);
@@ -469,9 +470,13 @@ layout.setHorizontalGroup(
 
     private void btnIngresarFotoPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarFotoPerfilActionPerformed
         JFileChooser fileChooser = new JFileChooser();
-        FileNameExtensionFilter file = new FileNameExtensionFilter("PNG", "png");
-        fileChooser.setFileFilter(file);
-        fileChooser.setAcceptAllFileFilterUsed(false);
+        FileNameExtensionFilter file = new FileNameExtensionFilter(".png", "png", "PNG");
+        fileChooser.addChoosableFileFilter(file);
+        FileNameExtensionFilter file2 = new FileNameExtensionFilter(".jpg", "jpg", "JPG");
+        fileChooser.addChoosableFileFilter(file2);
+        FileNameExtensionFilter file3 = new FileNameExtensionFilter(".jpeg", "jpeg", "JPEG");
+        fileChooser.addChoosableFileFilter(file3);
+        fileChooser.setAcceptAllFileFilterUsed(true);
         int imagen = fileChooser.showOpenDialog(this);
         if (imagen == JFileChooser.APPROVE_OPTION) {
             ImageIcon iconoPerfil = new ImageIcon(fileChooser.getSelectedFile().getAbsolutePath());
