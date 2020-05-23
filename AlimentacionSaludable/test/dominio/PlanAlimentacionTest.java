@@ -214,7 +214,7 @@ public class PlanAlimentacionTest {
     }
 
     @Test
-    public void testEqualsDiferentes() {
+    public void testEqualsDiferentesNombre() {
         String nombrePlan = "Plan 2 Dias DOWN";
         Usuario usuario = new Usuario("Martin", "Gómez", "11/02/98", new ImageIcon("Imagenes/fotoDeUsuarioStandard.png"), "Uruguayo", null, null, null);
         Profesional profesional = new Profesional("Alejandro", "Fernandez", null, null, null, null, null);
@@ -228,6 +228,46 @@ public class PlanAlimentacionTest {
                 fueAtendido, planDiaADia);
         String nombrePlan2 = "Plan 2 Dias UP";
         PlanAlimentacion planAComparar = new PlanAlimentacion(nombrePlan2, usuario, profesional,
+                fueAtendido, planDiaADia);
+        assertNotEquals(planATestear, planAComparar);
+    }
+    
+    @Test
+    public void testEqualsDiferentesUsuario() {
+        String nombrePlan = "Plan 2 Dias";
+        Usuario usuario = new Usuario("Martin", "Gómez", "11/02/98", new ImageIcon("Imagenes/fotoDeUsuarioStandard.png"), "Uruguayo", null, null, null);
+        Usuario usuarioComparacion = new Usuario("Joaquin", "Gómez", "11/02/98", new ImageIcon("Imagenes/fotoDeUsuarioStandard.png"), "Uruguayo", null, null, null);
+        Profesional profesional = new Profesional("Alejandro", "Fernandez", null, null, null, null, null);
+        boolean fueAtendido = true;
+        String[][] planDiaADia = new String[2][2];
+        planDiaADia[0][0] = "Manzana";
+        planDiaADia[0][1] = "Manzana";
+        planDiaADia[1][0] = "Manzana";
+        planDiaADia[1][1] = "Manzana";
+        PlanAlimentacion planATestear = new PlanAlimentacion(nombrePlan, usuario, profesional,
+                fueAtendido, planDiaADia);
+        String nombrePlan2 = "Plan 2 Dias";
+        PlanAlimentacion planAComparar = new PlanAlimentacion(nombrePlan2, usuarioComparacion, profesional,
+                fueAtendido, planDiaADia);
+        assertNotEquals(planATestear, planAComparar);
+    }
+    
+    @Test
+    public void testEqualsDiferentesProfesional() {
+        String nombrePlan = "Plan 2 Dias";
+        Usuario usuario = new Usuario("Martin", "Gómez", "11/02/98", new ImageIcon("Imagenes/fotoDeUsuarioStandard.png"), "Uruguayo", null, null, null);
+        Profesional profesional = new Profesional("Alejandro", "Fernandez", null, null, null, null, null);
+        Profesional profesionalComparacion = new Profesional("Diego", "Fernandez", null, null, null, null, null);
+        boolean fueAtendido = true;
+        String[][] planDiaADia = new String[2][2];
+        planDiaADia[0][0] = "Manzana";
+        planDiaADia[0][1] = "Manzana";
+        planDiaADia[1][0] = "Manzana";
+        planDiaADia[1][1] = "Manzana";
+        PlanAlimentacion planATestear = new PlanAlimentacion(nombrePlan, usuario, profesional,
+                fueAtendido, planDiaADia);
+        String nombrePlan2 = "Plan 2 Dias";
+        PlanAlimentacion planAComparar = new PlanAlimentacion(nombrePlan2, usuario, profesionalComparacion,
                 fueAtendido, planDiaADia);
         assertNotEquals(planATestear, planAComparar);
     }

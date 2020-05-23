@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>InformacionMensaje.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">dominio</a> &gt; <span class="el_source">InformacionMensaje.java</span></div><h1>InformacionMensaje.java</h1><pre class="source lang-java linenums">package dominio;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>InformacionMensaje.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">dominio</a> &gt; <span class="el_source">InformacionMensaje.java</span></div><h1>InformacionMensaje.java</h1><pre class="source lang-java linenums">package dominio;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -16,11 +16,11 @@ public final class InformacionMensaje implements Serializable {
 <span class="fc" id="L16">    }</span>
 
     public String getMensaje() {
-<span class="fc" id="L19">        return mensaje;</span>
+<span class="fc" id="L19">        return this.mensaje;</span>
     }
 
     public void setMensaje(String elMensaje) {
-<span class="fc" id="L23">        mensaje = elMensaje;</span>
+<span class="fc" id="L23">        this.mensaje = elMensaje;</span>
 <span class="fc" id="L24">    }</span>
 
     public String getDestinatario() {
@@ -28,27 +28,36 @@ public final class InformacionMensaje implements Serializable {
     }
 
     public void setDestinatario(String elDestinatario) {
-<span class="fc" id="L31">        destinatario = elDestinatario;</span>
-
-<span class="fc" id="L33">    }</span>
+<span class="fc bfc" id="L31" title="All 4 branches covered.">        if (elDestinatario == null || elDestinatario.isEmpty()) {</span>
+<span class="fc" id="L32">            this.destinatario = &quot;Destinatario no ingresado&quot;;</span>
+        }
+        else {
+<span class="fc" id="L35">            this.destinatario = elDestinatario;</span>
+        }
+<span class="fc" id="L37">    }</span>
 
     public String getRemitente() {
-<span class="fc" id="L36">        return remitente;</span>
+<span class="fc" id="L40">        return remitente;</span>
     }
 
     public void setRemitente(String elRemitente) {
-<span class="fc" id="L40">        this.remitente = elRemitente;</span>
-<span class="fc" id="L41">    }</span>
+<span class="fc bfc" id="L44" title="All 4 branches covered.">        if (elRemitente == null || elRemitente.isEmpty()) {</span>
+<span class="fc" id="L45">            this.remitente = &quot;Remitente no ingresado&quot;;</span>
+        }
+        else {
+<span class="fc" id="L48">            this.remitente = elRemitente;</span>
+        }
+<span class="fc" id="L50">    }</span>
 
     public void intercambiarRemitente() {
-<span class="nc" id="L44">        String aux = destinatario;</span>
-<span class="nc" id="L45">        destinatario = remitente;</span>
-<span class="nc" id="L46">        remitente = aux;</span>
-<span class="nc" id="L47">    }</span>
+<span class="fc" id="L53">        String aux = destinatario;</span>
+<span class="fc" id="L54">        destinatario = remitente;</span>
+<span class="fc" id="L55">        remitente = aux;</span>
+<span class="fc" id="L56">    }</span>
 
     @Override
     public String toString() {
-<span class="fc" id="L51">        return getRemitente() + &quot;: \n&quot; + getMensaje();</span>
+<span class="fc" id="L60">        return getRemitente() + &quot;: \n&quot; + getMensaje();</span>
     }
 
 }
