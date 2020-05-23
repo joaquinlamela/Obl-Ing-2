@@ -310,6 +310,7 @@ public class SistemaTest {
         ArrayList<Alimento> listaAlimentos = new ArrayList<>();
         ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
         ArrayList<Conversacion> listaConversaciones = new ArrayList<>();
+        
         Persona personaLogueada = new Usuario("Martin", null, null, null, null, null, null, null);
         Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
         Persona usuarioConversacion = null;
@@ -325,6 +326,7 @@ public class SistemaTest {
         ArrayList<Alimento> listaAlimentos = new ArrayList<>();
         ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
         ArrayList<Conversacion> listaConversaciones = new ArrayList<>();
+        
         Persona personaLogueada = new Usuario("Martin", null, null, null, null, null, null, null);
         Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
         Persona usuarioConversacion = new Usuario("Martin", null, null, null, null, null, null, null);
@@ -334,19 +336,82 @@ public class SistemaTest {
     }
     
     @Test
-    public void testAgregarAListaConversacionesDatoMensajeVacio() {
+    public void testAgregarAListaConversacionesDatoMensajeVacio1() {
         ArrayList<Usuario> listaUsuarios = new ArrayList<>();
         ArrayList<Profesional> listaProfesionales = new ArrayList<>();
         ArrayList<Alimento> listaAlimentos = new ArrayList<>();
         ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
         ArrayList<Conversacion> listaConversaciones = new ArrayList<>();
+        
         Persona personaLogueada = new Usuario("Martin", null, null, null, null, null, null, null);
         Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
         Persona usuarioConversacion = new Usuario("Martin", null, null, null, null, null, null, null);
-        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion);
         Persona profesionalConversacion = new Profesional("Luis", null, null, null, null, null, null);
-        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion);
         boolean agregoConversacion = sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion, "", true);
+        assertFalse(agregoConversacion);
+    }
+    
+    @Test
+    public void testAgregarAListaConversacionesDatoMensajeVacio2() {
+        ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+        ArrayList<Profesional> listaProfesionales = new ArrayList<>();
+        ArrayList<Alimento> listaAlimentos = new ArrayList<>();
+        ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
+        ArrayList<Conversacion> listaConversaciones = new ArrayList<>();
+        
+        Persona personaLogueada = new Usuario("Martin", null, null, null, null, null, null, null);
+        Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
+        Persona usuarioConversacion = null;
+        Persona profesionalConversacion = new Profesional("Luis", null, null, null, null, null, null);
+        boolean agregoConversacion = sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion, "", true);
+        assertFalse(agregoConversacion);
+    }
+    
+    @Test
+    public void testAgregarAListaConversacionesDatoMensajeVacio3() {
+        ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+        ArrayList<Profesional> listaProfesionales = new ArrayList<>();
+        ArrayList<Alimento> listaAlimentos = new ArrayList<>();
+        ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
+        ArrayList<Conversacion> listaConversaciones = new ArrayList<>();
+        
+        Persona personaLogueada = new Usuario("Martin", null, null, null, null, null, null, null);
+        Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
+        Persona usuarioConversacion = new Usuario("Martin", null, null, null, null, null, null, null);
+        Persona profesionalConversacion = null;
+        boolean agregoConversacion = sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion, "", true);
+        assertFalse(agregoConversacion);
+    }
+    
+    @Test
+    public void testAgregarAListaConversacionesDatoMensajeVacio4() {
+        ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+        ArrayList<Profesional> listaProfesionales = new ArrayList<>();
+        ArrayList<Alimento> listaAlimentos = new ArrayList<>();
+        ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
+        ArrayList<Conversacion> listaConversaciones = new ArrayList<>();
+        
+        Persona personaLogueada = new Usuario("Martin", null, null, null, null, null, null, null);
+        Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
+        Persona usuarioConversacion = null;
+        Persona profesionalConversacion = null;
+        boolean agregoConversacion = sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion, "", true);
+        assertFalse(agregoConversacion);
+    }
+    
+    @Test
+    public void testAgregarAListaConversacionesDatoMensajeVacio5() {
+        ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+        ArrayList<Profesional> listaProfesionales = new ArrayList<>();
+        ArrayList<Alimento> listaAlimentos = new ArrayList<>();
+        ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
+        ArrayList<Conversacion> listaConversaciones = new ArrayList<>();
+        
+        Persona personaLogueada = new Usuario("Martin", null, null, null, null, null, null, null);
+        Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
+        Persona usuarioConversacion = null;
+        Persona profesionalConversacion = null;
+        boolean agregoConversacion = sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion, "Hola", true);
         assertFalse(agregoConversacion);
     }
     
@@ -357,6 +422,7 @@ public class SistemaTest {
         ArrayList<Alimento> listaAlimentos = new ArrayList<>();
         ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
         ArrayList<Conversacion> listaConversaciones = new ArrayList<>();
+        
         Persona personaLogueada = new Usuario("Martin", null, null, null, null, null, null, null);
         Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
         Persona usuarioConversacion = new Usuario("Martin", null, null, null, null, null, null, null);
@@ -374,6 +440,7 @@ public class SistemaTest {
         ArrayList<Alimento> listaAlimentos = new ArrayList<>();
         ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
         ArrayList<Conversacion> listaConversaciones = new ArrayList<>();
+        
         Persona personaLogueada = new Usuario("Martin", null, null, null, null, null, null, null);
         Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
         Persona usuarioConversacion = new Usuario("Martin", null, null, null, null, null, null, null);
@@ -390,6 +457,7 @@ public class SistemaTest {
         ArrayList<Alimento> listaAlimentos = new ArrayList<>();
         ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
         ArrayList<Conversacion> listaConversaciones = new ArrayList<>();
+        
         Persona personaLogueada = new Usuario("Martin", null, null, null, null, null, null, null);
         Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
         Persona usuarioConversacion = new Usuario("Martin", null, null, null, null, null, null, null);
@@ -409,6 +477,7 @@ public class SistemaTest {
         ArrayList<Alimento> listaAlimentos = new ArrayList<>();
         ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
         ArrayList<Conversacion> listaConversaciones = new ArrayList<>();
+        
         Persona personaLogueada = new Usuario("Martin", null, null, null, null, null, null, null);
         Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
         Persona usuarioConversacion = new Usuario("Martin", null, null, null, null, null, null, null);
@@ -428,6 +497,7 @@ public class SistemaTest {
         ArrayList<Alimento> listaAlimentos = new ArrayList<>();
         ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
         ArrayList<Conversacion> listaConversaciones = new ArrayList<>();
+        
         Persona personaLogueada = new Usuario("Martin", null, null, null, null, null, null, null);
         Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
         Persona usuarioConversacion = new Usuario("Martin", null, null, null, null, null, null, null);
@@ -440,7 +510,7 @@ public class SistemaTest {
     }
     
     @Test
-    public void testAgregarIngestaDatosCorrectos() {
+    public void testAgregarIngestaDatosCorrectos1() {
         ArrayList<Ingesta> listaIngestas = new ArrayList<>();
         Ingesta ingesta1 = new Ingesta("11/02/17", null);
         listaIngestas.add(ingesta1);
@@ -450,6 +520,17 @@ public class SistemaTest {
         assertTrue(retorno);
     }
 
+    @Test
+    public void testAgregarIngestaDatosCorrectos2() {
+        ArrayList<Ingesta> listaIngestas = new ArrayList<>();
+        Ingesta ingesta1 = new Ingesta("11/02/17", null);
+        listaIngestas.add(ingesta1);
+        Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
+        sistemaATestear.crearUsuario("Martin", null, null, null, null, null, null, null);
+        boolean retorno = sistemaATestear.agregarIngestaAUsuario(listaIngestas, "11/02/16", "Papa");
+        assertTrue(retorno);
+    }
+    
     @Test
     public void testAgregarIngestaRepetida() {
         ArrayList<Ingesta> listaIngestas = new ArrayList<>();
