@@ -36,9 +36,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
         this.lblNuevoAlimentoVacio.setVisible(false);
         this.lblDatosIncorrectos2.setVisible(false);
         this.nombreDelPlan = "";
-        SimpleDateFormat formatoFecha = new SimpleDateFormat ("dd.MM.yyyy");
-        Date fechaActual = new Date();
-        this.lblFechaAlimentoIngerido.setText(formatoFecha.format(fechaActual));    
+        this.setFechaActual();
         this.primeraVez = true;
         this.primeraIngesta = true;
         this.panelVacio.setVisible(true);
@@ -58,6 +56,13 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
 
     public void setYaExisteConversacion(boolean existe) {
         this.existeConversacion = existe;
+    }
+    
+    
+    public void setFechaActual(){
+        SimpleDateFormat formatoFecha = new SimpleDateFormat ("dd.MM.yyyy");
+        Date fechaActual = new Date();
+        this.lblFechaAlimentoIngerido.setText(formatoFecha.format(fechaActual));
     }
 
     @SuppressWarnings("unchecked")
