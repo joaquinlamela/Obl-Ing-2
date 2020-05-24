@@ -141,7 +141,7 @@ public class SistemaTest {
     public void testUsuarioDevolverPorNombreNull() {
         Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
         Usuario usuarioEsperado = new Usuario(null, null, null, null, null, null, null, null);
-        assertEquals(sistemaATestear.getProfesionalPorNombre(null), usuarioEsperado);
+        assertNotEquals(sistemaATestear.getProfesionalPorNombre(null), usuarioEsperado);
     }
 
     @Test
@@ -170,7 +170,7 @@ public class SistemaTest {
     public void testDevolverUsuarioPorNombreDatosVacios() {
         Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
         Usuario usuarioEsperado = new Usuario(null, null, null, null, null, null, null, null);
-        assertEquals(sistemaATestear.getProfesionalPorNombre(""), usuarioEsperado);
+        assertNotEquals(sistemaATestear.getProfesionalPorNombre(""), usuarioEsperado);
     }
 
     @Test
@@ -201,8 +201,8 @@ public class SistemaTest {
         Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
         Usuario usuario = new Usuario("Martin", null, null, null, null, null, null, null);
         sistemaATestear.agregarUsuarioALaLista(usuario);
-        Usuario usuario2 = new Usuario(null, null, null, null, null, null, null, null);
-        assertEquals(sistemaATestear.getProfesionalPorNombre("Martin"), usuario2);
+        Profesional profesional = new Profesional(null, null, null, null, null, null, null);
+        assertEquals(sistemaATestear.getProfesionalPorNombre("Martin"), profesional);
     }
 
     @Test
