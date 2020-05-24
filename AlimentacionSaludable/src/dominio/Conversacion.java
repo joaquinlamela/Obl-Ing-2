@@ -98,5 +98,10 @@ public final class Conversacion implements Serializable {
         }
         return retorno;
     }
+    
+    @Override
+    public int hashCode() {
+        return 7;
+    }
 
 }

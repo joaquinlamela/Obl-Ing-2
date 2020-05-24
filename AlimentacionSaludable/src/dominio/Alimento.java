@@ -94,5 +94,16 @@ public final class Alimento implements Serializable {
             return (this.getNombre().equals(otroAlimento.getNombre()));    
         }
     }
+    
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 47 * hash + Objects.hashCode(this.nombre);
+        hash = 47 * hash + Objects.hashCode(this.tipoAlimento);
+        hash = 47 * hash + Objects.hashCode(this.listaNutrientesConProporcion);
+        hash = 47 * hash + Objects.hashCode(this.fotoDelAlimento);
+        return hash;
+    }
+    
 
 }
