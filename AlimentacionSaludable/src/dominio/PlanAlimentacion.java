@@ -86,10 +86,24 @@ public final class PlanAlimentacion implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
+        if(obj==null){
+            return false; 
+        }else if (this.getClass() != obj.getClass()){
+            return false; 
+        }else{
         PlanAlimentacion otroPlanAlimentacion = (PlanAlimentacion) obj;
         return (this.getNombreDelPlan().equals(otroPlanAlimentacion.getNombreDelPlan())
                 && this.getUsuario().equals(otroPlanAlimentacion.getUsuario())
                 && this.getProfesional().equals(otroPlanAlimentacion.getProfesional()));
+        }
+       
+    }
+    
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.usuario);
+        return hash;
     }
 
 }
