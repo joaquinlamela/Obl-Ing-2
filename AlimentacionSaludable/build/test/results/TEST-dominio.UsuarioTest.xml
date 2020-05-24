@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="MSI" name="dominio.UsuarioTest" skipped="0" tests="16" time="0.714" timestamp="2020-05-23T18:11:50">
+<testsuite errors="0" failures="0" hostname="MSI" name="dominio.UsuarioTest" skipped="0" tests="16" time="0.65" timestamp="2020-05-24T15:16:49">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="UY" />
@@ -59,7 +59,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner dominio.UsuarioTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\PC\Desktop\Obl 2 Ing\Obl-Ing-2\AlimentacionSaludable\build\test\results\TEST-dominio.UsuarioTest.xml crashfile=C:\Users\PC\Desktop\Obl 2 Ing\Obl-Ing-2\AlimentacionSaludable\build\junitvmwatcher4383869474985434923.properties propsfile=C:\Users\PC\Desktop\Obl 2 Ing\Obl-Ing-2\AlimentacionSaludable\build\junit384106631656767865.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner dominio.UsuarioTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\PC\Desktop\Obl 2 Ing\Obl-Ing-2\AlimentacionSaludable\build\test\results\TEST-dominio.UsuarioTest.xml crashfile=C:\Users\PC\Desktop\Obl 2 Ing\Obl-Ing-2\AlimentacionSaludable\build\junitvmwatcher5023104003532799158.properties propsfile=C:\Users\PC\Desktop\Obl 2 Ing\Obl-Ing-2\AlimentacionSaludable\build\junit9057326466265018500.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -401,7 +401,7 @@
     <property name="libs.spring-framework300.classpath" value="C:\Program Files\NetBeans 8.2\ide\modules\org-apache-commons-logging.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\cglib-2.2.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-aop-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-aspects-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-beans-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-build-src-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-context-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-context-support-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-core-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-expression-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-framework-bom-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-instrument-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-instrument-tomcat-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-jdbc-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-jms-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-orm-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-oxm-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-struts-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-test-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-tx-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-web-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-webmvc-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-webmvc-portlet-3.2.7.RELEASE.jar" />
     <property name="libs.jsp-compiler.maven-pom" value="" />
     <property name="libs.hamcrest.src" value="" />
-    <property name="run.jvmargs" value="  -javaagent:&quot;C:\Users\PC\AppData\Roaming\NetBeans\8.2\modules\ext\jacocoagent.jar&quot;=includes=dominio.*:Imagenes.*:inicioSistema.*:interfaz.*,destfile=&quot;C:\Users\PC\Desktop\Obl 2 Ing\Obl-Ing-2\AlimentacionSaludable\jacoco.exec-113267498169300&quot;" />
+    <property name="run.jvmargs" value="  -javaagent:&quot;C:\Users\PC\AppData\Roaming\NetBeans\8.2\modules\ext\jacocoagent.jar&quot;=includes=dominio.*:Imagenes.*:inicioSistema.*:interfaz.*,destfile=&quot;C:\Users\PC\Desktop\Obl 2 Ing\Obl-Ing-2\AlimentacionSaludable\jacoco.exec-189208374981600&quot;" />
     <property name="libs.hibernate4-persistence.classpath" value="C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\antlr-2.7.7.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\c3p0-0.9.2.1.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-c3p0-4.3.1.Final.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\mchange-commons-java-0.2.3.4.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\dom4j-1.6.1.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\ehcache-core-2.4.3.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-ehcache-4.3.1.Final.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-core-4.3.1.Final.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\jboss-logging-3.1.3.GA.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-commons-annotations-4.0.4.Final.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-entitymanager-4.3.1.Final.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\javassist-3.18.1-GA.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\jboss-transaction-api_1.2_spec-1.0.0.Final.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\slf4j-api-1.6.1.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\slf4j-simple-1.6.1.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-jpa-2.1-api-1.0.0.Final.jar" />
     <property name="libs.JAXB-ENDORSED.src" value="" />
     <property name="dist.archive.excludes" value="" />
@@ -427,8 +427,8 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files\NetBeans 8.2\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="dominio.UsuarioTest" name="testGetsSetsVaciosRestricciones" time="0.614" />
-  <testcase classname="dominio.UsuarioTest" name="testGetsSetsNullApellido" time="0.0" />
+  <testcase classname="dominio.UsuarioTest" name="testGetsSetsVaciosRestricciones" time="0.538" />
+  <testcase classname="dominio.UsuarioTest" name="testGetsSetsNullApellido" time="0.001" />
   <testcase classname="dominio.UsuarioTest" name="testSetRestricciones" time="0.002" />
   <testcase classname="dominio.UsuarioTest" name="testGetsSetsNullNombre" time="0.0" />
   <testcase classname="dominio.UsuarioTest" name="testToString" time="0.0" />
@@ -437,11 +437,11 @@
   <testcase classname="dominio.UsuarioTest" name="testSetPreferencias" time="0.0" />
   <testcase classname="dominio.UsuarioTest" name="testGetsSetsNullNacionalidad" time="0.0" />
   <testcase classname="dominio.UsuarioTest" name="testGetsSetsNullListaAlimentos" time="0.0" />
-  <testcase classname="dominio.UsuarioTest" name="testGetsSetsVaciosPreferencias" time="0.0" />
+  <testcase classname="dominio.UsuarioTest" name="testGetsSetsVaciosPreferencias" time="0.001" />
   <testcase classname="dominio.UsuarioTest" name="testGetsSetsNullRestricciones" time="0.0" />
   <testcase classname="dominio.UsuarioTest" name="testSetRestriccionesVacias" time="0.0" />
-  <testcase classname="dominio.UsuarioTest" name="testSetAlimentosIngeridos" time="0.01" />
-  <testcase classname="dominio.UsuarioTest" name="testGetsSetsNullFechaNacimiento" time="0.001" />
+  <testcase classname="dominio.UsuarioTest" name="testSetAlimentosIngeridos" time="0.009" />
+  <testcase classname="dominio.UsuarioTest" name="testGetsSetsNullFechaNacimiento" time="0.0" />
   <testcase classname="dominio.UsuarioTest" name="testGetsSetsVaciosListaAlimentos" time="0.001" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

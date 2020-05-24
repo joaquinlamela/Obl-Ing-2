@@ -275,15 +275,13 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
         panelUsuariosLayout.setVerticalGroup(
             panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelUsuariosLayout.createSequentialGroup()
-                .addContainerGap(103, Short.MAX_VALUE)
+                .addContainerGap(102, Short.MAX_VALUE)
                 .addComponent(lblNoHayUsuarios1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblNoHayUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(136, 136, 136))
         );
 
-        lblNoHayUsuarios.getAccessibleContext().setAccessibleParent(jScrollPane2);
-        lblNoHayUsuarios1.getAccessibleContext().setAccessibleName("Aun no hay usuarios");
         lblNoHayUsuarios1.getAccessibleContext().setAccessibleDescription("");
 
         panel2.add(panelUsuarios);

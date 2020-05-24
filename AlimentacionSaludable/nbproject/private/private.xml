@@ -3,13 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/user/Desktop/Repo%20Ing2/Obl-Ing-2/AlimentacionSaludable/src/interfaz/VentanaMenuPrincipalProfesional.java</file>
-            <file>file:/C:/Users/user/Desktop/Repo%20Ing2/Obl-Ing-2/AlimentacionSaludable/test/dominio/PlanAlimentacionTest.java</file>
-            <file>file:/C:/Users/user/Desktop/Repo%20Ing2/Obl-Ing-2/AlimentacionSaludable/src/interfaz/VentanaMenuPrincipal.java</file>
-            <file>file:/C:/Users/user/Desktop/Repo%20Ing2/Obl-Ing-2/AlimentacionSaludable/src/interfaz/VentanaMenuPrincipalUsuario.java</file>
-            <file>file:/C:/Users/user/Desktop/Repo%20Ing2/Obl-Ing-2/AlimentacionSaludable/test/dominio/ComposicionAlimentoTest.java</file>
-            <file>file:/C:/Users/user/Desktop/Repo%20Ing2/Obl-Ing-2/AlimentacionSaludable/src/interfaz/VentanaRegistrarProfesional.java</file>
-            <file>file:/C:/Users/user/Desktop/Repo%20Ing2/Obl-Ing-2/AlimentacionSaludable/src/interfaz/VentanaRegistrarUsuario.java</file>
+            <file>file:/C:/Users/PC/Desktop/Obl%202%20Ing/Obl-Ing-2/AlimentacionSaludable/src/interfaz/VentanaMenuPrincipal.java</file>
+            <file>file:/C:/Users/PC/Desktop/Obl%202%20Ing/Obl-Ing-2/AlimentacionSaludable/test/dominio/SistemaTest.java</file>
+            <file>file:/C:/Users/PC/Desktop/Obl%202%20Ing/Obl-Ing-2/AlimentacionSaludable/src/dominio/Ingesta.java</file>
+            <file>file:/C:/Users/PC/Desktop/Obl%202%20Ing/Obl-Ing-2/AlimentacionSaludable/test/dominio/AlimentoTest.java</file>
+            <file>file:/C:/Users/PC/Desktop/Obl%202%20Ing/Obl-Ing-2/AlimentacionSaludable/src/dominio/Usuario.java</file>
+            <file>file:/C:/Users/PC/Desktop/Obl%202%20Ing/Obl-Ing-2/AlimentacionSaludable/src/dominio/Alimento.java</file>
+            <file>file:/C:/Users/PC/Desktop/Obl%202%20Ing/Obl-Ing-2/AlimentacionSaludable/src/dominio/InformacionMensaje.java</file>
+            <file>file:/C:/Users/PC/Desktop/Obl%202%20Ing/Obl-Ing-2/AlimentacionSaludable/test/dominio/UsuarioTest.java</file>
+            <file>file:/C:/Users/PC/Desktop/Obl%202%20Ing/Obl-Ing-2/AlimentacionSaludable/test/dominio/EnumTest.java</file>
+            <file>file:/C:/Users/PC/Desktop/Obl%202%20Ing/Obl-Ing-2/AlimentacionSaludable/test/dominio/ProfesionalTest.java</file>
+            <file>file:/C:/Users/PC/Desktop/Obl%202%20Ing/Obl-Ing-2/AlimentacionSaludable/src/dominio/Persona.java</file>
+            <file>file:/C:/Users/PC/Desktop/Obl%202%20Ing/Obl-Ing-2/AlimentacionSaludable/test/dominio/InformacionMensajeTest.java</file>
+            <file>file:/C:/Users/PC/Desktop/Obl%202%20Ing/Obl-Ing-2/AlimentacionSaludable/test/dominio/ConversacionTest.java</file>
+            <file>file:/C:/Users/PC/Desktop/Obl%202%20Ing/Obl-Ing-2/AlimentacionSaludable/src/dominio/Profesional.java</file>
         </group>
     </open-files>
 </project-private>

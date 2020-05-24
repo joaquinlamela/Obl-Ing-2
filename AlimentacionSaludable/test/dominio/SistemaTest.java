@@ -510,6 +510,334 @@ public class SistemaTest {
     }
     
     @Test
+    public void testGetListaNombresProfesionalesConversaciones() {
+        ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+        ArrayList<Profesional> listaProfesionales = new ArrayList<>();
+        ArrayList<Alimento> listaAlimentos = new ArrayList<>();
+        ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
+        ArrayList<Conversacion> listaConversaciones = new ArrayList<>();
+        
+        Persona personaLogueada = new Usuario("Martin", null, null, null, null, null, null, null);
+        Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
+        Persona usuarioConversacion = new Usuario("Martin", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion);
+        Persona profesionalConversacion = new Profesional("Luis", null, null, null, null, null, null);
+        Persona profesionalConversacion2 = new Profesional("Pedro", null, null, null, null, null, null);
+        
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion2);
+        sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion, "Hola", true);
+        
+        String[] nombres = {"Luis"};
+        assertEquals(sistemaATestear.getListaNombresProfesionalesConversaciones("Martin"),nombres);
+    }
+    
+    @Test
+    public void testGetListaNombres2ProfesionalesConversaciones1() {
+        ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+        ArrayList<Profesional> listaProfesionales = new ArrayList<>();
+        ArrayList<Alimento> listaAlimentos = new ArrayList<>();
+        ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
+        ArrayList<Conversacion> listaConversaciones = new ArrayList<>();
+        
+        Persona personaLogueada = new Usuario("Martin", null, null, null, null, null, null, null);
+        Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
+        Persona usuarioConversacion = new Usuario("Martin", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion);
+        Persona profesionalConversacion = new Profesional("Luis", null, null, null, null, null, null);
+        Persona profesionalConversacion2 = new Profesional("Pedro", null, null, null, null, null, null);
+        
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion2);
+        sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion, "Hola", true);
+        sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion2, "Como estas", true);
+        
+        String[] nombres = {"Luis","Pedro"};
+        assertEquals(sistemaATestear.getListaNombresProfesionalesConversaciones("Martin"),nombres);
+    }
+    
+    @Test
+    public void testGetListaNombres2ProfesionalesConversaciones2() {
+        ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+        ArrayList<Profesional> listaProfesionales = new ArrayList<>();
+        ArrayList<Alimento> listaAlimentos = new ArrayList<>();
+        ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
+        ArrayList<Conversacion> listaConversaciones = new ArrayList<>();
+        
+        Persona personaLogueada = new Usuario("Martin", null, null, null, null, null, null, null);
+        Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
+        Persona usuarioConversacion = new Usuario("Martin", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion);
+        Persona usuarioConversacion2 = new Usuario("Juan", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion2);
+        
+        Persona profesionalConversacion = new Profesional("Luis", null, null, null, null, null, null);
+        Persona profesionalConversacion2 = new Profesional("Pedro", null, null, null, null, null, null);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion2);
+        
+        sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion, "Hola", true);
+        sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion2, "Como estas", true);
+        sistemaATestear.crearConversacion(usuarioConversacion2, profesionalConversacion2, "Muy bien", true);
+        
+        String[] resultado = sistemaATestear.getListaNombresProfesionalesConversaciones("Martin");
+        String[] nombres = {"Luis","Pedro"};
+        for (int i = 0; i < nombres.length; i++) {
+            assertEquals(resultado[i],nombres[i]);
+        }
+    }
+    
+    @Test
+    public void testGetListaNombres2ProfesionalesConversaciones3() {
+        ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+        ArrayList<Profesional> listaProfesionales = new ArrayList<>();
+        ArrayList<Alimento> listaAlimentos = new ArrayList<>();
+        ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
+        ArrayList<Conversacion> listaConversaciones = new ArrayList<>();
+        
+        Persona personaLogueada = new Usuario("Martin", null, null, null, null, null, null, null);
+        Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
+        Persona usuarioConversacion = new Usuario("Martin", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion);
+        Persona usuarioConversacion2 = new Usuario("Juan", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion2);
+        
+        Persona profesionalConversacion = new Profesional("Luis", null, null, null, null, null, null);
+        Persona profesionalConversacion2 = new Profesional("Pedro", null, null, null, null, null, null);
+        Persona profesionalConversacion3 = new Profesional("Ricardo", null, null, null, null, null, null);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion2);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion3);
+        
+        sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion, "Hola", true);
+        sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion, "Hola 2.0", true);
+        sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion2, "Como estas", true);
+        sistemaATestear.crearConversacion(usuarioConversacion2, profesionalConversacion2, "Muy bien", true);
+        sistemaATestear.crearConversacion(usuarioConversacion2, profesionalConversacion3, "Me Alegro", true);
+         
+        String[] resultado = sistemaATestear.getListaNombresProfesionalesConversaciones("Martin");
+        String[] nombres = {"Luis","Pedro"};
+        for (int i = 0; i < nombres.length; i++) {
+            assertEquals(resultado[i],nombres[i]);
+        }
+    }
+    
+    @Test
+    public void testGetListaNombresUsuariosConversacionesPendientes() {
+        ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+        ArrayList<Profesional> listaProfesionales = new ArrayList<>();
+        ArrayList<Alimento> listaAlimentos = new ArrayList<>();
+        ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
+        ArrayList<Conversacion> listaConversaciones = new ArrayList<>();
+        
+        Persona personaLogueada = new Usuario("Martin", null, null, null, null, null, null, null);
+        Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
+        Persona usuarioConversacion = new Usuario("Martin", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion);
+        Persona usuarioConversacion2 = new Usuario("Juan", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion2);
+        Persona usuarioConversacion3 = new Usuario("Jose", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion3);
+        
+        Persona profesionalConversacion = new Profesional("Luis", null, null, null, null, null, null);
+        Persona profesionalConversacion2 = new Profesional("Pedro", null, null, null, null, null, null);
+        Persona profesionalConversacion3 = new Profesional("Ricardo", null, null, null, null, null, null);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion2);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion3);
+        
+        sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion, "Hola", true);
+        sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion, "Hola 2.0", true);
+        sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion2, "Como estas", true);
+        sistemaATestear.crearConversacion(usuarioConversacion2, profesionalConversacion2, "Muy bien", true);
+        sistemaATestear.crearConversacion(usuarioConversacion3, profesionalConversacion3, "Me Alegro", true);
+         
+        String[] resultado = sistemaATestear.getListaNombresUsuariosConversacionesPendientes("Pedro");
+        String[] nombres = {"Martin","Juan"};
+        for (int i = 0; i < nombres.length; i++) {
+            assertEquals(resultado[i],nombres[i]);
+        }
+    }
+    
+    @Test
+    public void testGetConversacion() {
+        ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+        ArrayList<Profesional> listaProfesionales = new ArrayList<>();
+        ArrayList<Alimento> listaAlimentos = new ArrayList<>();
+        ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
+        ArrayList<Conversacion> listaConversaciones = new ArrayList<>();
+        
+        Persona personaLogueada = new Usuario("Martin", null, null, null, null, null, null, null);
+        Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
+        Persona usuarioConversacion = new Usuario("Martin", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion);
+        Persona usuarioConversacion2 = new Usuario("Juan", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion2);
+        Persona usuarioConversacion3 = new Usuario("Jose", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion3);
+        
+        Persona profesionalConversacion = new Profesional("Luis", null, null, null, null, null, null);
+        Persona profesionalConversacion2 = new Profesional("Pedro", null, null, null, null, null, null);
+        Persona profesionalConversacion3 = new Profesional("Ricardo", null, null, null, null, null, null);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion2);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion3);
+        
+        sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion, "Hola", true);
+        sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion, "Hola 2.0", true);
+        sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion2, "Como estas", true);
+        sistemaATestear.crearConversacion(usuarioConversacion2, profesionalConversacion2, "Muy bien", true);
+        sistemaATestear.crearConversacion(usuarioConversacion3, profesionalConversacion3, "Me Alegro", true);
+        
+        assertEquals(sistemaATestear.getConversacion("Pedro", "Juan"),"\nJuan\nMuy bien\n");
+        assertEquals(sistemaATestear.getConversacion("Luis", "Martin"),"\nMartin\nHola\n");
+        assertEquals(sistemaATestear.getConversacion("Ricardo", "Martin"),"No hay conversación disponible.");   
+    }
+    
+    @Test
+    public void testGetAgregarMensajeConversacion() {
+        ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+        ArrayList<Profesional> listaProfesionales = new ArrayList<>();
+        ArrayList<Alimento> listaAlimentos = new ArrayList<>();
+        ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
+        ArrayList<Conversacion> listaConversaciones = new ArrayList<>();
+        
+        Persona personaLogueada = new Usuario("Martin", null, null, null, null, null, null, null);
+        Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
+        Persona usuarioConversacion = new Usuario("Martin", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion);
+        Persona usuarioConversacion2 = new Usuario("Juan", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion2);
+        Persona usuarioConversacion3 = new Usuario("Jose", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion3);
+        
+        Persona profesionalConversacion = new Profesional("Luis", null, null, null, null, null, null);
+        Persona profesionalConversacion2 = new Profesional("Pedro", null, null, null, null, null, null);
+        Persona profesionalConversacion3 = new Profesional("Ricardo", null, null, null, null, null, null);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion2);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion3);
+        
+        sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion, "Hola", true);
+        boolean ok = sistemaATestear.agregarMensajeConversacion("Martin", "Luis", "Hola 2.0", false,false);
+        sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion2, "Como estas", true);
+        sistemaATestear.crearConversacion(usuarioConversacion2, profesionalConversacion2, "Muy bien", true);
+        sistemaATestear.crearConversacion(usuarioConversacion3, profesionalConversacion3, "Me Alegro", true);
+        boolean fail = sistemaATestear.agregarMensajeConversacion("", null, "Hola 2.0", false,false);
+        
+        assertTrue(ok);
+        assertFalse(fail);
+        assertEquals(sistemaATestear.getConversacion("Luis", "Martin"),"\nMartin\nHola\n\nMartin\nHola 2.0\n");
+    }
+    
+    @Test
+    public void testGetAgregarMensajeConversacionSinIntercambio() {
+        ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+        ArrayList<Profesional> listaProfesionales = new ArrayList<>();
+        ArrayList<Alimento> listaAlimentos = new ArrayList<>();
+        ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
+        ArrayList<Conversacion> listaConversaciones = new ArrayList<>();
+        
+        Persona personaLogueada = new Usuario("Martin", null, null, null, null, null, null, null);
+        Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
+        Persona usuarioConversacion = new Usuario("Martin", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion);
+        Persona usuarioConversacion2 = new Usuario("Juan", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion2);
+        Persona usuarioConversacion3 = new Usuario("Jose", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion3);
+        
+        Persona profesionalConversacion = new Profesional("Luis", null, null, null, null, null, null);
+        Persona profesionalConversacion2 = new Profesional("Pedro", null, null, null, null, null, null);
+        Persona profesionalConversacion3 = new Profesional("Ricardo", null, null, null, null, null, null);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion2);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion3);
+        
+        sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion, "Hola", true);
+        boolean ok = sistemaATestear.agregarMensajeConversacion("Luis", "Martin", "Hola 2.0", false,false);
+        sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion2, "Como estas", true);
+        sistemaATestear.crearConversacion(usuarioConversacion2, profesionalConversacion2, "Muy bien", true);
+        sistemaATestear.crearConversacion(usuarioConversacion3, profesionalConversacion3, "Me Alegro", true);
+        boolean fail = sistemaATestear.agregarMensajeConversacion("", null, "Hola 2.0", false,false);
+        
+        assertTrue(ok);
+        assertFalse(fail);
+        assertEquals(sistemaATestear.getConversacion("Luis", "Martin"),"\nMartin\nHola\n\nMartin\nHola 2.0\n");
+    }
+    
+    @Test
+    public void testGetAgregarMensajeConversacionConIntercambio() {
+        ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+        ArrayList<Profesional> listaProfesionales = new ArrayList<>();
+        ArrayList<Alimento> listaAlimentos = new ArrayList<>();
+        ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
+        ArrayList<Conversacion> listaConversaciones = new ArrayList<>();
+        
+        Persona personaLogueada = new Usuario("Martin", null, null, null, null, null, null, null);
+        Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
+        Persona usuarioConversacion = new Usuario("Martin", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion);
+        Persona usuarioConversacion2 = new Usuario("Juan", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion2);
+        Persona usuarioConversacion3 = new Usuario("Jose", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion3);
+        
+        Persona profesionalConversacion = new Profesional("Luis", null, null, null, null, null, null);
+        Persona profesionalConversacion2 = new Profesional("Pedro", null, null, null, null, null, null);
+        Persona profesionalConversacion3 = new Profesional("Ricardo", null, null, null, null, null, null);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion2);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion3);
+        
+        sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion, "Hola", true);
+        boolean ok = sistemaATestear.agregarMensajeConversacion("Luis", "Martin", "Hola 2.0", true,false);
+        sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion2, "Como estas", true);
+        sistemaATestear.crearConversacion(usuarioConversacion2, profesionalConversacion2, "Muy bien", true);
+        sistemaATestear.crearConversacion(usuarioConversacion3, profesionalConversacion3, "Me Alegro", true);
+        boolean fail = sistemaATestear.agregarMensajeConversacion("", null, "Hola 2.0", false,false);
+        
+        assertTrue(ok);
+        assertFalse(fail);
+        assertEquals(sistemaATestear.getConversacion("Luis", "Martin"),"\nMartin\nHola\n\nLuis\nHola 2.0\n");
+    }
+    
+    @Test
+    public void testGetNombresProfesionalesSinConversacion() {
+        ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+        ArrayList<Profesional> listaProfesionales = new ArrayList<>();
+        ArrayList<Alimento> listaAlimentos = new ArrayList<>();
+        ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
+        ArrayList<Conversacion> listaConversaciones = new ArrayList<>();
+        
+        Persona personaLogueada = new Usuario("Martin", null, null, null, null, null, null, null);
+        Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
+        Persona usuarioConversacion = new Usuario("Martin", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion);
+        Persona usuarioConversacion2 = new Usuario("Juan", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion2);
+        Persona usuarioConversacion3 = new Usuario("Jose", null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista((Usuario)usuarioConversacion3);
+        
+        Persona profesionalConversacion = new Profesional("Luis", null, null, null, null, null, null);
+        Persona profesionalConversacion2 = new Profesional("Pedro", null, null, null, null, null, null);
+        Persona profesionalConversacion3 = new Profesional("Ricardo", null, null, null, null, null, null);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion2);
+        sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion3);
+        
+        sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion, "Hola", true);
+        sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion2, "Como estas", true);
+        sistemaATestear.crearConversacion(usuarioConversacion2, profesionalConversacion2, "Muy bien", true);
+        sistemaATestear.crearConversacion(usuarioConversacion3, profesionalConversacion3, "Me Alegro", true);
+        
+        ArrayList<Profesional> retorno = new ArrayList<>();
+        retorno.add((Profesional)profesionalConversacion3);
+        assertEquals(sistemaATestear.getNombresProfesionalesSinConversacionConUsuario(usuarioConversacion),retorno);
+    }
+    
+    @Test
     public void testAgregarIngestaDatosCorrectos1() {
         ArrayList<Ingesta> listaIngestas = new ArrayList<>();
         Ingesta ingesta1 = new Ingesta("11/02/17", null);
@@ -523,12 +851,21 @@ public class SistemaTest {
     @Test
     public void testAgregarIngestaDatosCorrectos2() {
         ArrayList<Ingesta> listaIngestas = new ArrayList<>();
-        Ingesta ingesta1 = new Ingesta("11/02/17", null);
+        Alimento papa = new Alimento("Papa",null,null,null);
+        Alimento frutilla = new Alimento("Frutilla",null,null,null);
+        ArrayList<Alimento> alimentos = new ArrayList<>();
+        alimentos.add(frutilla);
+        alimentos.add(papa);
+        Ingesta ingesta1 = new Ingesta("11/02/17", alimentos);
         listaIngestas.add(ingesta1);
+        
         Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
+        sistemaATestear.agregarAlimentoALaLista(frutilla);
+        sistemaATestear.agregarAlimentoALaLista(papa);
         sistemaATestear.crearUsuario("Martin", null, null, null, null, null, null, null);
         boolean retorno = sistemaATestear.agregarIngestaAUsuario(listaIngestas, "11/02/16", "Papa");
         assertTrue(retorno);
+        assertEquals(sistemaATestear.getListaAlimentos(), alimentos);
     }
     
     @Test
