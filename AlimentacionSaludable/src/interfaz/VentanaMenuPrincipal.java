@@ -14,6 +14,23 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
         initComponents();
         this.setLocationRelativeTo(null);
         this.sistema = unSistema;
+        this.iniicializarListaMenuPrincipal();
+    }
+
+    public Image getIconImage() {
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Imagenes/Imagen5.png"));
+        return retValue;
+    }
+
+    public Sistema getSistema() {
+        return sistema;
+    }
+
+    public void setSistema(Sistema unSistema) {
+        this.sistema = unSistema;
+    }
+    
+    private void iniicializarListaMenuPrincipal(){
         if (sistema.getListaUsuarios().isEmpty()) {
             this.panelUsuarios.setVisible(true);
             this.listaUsuariosVentana.setVisible(false);
@@ -38,19 +55,6 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
             this.lblNoHayProfesionales.setVisible(false);
             this.listaProfesionalesVentana.setVisible(true);
         }
-    }
-
-    public Image getIconImage() {
-        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Imagenes/Imagen5.png"));
-        return retValue;
-    }
-
-    public Sistema getSistema() {
-        return sistema;
-    }
-
-    public void setSistema(Sistema unSistema) {
-        this.sistema = unSistema;
     }
 
     @SuppressWarnings("unchecked")
