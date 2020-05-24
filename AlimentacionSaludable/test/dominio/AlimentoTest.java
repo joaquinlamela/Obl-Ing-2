@@ -1,6 +1,7 @@
 package dominio;
 
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import org.junit.Test;
@@ -44,6 +45,15 @@ public class AlimentoTest {
         listaComposicion.add(new ComposicionAlimento("Lipidos", 2));
         Alimento alimentoTest = new Alimento("Papa", "Verdura", listaComposicion, null);
         assertEquals(alimentoTest.getListaNutrientesConProporcion(), listaComposicion);
+    }
+    
+    @Test
+    public void testSetsGetsDatosCorrectosImagenes() {
+        ArrayList<ComposicionAlimento> listaComposicion = new ArrayList<>();
+        listaComposicion.add(new ComposicionAlimento("Lipidos", 2));
+        ImageIcon i = new ImageIcon(getClass().getResource("/Imagenes/fotoDelAlimentoEstandar.png"));
+        Alimento alimentoTest = new Alimento("Papa", "Verdura", listaComposicion, i);
+        assertEquals(i, alimentoTest.getFotoDelAlimento());
     }
 
     @Test

@@ -25,6 +25,14 @@ public class InformacionMensajeTest {
         InformacionMensaje info = new InformacionMensaje(remitente, destinatario, mensaje);
         assertEquals(info.getMensaje(), mensaje);
     }
+    
+    @Test
+    public void testIntercambioRemitente() {
+        InformacionMensaje i = new InformacionMensaje("Juan", "Jose", "Hola");
+        i.intercambiarRemitente();
+        assertEquals(i.getRemitente(), "Jose");
+        assertEquals(i.getDestinatario(), "Juan");
+    }
 
     @Test
     public void testGetsSetsNullToString() {
