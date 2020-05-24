@@ -84,8 +84,15 @@ public final class Alimento implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-        Alimento otroAlimento = (Alimento) obj;
-        return (this.getNombre().equals(otroAlimento.getNombre()));
+        if (obj == null){
+	  return false;
+	}
+        else if (this.getClass() != obj.getClass()){
+            return false;
+	}else{
+            Alimento otroAlimento = (Alimento) obj;
+            return (this.getNombre().equals(otroAlimento.getNombre()));    
+        }
     }
 
 }
