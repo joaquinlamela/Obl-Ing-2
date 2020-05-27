@@ -2,6 +2,7 @@ package interfaz;
 
 import dominio.Ingesta;
 import dominio.Sistema;
+import java.awt.Image;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -466,6 +467,9 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
         int imagen = fileChooser.showOpenDialog(this);
         if (imagen == JFileChooser.APPROVE_OPTION) {
             ImageIcon iconoPerfil = new ImageIcon(fileChooser.getSelectedFile().getAbsolutePath());
+            Image image = iconoPerfil.getImage(); // transform it 
+            Image newimg = image.getScaledInstance(120, 120,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+            iconoPerfil = new ImageIcon(newimg);
             this.btnIngresarFotoPerfil.setIcon(iconoPerfil);
             this.fotoDePerfilActual = iconoPerfil;
         }

@@ -356,7 +356,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
                 .addComponent(lblIngresarAlimento)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblIngresarAlimento2)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         panelDerecho.setBackground(new java.awt.Color(51, 51, 51));
@@ -410,7 +410,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
         lblNohayPlanesTexto1.setForeground(new java.awt.Color(255, 255, 255));
         lblNohayPlanesTexto1.setText("No hay planes de");
         panelNoHayPlanesPendientes.add(lblNohayPlanesTexto1);
-        lblNohayPlanesTexto1.setBounds(200, 260, 344, 77);
+        lblNohayPlanesTexto1.setBounds(200, 260, 323, 77);
 
         lblNoHayAlimentosIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoCaraTriste.png"))); // NOI18N
         panelNoHayPlanesPendientes.add(lblNoHayAlimentosIcono);
@@ -420,7 +420,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
         lblNohayConsultasTexto2.setForeground(new java.awt.Color(255, 255, 255));
         lblNohayConsultasTexto2.setText("alimentación pendientes");
         panelNoHayPlanesPendientes.add(lblNohayConsultasTexto2);
-        lblNohayConsultasTexto2.setBounds(128, 336, 487, 77);
+        lblNohayConsultasTexto2.setBounds(128, 336, 457, 77);
 
         lblNoHayAlimentos.setFont(new java.awt.Font("Century Gothic", 1, 40)); // NOI18N
         lblNoHayAlimentos.setForeground(new java.awt.Color(255, 255, 255));
@@ -482,8 +482,9 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
 
         lblFotoProfesional.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fotoDeUsuarioStandard.png"))); // NOI18N
 
-        listaConversaciones.setBackground(new java.awt.Color(238, 238, 238));
+        listaConversaciones.setBackground(new java.awt.Color(55, 55, 55));
         listaConversaciones.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
+        listaConversaciones.setForeground(new java.awt.Color(238, 238, 238));
         listaConversaciones.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
                 listaConversacionesValueChanged(evt);
@@ -735,8 +736,9 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
         panelElaborarPlan.add(listaComidasPlan);
         listaComidasPlan.setBounds(50, 290, 200, 40);
 
-        listaAlimentosEnSistema.setBackground(new java.awt.Color(238, 238, 238));
+        listaAlimentosEnSistema.setBackground(new java.awt.Color(55, 55, 55));
         listaAlimentosEnSistema.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
+        listaAlimentosEnSistema.setForeground(new java.awt.Color(238, 238, 238));
         listaAlimentosEnSistema.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
                 listaAlimentosEnSistemaValueChanged(evt);
@@ -976,7 +978,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
                 .addComponent(lblElijaUnUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         panelDatosUsuario.setBackground(new java.awt.Color(51, 51, 51));
