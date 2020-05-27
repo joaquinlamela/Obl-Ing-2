@@ -1,6 +1,7 @@
 package interfaz;
 
 import dominio.Sistema;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -407,7 +408,8 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
         String fechaNacimiento= ""; 
         String fechaGraduacion=""; 
         try{
-            fechaNacimiento = this.jDateFechaNacimiento.getDate().toString();  
+            fechaNacimiento = this.jDateFechaNacimiento.getDate().toString(); 
+            validarFechaNacimiento(fechaNacimiento); 
         }catch(NullPointerException e){
              this.jLabelFechaNacInvalida.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
             this.jLabelFechaNacInvalida.setVisible(true);
@@ -416,6 +418,7 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
         
         try{
                fechaGraduacion = this.jDateFechaGraduacion.getDate().toString();
+               validarFechaGraduacion(fechaGraduacion); 
         }catch(NullPointerException e){
             this.jLabelFechaGraduacionInvalida.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
             this.jLabelFechaGraduacionInvalida.setVisible(true);
@@ -607,6 +610,17 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
             this.listaPaisGraduacion.addItem(paisesEnSistema.get(i));
         }
     }
+    
+    private void validarFechaNacimiento(String fecha){
+        DateTimeFormatter formato= DateTimeFormatter.ofPattern("dd/MM/yyyy"); 
+        try{
+            formato.parse(fecha); 
+        }catch(Exception e){
+            this.jLabelFechaNacInvalida.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
+            this.jLabelFechaNacInvalida.setVisible(true);
+            this.jLabelFechaInvalidaNacimiento.setVisible(true);
+        }  
+    }
 
     private void mostrarErrores(String nombre, String apellido, String tituloProfesional, String paisGraduacion, String fechaNacimiento, String fechaGraduacion) {
         if (nombre.equals("")) {
@@ -650,6 +664,17 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
         this.jDateFechaNacimiento.setMaxSelectableDate(date);
         this.jDateFechaGraduacion.setDate(date);
         this.jDateFechaNacimiento.setDate(date);
+    }
+
+    private void validarFechaGraduacion(String fechaGraduacion) {
+        DateTimeFormatter formato= DateTimeFormatter.ofPattern("dd/MM/yyyy"); 
+        try{
+            formato.parse(fechaGraduacion); 
+        }catch(Exception e){
+            this.jLabelFechaGraduacionInvalida.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
+            this.jLabelFechaGraduacionInvalida.setVisible(true);
+            this.jLabelFechaInvalidaGraduacion.setVisible(true);
+        } 
     }
 
 }
