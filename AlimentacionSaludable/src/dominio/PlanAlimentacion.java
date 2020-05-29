@@ -8,8 +8,8 @@ public final class PlanAlimentacion implements Serializable {
 
     private String nombreDelPlan;
     private Usuario usuario;
-    public Profesional profesional;
-    public boolean fueAtendidoElPlan;
+    private Profesional profesional;
+    private boolean fueAtendidoElPlan;
     private String[][] planDiaADia;
 
     public PlanAlimentacion(String unNombreDelPlan, Usuario unUsuario, Profesional unProfesional, boolean fueAtendido, String[][] unPlan) {
