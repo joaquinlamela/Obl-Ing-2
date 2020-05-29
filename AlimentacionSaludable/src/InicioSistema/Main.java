@@ -1,4 +1,4 @@
-package inicioSistema;
+package InicioSistema;
 
 import dominio.Sistema;
 import interfaz.VentanaMenuPrincipal;

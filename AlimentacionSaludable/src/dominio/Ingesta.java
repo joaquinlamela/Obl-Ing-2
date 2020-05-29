@@ -3,7 +3,6 @@ package dominio;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
-import java.util.Arrays;
 
 public final class Ingesta implements Serializable {
 
@@ -38,7 +37,7 @@ public final class Ingesta implements Serializable {
 
     public void setListaAlimentosPorFecha(final ArrayList<Alimento> listaAlimentos) {
         if (listaAlimentos == null || listaAlimentos.isEmpty()) {
-            this.listaAlimentosPorFecha = new ArrayList<Alimento>();
+            this.listaAlimentosPorFecha = new ArrayList<>();
         }
         else {
             this.listaAlimentosPorFecha = listaAlimentos;

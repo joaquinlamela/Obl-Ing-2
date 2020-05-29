@@ -27,7 +27,7 @@ public final class Conversacion implements Serializable {
 
     public ArrayList<InformacionMensaje> getListaMensajes() {
         if (this.listaMensajes.isEmpty()) {
-            return new ArrayList<InformacionMensaje>();
+            return new ArrayList<>();
         }
         return this.listaMensajes;
     }
@@ -70,8 +70,7 @@ public final class Conversacion implements Serializable {
             informacion.intercambiarRemitente();
         }
         listaMensajes.add(informacion);
-        boolean agregueMensaje = true;
-        return agregueMensaje;
+        return true;
     }
 
     @Override

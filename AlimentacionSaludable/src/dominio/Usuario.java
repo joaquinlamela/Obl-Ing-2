@@ -2,7 +2,6 @@ package dominio;
 
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
-import java.io.File;
 
 public final class Usuario extends Persona {
 

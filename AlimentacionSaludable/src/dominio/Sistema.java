@@ -181,8 +181,7 @@ public final class Sistema implements Serializable {
 
     public boolean crearUsuario(String nombre, String apellido, String fechaNacimiento, ImageIcon fotoDePerfil, String nacionalidad, ArrayList<String> preferencias, ArrayList<String> restricciones, ArrayList<Ingesta> alimentosIngeridos) {
         Usuario usuarioNuevo = new Usuario(nombre, apellido, fechaNacimiento, fotoDePerfil, nacionalidad, preferencias, restricciones, alimentosIngeridos);
-        boolean fueAgregadoUsuario = agregarUsuarioALaLista(usuarioNuevo);
-        return fueAgregadoUsuario;
+        return agregarUsuarioALaLista(usuarioNuevo);
     }
 
     public boolean agregarUsuarioALaLista(Usuario usuarioARegistrar) {
@@ -196,8 +195,7 @@ public final class Sistema implements Serializable {
 
     public boolean crearProfesional(String nombre, String apellido, String fechaNacimiento, ImageIcon fotoPerfil, String tituloProfesional, String fechaGraduacion, String paisGraduacion) {
         Profesional profesionalNuevo = new Profesional(nombre, apellido, fechaNacimiento, fotoPerfil, tituloProfesional, fechaGraduacion, paisGraduacion);
-        boolean fueAgregadoProfesional = agregarProfesionalALaLista(profesionalNuevo);
-        return fueAgregadoProfesional;
+        return  agregarProfesionalALaLista(profesionalNuevo);
     }
 
     public boolean agregarProfesionalALaLista(Profesional profesionalARegistrar) {
@@ -211,8 +209,7 @@ public final class Sistema implements Serializable {
 
     public boolean crearAlimento(String nombre, String tipoAlimento, ArrayList<ComposicionAlimento> listaNutrientesConProporcion, ImageIcon fotoDelAlimento) {
         Alimento alimentoNuevo = new Alimento(nombre, tipoAlimento, listaNutrientesConProporcion, fotoDelAlimento);
-        boolean fueAgregadoAlimento = agregarAlimentoALaLista(alimentoNuevo);
-        return fueAgregadoAlimento;
+        return agregarAlimentoALaLista(alimentoNuevo);
     }
 
     public boolean agregarAlimentoALaLista(Alimento alimentoAAgregar) {
@@ -427,7 +424,7 @@ public final class Sistema implements Serializable {
         for (int i = 0; i < this.listaPlanesAlimentacion.size(); i++) {
             PlanAlimentacion actual = this.listaPlanesAlimentacion.get(i);
             if (actual.getProfesional().equals(profesional) && actual.getUsuario().equals(usuario)
-                    && actual.getFueAtendidoElPlan() == false) {
+                    && !actual.getFueAtendidoElPlan()) { //cambio aca
                 actual.setNombreDelPlan(nombrePlan);
                 actual.setPlanDiaADia(planAlimentacion);
                 actual.setFueAtendidoElPlan(true);
@@ -472,7 +469,7 @@ public final class Sistema implements Serializable {
             for (int i = 0; i < this.listaPlanesAlimentacion.size(); i++) {
                 Profesional profesionalActual = this.listaPlanesAlimentacion.get(i).getProfesional();
                 boolean fueAtendidoPlanActual = this.listaPlanesAlimentacion.get(i).getFueAtendidoElPlan();
-                if (profesionalActual.equals(profesional) && fueAtendidoPlanActual == false) {
+                if (profesionalActual.equals(profesional) && !fueAtendidoPlanActual) {
                     String nombreUsuario = this.listaPlanesAlimentacion.get(i).getUsuario().getNombreCompleto();
                     planesPendientes.add(nombreUsuario);
                 }

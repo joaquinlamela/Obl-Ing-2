@@ -8,9 +8,7 @@ import dominio.Sistema;
 import dominio.Usuario;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 
@@ -1308,7 +1306,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
     private void btnNuevaConversacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaConversacionActionPerformed
         ArrayList listaNombresProfesionalesSinConversacion;
         listaNombresProfesionalesSinConversacion = this.sistema.getNombresProfesionalesSinConversacionConUsuario((sistema.getPersonaLogueada()));
-        if (listaNombresProfesionalesSinConversacion != null && listaNombresProfesionalesSinConversacion.size() > 0) {
+        if (listaNombresProfesionalesSinConversacion != null && !listaNombresProfesionalesSinConversacion.isEmpty()) { //Hay cambio aca que puede afectar
             ocultarPaneles();
             this.listaElegirProfesionales.setListData(listaNombresProfesionalesSinConversacion.toArray());
             this.panelElegirProfesional.setVisible(true);
@@ -1468,7 +1466,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
     private void btnNuevaConversacion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaConversacion1ActionPerformed
         ArrayList listaNombresProfesionalesSinConversacion;
         listaNombresProfesionalesSinConversacion = this.sistema.getNombresProfesionalesSinConversacionConUsuario((sistema.getPersonaLogueada()));
-        if (listaNombresProfesionalesSinConversacion != null && listaNombresProfesionalesSinConversacion.size() > 0) {
+        if (listaNombresProfesionalesSinConversacion != null && !listaNombresProfesionalesSinConversacion.isEmpty()) {
             ocultarPaneles();
             this.listaElegirProfesionales.setListData(listaNombresProfesionalesSinConversacion.toArray());
             this.panelElegirProfesional.setVisible(true);

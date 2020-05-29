@@ -1,7 +1,6 @@
 package dominio;
 
 import java.io.Serializable;
-import java.util.Date;
         
 public final class InformacionMensaje implements Serializable {
 

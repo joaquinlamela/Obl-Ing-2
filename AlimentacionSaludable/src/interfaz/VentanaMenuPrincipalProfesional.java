@@ -177,7 +177,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
         checkGlucidos = new javax.swing.JCheckBox();
         checkLipidos = new javax.swing.JCheckBox();
         checkVitaminas = new javax.swing.JCheckBox();
-        checkProteínas = new javax.swing.JCheckBox();
+        checkProteinas = new javax.swing.JCheckBox();
         checkMinerales = new javax.swing.JCheckBox();
         checkFibra = new javax.swing.JCheckBox();
         txtFibra = new javax.swing.JTextField();
@@ -187,7 +187,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
         txtVitaminas = new javax.swing.JTextField();
         txtProteínas = new javax.swing.JTextField();
         lblGlucidos = new javax.swing.JLabel();
-        lblProteínas = new javax.swing.JLabel();
+        lblProteinas = new javax.swing.JLabel();
         lblMinerales = new javax.swing.JLabel();
         lblVitaminas = new javax.swing.JLabel();
         lblFibra = new javax.swing.JLabel();
@@ -1335,14 +1335,14 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
             }
         });
 
-        checkProteínas.setBackground(new java.awt.Color(51, 51, 51));
-        checkProteínas.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        checkProteínas.setForeground(new java.awt.Color(255, 255, 255));
-        checkProteínas.setText("Proteínas");
-        checkProteínas.setActionCommand("Hiidratos de carbono");
-        checkProteínas.addActionListener(new java.awt.event.ActionListener() {
+        checkProteinas.setBackground(new java.awt.Color(51, 51, 51));
+        checkProteinas.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        checkProteinas.setForeground(new java.awt.Color(255, 255, 255));
+        checkProteinas.setText("Proteinas");
+        checkProteinas.setActionCommand("Hiidratos de carbono");
+        checkProteinas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkProteínasActionPerformed(evt);
+                checkProteinasActionPerformed(evt);
             }
         });
 
@@ -1430,7 +1430,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
 
         lblGlucidos.setForeground(new java.awt.Color(255, 255, 255));
 
-        lblProteínas.setForeground(new java.awt.Color(255, 255, 255));
+        lblProteinas.setForeground(new java.awt.Color(255, 255, 255));
 
         lblMinerales.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -1494,7 +1494,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelIngresarAlimentoAlSistemaLayout.createSequentialGroup()
                         .addGap(60, 60, 60)
                         .addGroup(panelIngresarAlimentoAlSistemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(checkProteínas)
+                            .addComponent(checkProteinas)
                             .addComponent(checkHidratos)
                             .addComponent(checkVitaminas)
                             .addComponent(checkGlucidos)
@@ -1561,7 +1561,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
             .addGroup(panelIngresarAlimentoAlSistemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelIngresarAlimentoAlSistemaLayout.createSequentialGroup()
                     .addContainerGap(376, Short.MAX_VALUE)
-                    .addComponent(lblProteínas)
+                    .addComponent(lblProteinas)
                     .addGap(324, 324, 324)))
             .addGroup(panelIngresarAlimentoAlSistemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelIngresarAlimentoAlSistemaLayout.createSequentialGroup()
@@ -1631,7 +1631,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
                                     .addComponent(jLabel2))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(panelIngresarAlimentoAlSistemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(checkProteínas)
+                                    .addComponent(checkProteinas)
                                     .addComponent(txtProteínas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel4))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1677,7 +1677,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
             .addGroup(panelIngresarAlimentoAlSistemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelIngresarAlimentoAlSistemaLayout.createSequentialGroup()
                     .addContainerGap(501, Short.MAX_VALUE)
-                    .addComponent(lblProteínas)
+                    .addComponent(lblProteinas)
                     .addGap(211, 211, 211)))
             .addGroup(panelIngresarAlimentoAlSistemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelIngresarAlimentoAlSistemaLayout.createSequentialGroup()
@@ -1700,6 +1700,8 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
                     .addComponent(lblLipidos)
                     .addGap(171, 171, 171)))
         );
+
+        checkProteinas.getAccessibleContext().setAccessibleName("Proteinas");
 
         panelNuevoAlimento.add(panelIngresarAlimentoAlSistema);
         panelIngresarAlimentoAlSistema.setBounds(0, 0, 800, 800);
@@ -1911,17 +1913,17 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_checkLipidosActionPerformed
 
-    private void checkProteínasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkProteínasActionPerformed
+    private void checkProteinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkProteinasActionPerformed
         if (!nutrientesSeleccionados[3]) {
             txtProteínas.setVisible(true);
-            lblProteínas.setVisible(true);
+            lblProteinas.setVisible(true);
             nutrientesSeleccionados[3] = true;
         } else {
             txtProteínas.setVisible(false);
-            lblProteínas.setVisible(false);
+            lblProteinas.setVisible(false);
             nutrientesSeleccionados[3] = false;
         }
-    }//GEN-LAST:event_checkProteínasActionPerformed
+    }//GEN-LAST:event_checkProteinasActionPerformed
 
     private void checkMineralesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkMineralesActionPerformed
         if (!nutrientesSeleccionados[4]) {
@@ -2146,7 +2148,6 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
     }//GEN-LAST:event_btnAgregarAlPlanActionPerformed
 
     private void btnEliminarDelPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarDelPlanActionPerformed
-        String diaSeleccionado = (String) this.listaDiasDeLaSemana.getSelectedItem();
         String ingestaSeleccionada = (String) this.listaComidasPlan.getSelectedItem();
         String alimentoEliminado = this.listaAlimentosEnSistema.getSelectedValue().toString();
         String aRemplazar = "";
@@ -2334,7 +2335,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
         txtHidratos.setVisible(false);
         lblHidratos.setVisible(false);
         txtProteínas.setVisible(false);
-        lblProteínas.setVisible(false);
+        lblProteinas.setVisible(false);
         txtVitaminas.setVisible(false);
         lblVitaminas.setVisible(false);
         txtGlucidos.setVisible(false);
@@ -2392,7 +2393,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
                 listaRetorno.add(nueva);
             }
         }
-        if (checkProteínas.isSelected()) {
+        if (checkProteinas.isSelected()) {
             String proporcionIngresada = txtProteínas.getText();
             if (!proporcionIngresada.equals("")) {
                 float proporcion = Integer.parseInt(proporcionIngresada);
@@ -2431,7 +2432,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
     private javax.swing.JCheckBox checkHidratos;
     private javax.swing.JCheckBox checkLipidos;
     private javax.swing.JCheckBox checkMinerales;
-    private javax.swing.JCheckBox checkProteínas;
+    private javax.swing.JCheckBox checkProteinas;
     private javax.swing.JCheckBox checkVitaminas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -2500,7 +2501,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
     private javax.swing.JLabel lblPlanesSolicitados2;
     private javax.swing.JLabel lblPreferencias;
     private javax.swing.JLabel lblPrincipalesNutrientes;
-    private javax.swing.JLabel lblProteínas;
+    private javax.swing.JLabel lblProteinas;
     private javax.swing.JLabel lblTipoAlimento;
     private javax.swing.JLabel lblTipoAlimentoVacio;
     private javax.swing.JLabel lblTxtFechaNacimiento;
@@ -2642,7 +2643,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
         this.checkHidratos.setSelected(false);
         this.checkLipidos.setSelected(false);
         this.checkMinerales.setSelected(false);
-        this.checkProteínas.setSelected(false);
+        this.checkProteinas.setSelected(false);
         this.checkVitaminas.setSelected(false);
         this.txtFibra.setText("");
         this.txtGlucidos.setText("");
