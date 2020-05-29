@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="LAPTOP-7B6D15A6" name="dominio.EnumTest" skipped="0" tests="27" time="0.329" timestamp="2020-05-29T19:35:23">
+<testsuite errors="0" failures="0" hostname="LAPTOP-7B6D15A6" name="dominio.EnumTest" skipped="0" tests="27" time="0.27" timestamp="2020-05-29T19:46:11">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="ES" />
@@ -59,7 +59,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner dominio.EnumTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\test\results\TEST-dominio.EnumTest.xml crashfile=C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\junitvmwatcher3396896215365502885.properties propsfile=C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\junit4552474527890783006.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner dominio.EnumTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\test\results\TEST-dominio.EnumTest.xml crashfile=C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\junitvmwatcher349399195522093940.properties propsfile=C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\junit4905064536772199909.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -420,33 +420,33 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files\NetBeans 8.2\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="dominio.EnumTest" name="testEnumDevolverListaDiasDeLaSemana" time="0.153" />
-  <testcase classname="dominio.EnumTest" name="testEnumPreferenciasCarnesBlancas" time="0.003" />
+  <testcase classname="dominio.EnumTest" name="testEnumDevolverListaDiasDeLaSemana" time="0.146" />
+  <testcase classname="dominio.EnumTest" name="testEnumPreferenciasCarnesBlancas" time="0.002" />
   <testcase classname="dominio.EnumTest" name="testEnumDiasSemanaViernes" time="0.001" />
-  <testcase classname="dominio.EnumTest" name="testEnumPreferenciasHarinas" time="0.0" />
+  <testcase classname="dominio.EnumTest" name="testEnumPreferenciasHarinas" time="0.001" />
   <testcase classname="dominio.EnumTest" name="testEnumRestriccionesHarinas" time="0.001" />
-  <testcase classname="dominio.EnumTest" name="testEnumValueIngestasDiaDesayuno" time="0.003" />
+  <testcase classname="dominio.EnumTest" name="testEnumValueIngestasDiaDesayuno" time="0.001" />
   <testcase classname="dominio.EnumTest" name="testEnumValueRestricciones" time="0.0" />
   <testcase classname="dominio.EnumTest" name="testEnumDiasSemanaMiercoles" time="0.0" />
   <testcase classname="dominio.EnumTest" name="testEnumDiasSemanaJueves" time="0.0" />
-  <testcase classname="dominio.EnumTest" name="testEnumDiasSemanaMartes" time="0.001" />
-  <testcase classname="dominio.EnumTest" name="testEnumIngestasDiaDesayuno" time="0.001" />
+  <testcase classname="dominio.EnumTest" name="testEnumDiasSemanaMartes" time="0.0" />
+  <testcase classname="dominio.EnumTest" name="testEnumIngestasDiaDesayuno" time="0.0" />
   <testcase classname="dominio.EnumTest" name="testEnumDiasSemanaSabado" time="0.0" />
   <testcase classname="dominio.EnumTest" name="testEnumValuePaises" time="0.001" />
-  <testcase classname="dominio.EnumTest" name="testEnumDiasSemanaDomingo" time="0.0" />
-  <testcase classname="dominio.EnumTest" name="testEnumRestriccionesIntoleranciaLactosa" time="0.001" />
+  <testcase classname="dominio.EnumTest" name="testEnumDiasSemanaDomingo" time="0.001" />
+  <testcase classname="dominio.EnumTest" name="testEnumRestriccionesIntoleranciaLactosa" time="0.0" />
   <testcase classname="dominio.EnumTest" name="testEnumRestriccionesDiabetes" time="0.001" />
   <testcase classname="dominio.EnumTest" name="testEnumIngestasDiaAlmuerzo" time="0.0" />
   <testcase classname="dominio.EnumTest" name="testEnumIngestasDiaCena" time="0.0" />
-  <testcase classname="dominio.EnumTest" name="testEnumDiasSemanaLunes" time="0.001" />
-  <testcase classname="dominio.EnumTest" name="testEnumDevolverListaIngestas" time="0.0" />
-  <testcase classname="dominio.EnumTest" name="testEnumValueDiasDeLaSemana" time="0.0" />
-  <testcase classname="dominio.EnumTest" name="testEnumPreferenciasVerduras" time="0.0" />
-  <testcase classname="dominio.EnumTest" name="testEnumPreferenciasCarnesRojas" time="0.001" />
+  <testcase classname="dominio.EnumTest" name="testEnumDiasSemanaLunes" time="0.0" />
+  <testcase classname="dominio.EnumTest" name="testEnumDevolverListaIngestas" time="0.001" />
+  <testcase classname="dominio.EnumTest" name="testEnumValueDiasDeLaSemana" time="0.001" />
+  <testcase classname="dominio.EnumTest" name="testEnumPreferenciasVerduras" time="0.001" />
+  <testcase classname="dominio.EnumTest" name="testEnumPreferenciasCarnesRojas" time="0.0" />
   <testcase classname="dominio.EnumTest" name="testEnumPreferenciasFrutas" time="0.0" />
   <testcase classname="dominio.EnumTest" name="testEnumRestriccionesVeganismo" time="0.0" />
-  <testcase classname="dominio.EnumTest" name="testEnumListaPaises" time="0.0" />
-  <testcase classname="dominio.EnumTest" name="testEnumValuePreferencias" time="0.0" />
+  <testcase classname="dominio.EnumTest" name="testEnumListaPaises" time="0.001" />
+  <testcase classname="dominio.EnumTest" name="testEnumValuePreferencias" time="0.001" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

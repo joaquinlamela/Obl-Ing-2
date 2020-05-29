@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="LAPTOP-7B6D15A6" name="dominio.AlimentoTest" skipped="0" tests="14" time="0.362" timestamp="2020-05-29T19:35:20">
+<testsuite errors="0" failures="0" hostname="LAPTOP-7B6D15A6" name="dominio.AlimentoTest" skipped="0" tests="14" time="0.462" timestamp="2020-05-29T19:46:08">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="ES" />
@@ -59,7 +59,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner dominio.AlimentoTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\test\results\TEST-dominio.AlimentoTest.xml crashfile=C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\junitvmwatcher1095029158042609364.properties propsfile=C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\junit599635045706129437.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner dominio.AlimentoTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\test\results\TEST-dominio.AlimentoTest.xml crashfile=C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\junitvmwatcher5605618458889820496.properties propsfile=C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\junit2582255495096733978.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -420,19 +420,19 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files\NetBeans 8.2\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="dominio.AlimentoTest" name="testEqualsIguales" time="0.231" />
+  <testcase classname="dominio.AlimentoTest" name="testEqualsIguales" time="0.334" />
   <testcase classname="dominio.AlimentoTest" name="testToStringDatosCorrectos" time="0.001" />
   <testcase classname="dominio.AlimentoTest" name="testSetsGetsNullTipo" time="0.001" />
-  <testcase classname="dominio.AlimentoTest" name="testSetsGetsNullListaNutrientes" time="0.0" />
+  <testcase classname="dominio.AlimentoTest" name="testSetsGetsNullListaNutrientes" time="0.002" />
   <testcase classname="dominio.AlimentoTest" name="testSetsGetsListaNutrientesDatosVacios" time="0.0" />
-  <testcase classname="dominio.AlimentoTest" name="testEqualsDiferentes" time="0.0" />
+  <testcase classname="dominio.AlimentoTest" name="testEqualsDiferentes" time="0.001" />
   <testcase classname="dominio.AlimentoTest" name="testSetsGetsDatosCorrectosImagenes" time="0.002" />
-  <testcase classname="dominio.AlimentoTest" name="testToStringNullNombre" time="0.002" />
+  <testcase classname="dominio.AlimentoTest" name="testToStringNullNombre" time="0.0" />
   <testcase classname="dominio.AlimentoTest" name="testSetsGetsNombreDatosVacios" time="0.001" />
-  <testcase classname="dominio.AlimentoTest" name="testSetsGetsTipoDatosVacios" time="0.002" />
-  <testcase classname="dominio.AlimentoTest" name="testSetsGetsDatosCorrectosNutrientes" time="0.001" />
+  <testcase classname="dominio.AlimentoTest" name="testSetsGetsTipoDatosVacios" time="0.0" />
+  <testcase classname="dominio.AlimentoTest" name="testSetsGetsDatosCorrectosNutrientes" time="0.0" />
   <testcase classname="dominio.AlimentoTest" name="testSetsGetsDatosCorrectosTipo" time="0.001" />
-  <testcase classname="dominio.AlimentoTest" name="testSetsGetsDatosCorrectosNombre" time="0.001" />
+  <testcase classname="dominio.AlimentoTest" name="testSetsGetsDatosCorrectosNombre" time="0.0" />
   <testcase classname="dominio.AlimentoTest" name="testToStringNull" time="0.0" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

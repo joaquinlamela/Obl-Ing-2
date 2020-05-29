@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="LAPTOP-7B6D15A6" name="dominio.IngestaTest" skipped="0" tests="9" time="0.355" timestamp="2020-05-29T19:35:25">
+<testsuite errors="0" failures="0" hostname="LAPTOP-7B6D15A6" name="dominio.IngestaTest" skipped="0" tests="9" time="0.201" timestamp="2020-05-29T19:46:12">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="ES" />
@@ -59,7 +59,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner dominio.IngestaTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\test\results\TEST-dominio.IngestaTest.xml crashfile=C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\junitvmwatcher4802812265890765916.properties propsfile=C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\junit4580996886188356667.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner dominio.IngestaTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\test\results\TEST-dominio.IngestaTest.xml crashfile=C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\junitvmwatcher2446753651849103684.properties propsfile=C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\junit4322906059080789444.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -420,15 +420,15 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files\NetBeans 8.2\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="dominio.IngestaTest" name="testEqualsIguales" time="0.174" />
-  <testcase classname="dominio.IngestaTest" name="testGetsSetsFechaNullListaAlimentos" time="0.0" />
-  <testcase classname="dominio.IngestaTest" name="testGetsSetsDatosValidosToString" time="0.001" />
+  <testcase classname="dominio.IngestaTest" name="testEqualsIguales" time="0.111" />
+  <testcase classname="dominio.IngestaTest" name="testGetsSetsFechaNullListaAlimentos" time="0.001" />
+  <testcase classname="dominio.IngestaTest" name="testGetsSetsDatosValidosToString" time="0.0" />
   <testcase classname="dominio.IngestaTest" name="testEqualsDistintosListaAlimentos" time="0.001" />
-  <testcase classname="dominio.IngestaTest" name="testEqualsDistintosAmbos" time="0.002" />
-  <testcase classname="dominio.IngestaTest" name="testEqualsDistintosFecha" time="0.001" />
-  <testcase classname="dominio.IngestaTest" name="testGetsSetsFechaVaciaListaAlimentos" time="0.001" />
+  <testcase classname="dominio.IngestaTest" name="testEqualsDistintosAmbos" time="0.0" />
+  <testcase classname="dominio.IngestaTest" name="testEqualsDistintosFecha" time="0.0" />
+  <testcase classname="dominio.IngestaTest" name="testGetsSetsFechaVaciaListaAlimentos" time="0.0" />
   <testcase classname="dominio.IngestaTest" name="testListaAlimentosVaciaToString" time="0.0" />
-  <testcase classname="dominio.IngestaTest" name="testGetsSetsDatosValidosListaAlimentos" time="0.001" />
+  <testcase classname="dominio.IngestaTest" name="testGetsSetsDatosValidosListaAlimentos" time="0.0" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

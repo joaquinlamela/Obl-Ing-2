@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="LAPTOP-7B6D15A6" name="dominio.InformacionMensajeTest" skipped="0" tests="8" time="0.147" timestamp="2020-05-29T19:35:24">
+<testsuite errors="0" failures="0" hostname="LAPTOP-7B6D15A6" name="dominio.InformacionMensajeTest" skipped="0" tests="8" time="0.086" timestamp="2020-05-29T19:46:11">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="ES" />
@@ -59,7 +59,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner dominio.InformacionMensajeTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\test\results\TEST-dominio.InformacionMensajeTest.xml crashfile=C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\junitvmwatcher6583761939324535696.properties propsfile=C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\junit5933289683354967536.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner dominio.InformacionMensajeTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\test\results\TEST-dominio.InformacionMensajeTest.xml crashfile=C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\junitvmwatcher863661262716678574.properties propsfile=C:\Users\user\Desktop\Ingenieria Software\Obligatorio2\Obl-Ing-2\AlimentacionSaludable\build\junit5688285533979125805.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -420,14 +420,14 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files\NetBeans 8.2\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="dominio.InformacionMensajeTest" name="testGetsSetsStringsVaciosToString" time="0.004" />
+  <testcase classname="dominio.InformacionMensajeTest" name="testGetsSetsStringsVaciosToString" time="0.002" />
   <testcase classname="dominio.InformacionMensajeTest" name="testGetsSetsNullMensaje" time="0.0" />
   <testcase classname="dominio.InformacionMensajeTest" name="testGetsSetsStringsVaciosRemitente" time="0.0" />
-  <testcase classname="dominio.InformacionMensajeTest" name="testIntercambioRemitente" time="0.001" />
+  <testcase classname="dominio.InformacionMensajeTest" name="testIntercambioRemitente" time="0.0" />
   <testcase classname="dominio.InformacionMensajeTest" name="testGetsSetsNullToString" time="0.0" />
   <testcase classname="dominio.InformacionMensajeTest" name="testGetsSetsStringsVaciosMensaje" time="0.0" />
   <testcase classname="dominio.InformacionMensajeTest" name="testGetsSetsStringsVaciosDestinatario" time="0.0" />
-  <testcase classname="dominio.InformacionMensajeTest" name="testGetsSetsNullRemitente" time="0.0" />
+  <testcase classname="dominio.InformacionMensajeTest" name="testGetsSetsNullRemitente" time="0.001" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -2614,9 +2614,6 @@
                     <Property name="text" type="java.lang.String" value="Proteinas"/>
                     <Property name="actionCommand" type="java.lang.String" value="Hiidratos de carbono"/>
                   </Properties>
-                  <AccessibilityProperties>
-                    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Proteinas"/>
-                  </AccessibilityProperties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkProteinasActionPerformed"/>
                   </Events>

@@ -10,6 +10,8 @@ public abstract class Persona implements Serializable {
     private String apellido;
     private String fechaNacimiento;
     private ImageIcon fotoDePerfil;
+    
+    private static final String NOMBRENOINGRESADO= "Nombre no ingresado"; 
 
     public String getNombre() {
         return this.nombre;
@@ -17,7 +19,7 @@ public abstract class Persona implements Serializable {
 
     public void setNombre(String unNombre) {
         if (unNombre == null || unNombre.isEmpty()) {
-            this.nombre = "Nombre no ingresado";
+            this.nombre = NOMBRENOINGRESADO;
         }
         else {
             this.nombre = unNombre;
@@ -62,9 +64,9 @@ public abstract class Persona implements Serializable {
 
     public String getNombreCompleto() {
         String retorno;
-        if (getNombre().equals("Nombre no ingresado") && getApellido().equals("Apellido no ingresado")) {
-            retorno = "Nombre no ingresado";
-        } else if (getNombre().equals("Nombre no ingresado")) {
+        if (getNombre().equals(NOMBRENOINGRESADO) && getApellido().equals("Apellido no ingresado")) {
+            retorno = NOMBRENOINGRESADO;
+        } else if (getNombre().equals(NOMBRENOINGRESADO)) {
             retorno = getApellido();
         } else if (getApellido().equals("Apellido no ingresado")) {
             retorno = getNombre();
