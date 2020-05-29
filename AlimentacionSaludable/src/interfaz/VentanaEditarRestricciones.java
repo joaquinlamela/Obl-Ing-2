@@ -82,13 +82,13 @@ public class VentanaEditarRestricciones extends javax.swing.JDialog {
         lblEditar.setForeground(new java.awt.Color(255, 255, 255));
         lblEditar.setText("Editar");
         panelEditarRestricciones.add(lblEditar);
-        lblEditar.setBounds(110, 20, 137, 71);
+        lblEditar.setBounds(110, 20, 132, 64);
 
         lblTxtRestricciones.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
         lblTxtRestricciones.setForeground(new java.awt.Color(255, 255, 255));
         lblTxtRestricciones.setText("Restricciones");
         panelEditarRestricciones.add(lblTxtRestricciones);
-        lblTxtRestricciones.setBounds(60, 100, 208, 38);
+        lblTxtRestricciones.setBounds(60, 100, 208, 39);
 
         rdBtnCeliaco.setBackground(new java.awt.Color(51, 51, 51));
         rdBtnCeliaco.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
@@ -108,11 +108,6 @@ public class VentanaEditarRestricciones extends javax.swing.JDialog {
         rdBtnVegano.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         rdBtnVegano.setForeground(new java.awt.Color(255, 255, 255));
         rdBtnVegano.setText("Restriccion 2");
-        rdBtnVegano.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rdBtnVeganoActionPerformed(evt);
-            }
-        });
         panelEditarRestricciones.add(rdBtnVegano);
         rdBtnVegano.setBounds(80, 190, 250, 35);
 
@@ -157,7 +152,7 @@ public class VentanaEditarRestricciones extends javax.swing.JDialog {
                 .addComponent(lblIconoListo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblListo)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -191,10 +186,6 @@ public class VentanaEditarRestricciones extends javax.swing.JDialog {
         this.panelEditarRestricciones.setVisible(false);
         this.panelListo.setVisible(true);
     }//GEN-LAST:event_btnEditarPreferenciasActionPerformed
-
-    private void rdBtnVeganoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdBtnVeganoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rdBtnVeganoActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         this.sistema.guardarDatosSistema();

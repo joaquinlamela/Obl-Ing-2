@@ -2427,7 +2427,6 @@
                   </Properties>
                   <Events>
                     <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtNombreFocusLost"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblTipoAlimento">
@@ -2865,10 +2864,6 @@
                       <Image iconType="3" name="/Imagenes/iconoCampoIncorrecto.png"/>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="lblValidarNombreFocusGained"/>
-                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="lblValidarNombreFocusLost"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblValidarTipoAlimento">
                   <Properties>
@@ -2879,9 +2874,6 @@
                       <Image iconType="3" name="/Imagenes/iconoCampoIncorrecto.png"/>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="lblValidarTipoAlimentoFocusGained"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblDatosIncorrectos">
                   <Properties>

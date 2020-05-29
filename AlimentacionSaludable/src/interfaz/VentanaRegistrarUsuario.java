@@ -522,7 +522,7 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
     }//GEN-LAST:event_listaNacionalidadItemStateChanged
 
     private void jDateFechaNacimientoPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateFechaNacimientoPropertyChange
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jDateFechaNacimientoPropertyChange
 
     private void btnCerrarSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSistemaActionPerformed
