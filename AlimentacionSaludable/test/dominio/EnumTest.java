@@ -214,11 +214,11 @@ public class EnumTest {
         lstNacionalidades.add(Paises.Haití.toString());
         lstNacionalidades.add(Paises.Honduras.toString());
         lstNacionalidades.add(Paises.Jamaica.toString());
-        lstNacionalidades.add(Paises.México.toString());
+        lstNacionalidades.add(Paises.Mexico.toString());
         lstNacionalidades.add(Paises.Nicaragua.toString());
         lstNacionalidades.add(Paises.Paraguay.toString());
-        lstNacionalidades.add(Paises.Panamá.toString());
-        lstNacionalidades.add(Paises.Perú.toString());
+        lstNacionalidades.add(Paises.Panama.toString());
+        lstNacionalidades.add(Paises.Peru.toString());
         lstNacionalidades.add("Puerto Rico");
         lstNacionalidades.add("República Dominicana");
         lstNacionalidades.add(Paises.Surinam.toString());

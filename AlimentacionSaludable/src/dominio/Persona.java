@@ -9,7 +9,7 @@ public abstract class Persona implements Serializable {
     private String nombre;
     private String apellido;
     private String fechaNacimiento;
-    public ImageIcon fotoDePerfil;
+    private ImageIcon fotoDePerfil;
 
     public String getNombre() {
         return this.nombre;

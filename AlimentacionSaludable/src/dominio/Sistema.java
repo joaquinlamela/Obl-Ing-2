@@ -136,11 +136,11 @@ public final class Sistema implements Serializable {
         lstNacionalidades.add(Paises.Haití.toString());
         lstNacionalidades.add(Paises.Honduras.toString());
         lstNacionalidades.add(Paises.Jamaica.toString());
-        lstNacionalidades.add(Paises.México.toString());
+        lstNacionalidades.add(Paises.Mexico.toString());
         lstNacionalidades.add(Paises.Nicaragua.toString());
         lstNacionalidades.add(Paises.Paraguay.toString());
-        lstNacionalidades.add(Paises.Panamá.toString());
-        lstNacionalidades.add(Paises.Perú.toString());
+        lstNacionalidades.add(Paises.Panama.toString());
+        lstNacionalidades.add(Paises.Peru.toString());
         lstNacionalidades.add("Puerto Rico");
         lstNacionalidades.add("República Dominicana");
         lstNacionalidades.add(Paises.Surinam.toString());
@@ -170,8 +170,7 @@ public final class Sistema implements Serializable {
     }
 
     public void guardarDatosSistema() {
-        try {
-            FileOutputStream archivo = new FileOutputStream("Sistema.data");
+        try (FileOutputStream archivo = new FileOutputStream("Sistema.data")){
             BufferedOutputStream buffer = new BufferedOutputStream(archivo);
             try (ObjectOutputStream objetoASerializar = new ObjectOutputStream(buffer)) {
                 objetoASerializar.writeObject(this);
@@ -499,7 +498,7 @@ public final class Sistema implements Serializable {
     public enum Paises {
         Argentina, Bolivia, Brasil, Chile, Colombia, CostaRica, Cuba, Ecuador, ElSalvador,
         GuayanaFrancesa, Granada, Guatemala, Guayana, Haití, Honduras, Jamaica,
-        México, Nicaragua, Paraguay, Panamá, Perú, PuertoRico, RepúblicaDominicana, Surinam, Uruguay, Venezuela;
+        Mexico, Nicaragua, Paraguay, Panama, Peru, PuertoRico, RepúblicaDominicana, Surinam, Uruguay, Venezuela;
     }
 
     public enum DiasDeLaSemana {

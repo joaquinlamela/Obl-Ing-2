@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 public final class Ingesta implements Serializable {
 
-    public String fechaDeIngesta;
+    private String fechaDeIngesta;
     private ArrayList<Alimento> listaAlimentosPorFecha;
 
     public Ingesta(String f, ArrayList<Alimento> listaAlimento) {
