@@ -39,7 +39,7 @@
     <Container class="javax.swing.JPanel" name="panel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="f9" green="d3" red="a4" type="rgb"/>
+          <Color blue="99" green="ff" red="99" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
@@ -85,15 +85,18 @@
               <Font name="Segoe Script" size="50" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="33" red="0" type="rgb"/>
+              <Color blue="33" green="66" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Broccoli"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="icono">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="ff" red="99" type="rgb"/>
+            </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/IconoBrocoli.png"/>
+              <Image iconType="3" name="/Imagenes/IconoBrocoliNuevo.png"/>
             </Property>
           </Properties>
         </Component>
@@ -206,7 +209,7 @@
         <Component class="javax.swing.JLabel" name="btnAgregarUsuario">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/iconoAgregarUsuario.png"/>
+              <Image iconType="3" name="/Imagenes/iconoAgregarUsuarioNuevo.png"/>
             </Property>
           </Properties>
           <Events>
@@ -221,7 +224,7 @@
         <Component class="javax.swing.JLabel" name="btnAgregarProfesional">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/iconoAgregarProf.png"/>
+              <Image iconType="3" name="/Imagenes/iconoAgregarProfNuevo.png"/>
             </Property>
           </Properties>
           <Events>
@@ -324,7 +327,7 @@
         <Component class="javax.swing.JLabel" name="btnAgregarProfesional1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/iconoAgregarProfesional.png"/>
+              <Image iconType="3" name="/Imagenes/iconoAgregarProfesionalNuevo.png"/>
             </Property>
           </Properties>
           <Events>

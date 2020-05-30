@@ -39,7 +39,7 @@
     <Container class="javax.swing.JPanel" name="panel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="f9" green="d3" red="a4" type="rgb"/>
+          <Color blue="99" green="ff" red="99" type="rgb"/>
         </Property>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[270, 800]"/>
@@ -96,7 +96,7 @@
               <Font name="Segoe Script" size="50" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="33" red="0" type="rgb"/>
+              <Color blue="0" green="99" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Broccoli"/>
           </Properties>
@@ -123,7 +123,7 @@
         <Component class="javax.swing.JLabel" name="icono">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/IconoBrocoli.png"/>
+              <Image iconType="3" name="/Imagenes/IconoBrocoliNuevo.png"/>
             </Property>
           </Properties>
         </Component>
@@ -456,7 +456,7 @@
         <Component class="javax.swing.JButton" name="btnIngresarUsuarioASistema">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/fotoConfirmar.png"/>
+              <Image iconType="3" name="/Imagenes/fotoConfirmarNuevo.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -702,7 +702,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="330" y="340" width="170" height="40"/>
+              <AbsoluteConstraints x="360" y="340" width="170" height="40"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -714,7 +714,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="520" y="340" width="40" height="50"/>
+              <AbsoluteConstraints x="550" y="340" width="40" height="50"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -730,7 +730,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="570" y="350" width="150" height="30"/>
+              <AbsoluteConstraints x="590" y="350" width="150" height="30"/>
             </Constraint>
           </Constraints>
         </Component>

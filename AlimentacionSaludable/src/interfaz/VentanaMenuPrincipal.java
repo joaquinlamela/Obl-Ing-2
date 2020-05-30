@@ -4,6 +4,7 @@ import dominio.Persona;
 import dominio.Sistema;
 import java.awt.Image;
 import java.awt.Toolkit;
+import javax.swing.JOptionPane;
 
 public class VentanaMenuPrincipal extends javax.swing.JDialog {
 
@@ -95,13 +96,14 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
         });
         getContentPane().setLayout(null);
 
-        panel1.setBackground(new java.awt.Color(164, 211, 249));
+        panel1.setBackground(new java.awt.Color(153, 255, 153));
 
         lblTituloVentana.setFont(new java.awt.Font("Segoe Script", 1, 50)); // NOI18N
-        lblTituloVentana.setForeground(new java.awt.Color(0, 51, 153));
+        lblTituloVentana.setForeground(new java.awt.Color(0, 102, 51));
         lblTituloVentana.setText("Broccoli");
 
-        icono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoBrocoli.png"))); // NOI18N
+        icono.setForeground(new java.awt.Color(153, 255, 153));
+        icono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoBrocoliNuevo.png"))); // NOI18N
 
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
@@ -163,7 +165,7 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
         panel2.add(jScrollPane1);
         jScrollPane1.setBounds(430, 250, 230, 330);
 
-        btnAgregarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoAgregarUsuario.png"))); // NOI18N
+        btnAgregarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoAgregarUsuarioNuevo.png"))); // NOI18N
         btnAgregarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAgregarUsuarioMouseClicked(evt);
@@ -172,7 +174,7 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
         panel2.add(btnAgregarUsuario);
         btnAgregarUsuario.setBounds(150, 600, 110, 90);
 
-        btnAgregarProfesional.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoAgregarProf.png"))); // NOI18N
+        btnAgregarProfesional.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoAgregarProfNuevo.png"))); // NOI18N
         btnAgregarProfesional.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAgregarProfesionalMouseClicked(evt);
@@ -225,7 +227,7 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
         panel2.add(lblNombre1);
         lblNombre1.setBounds(140, 200, 181, 38);
 
-        btnAgregarProfesional1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoAgregarProfesional.png"))); // NOI18N
+        btnAgregarProfesional1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoAgregarProfesionalNuevo.png"))); // NOI18N
         btnAgregarProfesional1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAgregarProfesional1MouseClicked(evt);
@@ -320,9 +322,14 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
 
     private void listaUsuariosVentanaValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaUsuariosVentanaValueChanged
         this.sistema.setPersonaLogueada((Persona) listaUsuariosVentana.getSelectedValue());
-        VentanaMenuPrincipalUsuario ventanaPrincipalUsuarios = new VentanaMenuPrincipalUsuario(sistema);
-        this.setVisible(false);
-        ventanaPrincipalUsuarios.setVisible(true);
+        if (this.sistema.getListaProfesionales().isEmpty()&&this.sistema.getListaAlimentos().isEmpty()) {
+            JOptionPane.showMessageDialog(icono, "No hay alimentos ni profesionales ingresados, ingrese alguno para acceder a la funcion",
+                    "Inane error",JOptionPane.ERROR_MESSAGE);
+        }else{
+            VentanaMenuPrincipalUsuario ventanaPrincipalUsuarios = new VentanaMenuPrincipalUsuario(sistema);
+            this.setVisible(false);
+            ventanaPrincipalUsuarios.setVisible(true);
+        }
     }//GEN-LAST:event_listaUsuariosVentanaValueChanged
 
     private void listaProfesionalesVentanaValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaProfesionalesVentanaValueChanged

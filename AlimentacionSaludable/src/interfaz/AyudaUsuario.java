@@ -98,7 +98,7 @@ public class AyudaUsuario extends javax.swing.JDialog {
         jScrollPane14.setViewportView(textDesayuno2);
 
         jPanel1.add(jScrollPane14);
-        jScrollPane14.setBounds(220, 450, 315, 31);
+        jScrollPane14.setBounds(220, 450, 315, 28);
 
         textDesayuno3.setEditable(false);
         textDesayuno3.setBackground(new java.awt.Color(51, 51, 51));
@@ -109,7 +109,7 @@ public class AyudaUsuario extends javax.swing.JDialog {
         jScrollPane15.setViewportView(textDesayuno3);
 
         jPanel1.add(jScrollPane15);
-        jScrollPane15.setBounds(219, 160, 315, 81);
+        jScrollPane15.setBounds(219, 160, 315, 78);
 
         textDesayuno4.setEditable(false);
         textDesayuno4.setBackground(new java.awt.Color(51, 51, 51));
@@ -120,7 +120,7 @@ public class AyudaUsuario extends javax.swing.JDialog {
         jScrollPane16.setViewportView(textDesayuno4);
 
         jPanel1.add(jScrollPane16);
-        jScrollPane16.setBounds(220, 300, 315, 81);
+        jScrollPane16.setBounds(220, 300, 315, 78);
 
         btnCerrarSistema.setBackground(new java.awt.Color(51, 51, 51));
         btnCerrarSistema.setForeground(new java.awt.Color(51, 51, 51));

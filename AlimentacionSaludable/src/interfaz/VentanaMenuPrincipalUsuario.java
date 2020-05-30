@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
 
@@ -55,10 +56,9 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
     public void setYaExisteConversacion(boolean existe) {
         this.existeConversacion = existe;
     }
-    
-    
-    public void setFechaActual(){
-        SimpleDateFormat formatoFecha = new SimpleDateFormat ("dd.MM.yyyy");
+
+    public void setFechaActual() {
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("dd.MM.yyyy");
         Date fechaActual = new Date();
         this.lblFechaAlimentoIngerido.setText(formatoFecha.format(fechaActual));
     }
@@ -193,7 +193,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
             }
         });
 
-        panelMenu.setBackground(new java.awt.Color(164, 211, 249));
+        panelMenu.setBackground(new java.awt.Color(153, 255, 153));
         panelMenu.setMaximumSize(new java.awt.Dimension(260, 800));
         panelMenu.setMinimumSize(new java.awt.Dimension(260, 800));
         panelMenu.setPreferredSize(new java.awt.Dimension(260, 800));
@@ -276,27 +276,26 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
                     .addGroup(panelMenuLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(lblConsultaConProfesional, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(panelMenuLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(btnHome)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnCerrarSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(panelMenuLayout.createSequentialGroup()
-                            .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(panelMenuLayout.createSequentialGroup()
-                                    .addGap(57, 57, 57)
-                                    .addComponent(btnIngresarAlimentoIngerido, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(panelMenuLayout.createSequentialGroup()
-                                    .addGap(20, 20, 20)
-                                    .addComponent(lblIngresarAlimentoIngerido, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(panelMenuLayout.createSequentialGroup()
-                                    .addGap(42, 42, 42)
-                                    .addComponent(btnConsultaConProfesional, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(panelMenuLayout.createSequentialGroup()
-                                    .addGap(56, 56, 56)
-                                    .addComponent(btnSolicitarPlanAlimentacion, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(panelMenuLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnHome)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCerrarSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelMenuLayout.createSequentialGroup()
+                        .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelMenuLayout.createSequentialGroup()
+                                .addGap(57, 57, 57)
+                                .addComponent(btnIngresarAlimentoIngerido, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelMenuLayout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(lblIngresarAlimentoIngerido, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelMenuLayout.createSequentialGroup()
+                                .addGap(42, 42, 42)
+                                .addComponent(btnConsultaConProfesional, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelMenuLayout.createSequentialGroup()
+                                .addGap(56, 56, 56)
+                                .addComponent(btnSolicitarPlanAlimentacion, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -1314,12 +1313,17 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
     }//GEN-LAST:event_btnNuevaConversacionActionPerformed
 
     private void btnEnviarMensajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarMensajeActionPerformed
-        String mensaje = this.txtMensajeNuevo.getText();
-        String profesional = this.profesionalSeleccionado;
-        String usuario = this.sistema.getPersonaLogueada().getNombreCompleto();
-        this.sistema.agregarMensajeConversacion(usuario, profesional, mensaje, false, false);
-        this.txtMensajeNuevo.setText("");
-        actualizarConversaciones(profesional);
+        String mensaje = this.txtMensajeNuevo.getText().trim();
+        if (mensaje == null || mensaje.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "El mensaje esta vacio, ingrese un mensaje con texto",
+                    "Inane error",JOptionPane.ERROR_MESSAGE);
+        } else {
+            String profesional = this.profesionalSeleccionado;
+            String usuario = this.sistema.getPersonaLogueada().getNombreCompleto();
+            this.sistema.agregarMensajeConversacion(usuario, profesional, mensaje, false, false);
+            this.txtMensajeNuevo.setText("");
+            actualizarConversaciones(profesional);
+        }
     }//GEN-LAST:event_btnEnviarMensajeActionPerformed
 
     private void btnNuevaIngestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaIngestaActionPerformed
@@ -1344,8 +1348,8 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
             this.lblNuevoAlimentoVacio.setVisible(false);
             this.primeraIngesta = true;
             this.comboAlimentosEnSistema.setSelectedIndex(0);
+            this.panelAlimentoIngerido.setVisible(false);
         }
-        this.panelAlimentoIngerido.setVisible(false);
     }//GEN-LAST:event_btnNuevaIngestaActionPerformed
 
     private void btnVerPlanesExistentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPlanesExistentesActionPerformed

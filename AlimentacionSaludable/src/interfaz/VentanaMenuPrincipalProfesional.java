@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
@@ -21,8 +22,8 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
     private String diaDeLaSemanaAnterior;
     private String diaDeLaSemanaActual;
     private final String[][] planAlimentacion;
-    
-    private static final String DIALUNES= "Lunes"; 
+
+    private static final String DIALUNES = "Lunes";
 
     public VentanaMenuPrincipalProfesional(Sistema unSistema) {
         initComponents();
@@ -216,7 +217,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
             }
         });
 
-        panelMenu.setBackground(new java.awt.Color(164, 211, 249));
+        panelMenu.setBackground(new java.awt.Color(153, 255, 153));
         panelMenu.setMaximumSize(new java.awt.Dimension(260, 800));
         panelMenu.setMinimumSize(new java.awt.Dimension(260, 800));
         panelMenu.setPreferredSize(new java.awt.Dimension(260, 800));
@@ -358,7 +359,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
                 .addComponent(lblIngresarAlimento)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblIngresarAlimento2)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         panelDerecho.setBackground(new java.awt.Color(51, 51, 51));
@@ -412,7 +413,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
         lblNohayPlanesTexto1.setForeground(new java.awt.Color(255, 255, 255));
         lblNohayPlanesTexto1.setText("No hay planes de");
         panelNoHayPlanesPendientes.add(lblNohayPlanesTexto1);
-        lblNohayPlanesTexto1.setBounds(200, 260, 323, 77);
+        lblNohayPlanesTexto1.setBounds(200, 260, 344, 77);
 
         lblNoHayAlimentosIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoCaraTriste.png"))); // NOI18N
         panelNoHayPlanesPendientes.add(lblNoHayAlimentosIcono);
@@ -422,7 +423,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
         lblNohayConsultasTexto2.setForeground(new java.awt.Color(255, 255, 255));
         lblNohayConsultasTexto2.setText("alimentación pendientes");
         panelNoHayPlanesPendientes.add(lblNohayConsultasTexto2);
-        lblNohayConsultasTexto2.setBounds(128, 336, 457, 77);
+        lblNohayConsultasTexto2.setBounds(128, 336, 487, 77);
 
         lblNoHayAlimentos.setFont(new java.awt.Font("Century Gothic", 1, 40)); // NOI18N
         lblNoHayAlimentos.setForeground(new java.awt.Color(255, 255, 255));
@@ -980,7 +981,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
                 .addComponent(lblElijaUnUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         panelDatosUsuario.setBackground(new java.awt.Color(51, 51, 51));
@@ -1703,8 +1704,6 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
                     .addGap(171, 171, 171)))
         );
 
-        checkProteinas.getAccessibleContext().setAccessibleName("Proteinas");
-
         panelNuevoAlimento.add(panelIngresarAlimentoAlSistema);
         panelIngresarAlimentoAlSistema.setBounds(0, 0, 800, 800);
 
@@ -1791,22 +1790,27 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
     }//GEN-LAST:event_listaConversacionesValueChanged
 
     private void btnEnviarMensajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarMensajeActionPerformed
-        String mensaje = this.txtMensajeNuevo.getText();
-        String usuario = this.usuarioSeleccionado;
-        String profesional = this.sistema.getPersonaLogueada().getNombreCompleto();
-        this.sistema.agregarMensajeConversacion(profesional, usuario, mensaje, true, true);
-        this.txtMensajeNuevo.setText("");
-        this.txtMostrarConversacion.setText("");
-        this.lblNombreUsuario.setText("Usuario");
-        this.panelConversacionOk.setVisible(true);
-        this.panelConversacion.setVisible(false);
-        this.panelMostrarOk.setVisible(true);
-        String[] listaUsuariosConversacionesPendientes = sistema.getListaNombresUsuariosConversacionesPendientes(profesional);
-        if (listaUsuariosConversacionesPendientes.length > 0) {
-            this.listaConversaciones.setListData(listaUsuariosConversacionesPendientes);
+        String mensaje = this.txtMensajeNuevo.getText().trim();
+        if (mensaje == null || mensaje.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "El mensaje esta vacio, ingrese un mensaje con texto",
+                    "Inane error", JOptionPane.ERROR_MESSAGE);
         } else {
-            ocultarPaneles();
-            this.panelNoHayConsultasPendientes.setVisible(true);
+            String usuario = this.usuarioSeleccionado;
+            String profesional = this.sistema.getPersonaLogueada().getNombreCompleto();
+            this.sistema.agregarMensajeConversacion(profesional, usuario, mensaje, true, true);
+            this.txtMensajeNuevo.setText("");
+            this.txtMostrarConversacion.setText("");
+            this.lblNombreUsuario.setText("Usuario");
+            this.panelConversacionOk.setVisible(true);
+            this.panelConversacion.setVisible(false);
+            this.panelMostrarOk.setVisible(true);
+            String[] listaUsuariosConversacionesPendientes = sistema.getListaNombresUsuariosConversacionesPendientes(profesional);
+            if (listaUsuariosConversacionesPendientes.length > 0) {
+                this.listaConversaciones.setListData(listaUsuariosConversacionesPendientes);
+            } else {
+                ocultarPaneles();
+                this.panelNoHayConsultasPendientes.setVisible(true);
+            }
         }
     }//GEN-LAST:event_btnEnviarMensajeActionPerformed
 
@@ -1848,7 +1852,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
     }//GEN-LAST:event_listaTipoAlimentosActionPerformed
 
     private void btnIngresarAlimentoASistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarAlimentoASistemaActionPerformed
-        String nombre = this.txtNombre.getText();
+        String nombre = this.txtNombre.getText().trim();
         String tipoAlimento = (String) this.listaTipoAlimentos.getSelectedItem();
         ArrayList<ComposicionAlimento> listaNutrientesConProporcion = nutrientesSeleccionados();
         if (nombre.equals("") || tipoAlimento.equals("Seleccione...")) {
@@ -1858,21 +1862,45 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
         } else {
             this.lblDatosIncorrectos.setVisible(false);
             this.lblDatosIncorrectos2.setVisible(false);
-            boolean seAgregoAlimento = this.getSistema().crearAlimento(nombre, tipoAlimento, listaNutrientesConProporcion, fotoDeAlimentoActual);
-            if (seAgregoAlimento) {
-                this.txtNombre.setText("");
-                this.listaTipoAlimentos.setSelectedIndex(0);
-                this.panelAlimentroRegistradoCorrectamente.setVisible(true);
-                this.btnIngresarAlimento.setEnabled(true);
-                this.lblValidarNombre.setVisible(false);
-                this.lblValidarTipoAlimento.setVisible(false);
-                this.lblTipoAlimentoVacio.setVisible(false);
-                this.lblNombreVacio.setVisible(false);
-                ocultarCheckbox();
-                this.panelIngresarAlimentoAlSistema.setVisible(false);
+            if (imagenRegistrada()) {
+                boolean seAgregoAlimento = this.getSistema().crearAlimento(nombre, tipoAlimento, listaNutrientesConProporcion, fotoDeAlimentoActual);
+                if (seAgregoAlimento) {
+                    this.txtNombre.setText("");
+                    this.listaTipoAlimentos.setSelectedIndex(0);
+                    this.panelAlimentroRegistradoCorrectamente.setVisible(true);
+                    this.btnIngresarAlimento.setEnabled(true);
+                    this.lblValidarNombre.setVisible(false);
+                    this.lblValidarTipoAlimento.setVisible(false);
+                    this.lblTipoAlimentoVacio.setVisible(false);
+                    this.lblNombreVacio.setVisible(false);
+                    ocultarCheckbox();
+                    this.panelIngresarAlimentoAlSistema.setVisible(false);
+                    this.btnIngresarFotoAlimento.setVisible(true);
+                    ImageIcon i = new ImageIcon(getClass().getResource("/Imagenes/agregarFotoUsuario.png"));
+                    this.btnIngresarFotoAlimento.setIcon(i);
+                    this.fotoDeAlimentoActual = new ImageIcon(getClass().getResource("/Imagenes/fotoDelAlimentoEstandar.png"));
+                }
             }
         }
     }//GEN-LAST:event_btnIngresarAlimentoASistemaActionPerformed
+
+    private boolean imagenRegistrada() {
+        ImageIcon i = new ImageIcon(getClass().getResource("/Imagenes/fotoDelAlimentoEstandar.png"));
+        int n = 0;
+        if (this.fotoDeAlimentoActual.getImage().equals(i.getImage())) {
+            Object[] options = {"Si", "No"};
+            n = JOptionPane.showOptionDialog(this,
+                    "No se ha registrado ninguna imagen,"
+                    + " desea continuar?",
+                    "Continuar sin registro",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    options,
+                    options[0]);
+        }
+        return n == 0;
+    }
 
     private void btnVerPerfilDeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPerfilDeUsuarioActionPerformed
         MostrarPerfilUsuario perfil = new MostrarPerfilUsuario(getSistema(), usuarioSeleccionado);
@@ -1965,7 +1993,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
     }//GEN-LAST:event_checkVitaminasActionPerformed
 
     private void txtNombreFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreFocusLost
-        String nombreIngresado = txtNombre.getText();
+        String nombreIngresado = txtNombre.getText().trim();
         if (nombreIngresado.equals("")) {
             lblValidarNombre.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
             lblValidarNombre.setVisible(true);
