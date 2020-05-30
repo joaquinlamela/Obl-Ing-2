@@ -3,6 +3,7 @@ package interfaz;
 import dominio.Sistema;
 import dominio.Usuario;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class VentanaEditarRestricciones extends javax.swing.JDialog {
 
@@ -180,12 +181,28 @@ public class VentanaEditarRestricciones extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEditarPreferenciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPreferenciasActionPerformed
-        ArrayList<String> restricciones = new ArrayList<>();
-        agregarRestriccionesUsuario(restricciones);
-        this.usuarioActual.actualizarRestriccionesUsuario(usuarioActual, restricciones);
-        this.panelEditarRestricciones.setVisible(false);
-        this.panelListo.setVisible(true);
+        if (confirmarEdicion()) {
+            ArrayList<String> restricciones = new ArrayList<>();
+            agregarRestriccionesUsuario(restricciones);
+            this.usuarioActual.actualizarRestriccionesUsuario(usuarioActual, restricciones);
+            this.panelEditarRestricciones.setVisible(false);
+            this.panelListo.setVisible(true);
+        }
     }//GEN-LAST:event_btnEditarPreferenciasActionPerformed
+
+    private boolean confirmarEdicion() {
+        Object[] options = {"Si", "No"};
+        int n = JOptionPane.showOptionDialog(this,
+                "Si continua se modificaran las restricciones"
+                + "\nDesea continuar?",
+                "Confirmar edicion",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                options,
+                options[0]);
+        return n == 0;
+    }
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         this.sistema.guardarDatosSistema();

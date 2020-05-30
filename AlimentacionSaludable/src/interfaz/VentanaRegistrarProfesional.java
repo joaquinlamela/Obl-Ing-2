@@ -426,18 +426,15 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
             this.jLabelFechaGraduacionInvalida.setVisible(true);
             this.jLabelFechaInvalidaGraduacion.setVisible(true);
         }
-
-        if (nombre.equals("") || apellido.equals("") || tituloProfesional.equals("Seleccione...") || paisGraduacion.equals("Seleccione...") || fechaNacimiento.equals("") || fechaGraduacion.equals("")) {
+        if (nombre.equals("") || apellido.equals("") || tituloProfesional.equals("Seleccione...") || paisGraduacion.equals("Seleccione...")) {
             this.lblDatosIncorrectos.setVisible(true);
-            mostrarErrores(nombre, apellido, tituloProfesional, paisGraduacion, fechaNacimiento, fechaGraduacion);
+            mostrarErrores(nombre, apellido, tituloProfesional, paisGraduacion);
         } else {
-
             if (this.jDateFechaGraduacion.getDate().after(new Date())) {
                 this.jLabelFechaGraduacionInvalida.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
                 this.jLabelFechaGraduacionInvalida.setVisible(true);
                 this.jLabelFechaInvalidaGraduacion.setVisible(true);
             } else {
-
                 if (this.jDateFechaNacimiento.getDate().after(new Date())) {
                     this.jLabelFechaNacInvalida.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
                     this.jLabelFechaNacInvalida.setVisible(true);
@@ -683,7 +680,7 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
         }
     }
 
-    private void mostrarErrores(String nombre, String apellido, String tituloProfesional, String paisGraduacion, String fechaNacimiento, String fechaGraduacion) {
+    private void mostrarErrores(String nombre, String apellido, String tituloProfesional, String paisGraduacion) {
         if (nombre.equals("")) {
             this.lblValidarNombre.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
             this.lblValidarNombre.setVisible(true);
@@ -703,18 +700,6 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
             this.lblValidarPaisGraduacion.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
             this.lblValidarPaisGraduacion.setVisible(true);
             this.lblPaisVacio.setVisible(true);
-        }
-
-        if (fechaNacimiento.equals("")) {
-            this.jLabelFechaNacInvalida.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
-            this.jLabelFechaNacInvalida.setVisible(true);
-            this.jLabelFechaInvalidaNacimiento.setVisible(true);
-        }
-
-        if (fechaGraduacion.equals("")) {
-            this.jLabelFechaGraduacionInvalida.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
-            this.jLabelFechaGraduacionInvalida.setVisible(true);
-            this.jLabelFechaInvalidaGraduacion.setVisible(true);
         }
     }
 

@@ -438,7 +438,9 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
             this.jLabelFechaNacInvalida.setVisible(true);
             this.jLabelFechaInvalidaNacimiento.setVisible(true);
         }
-        if (nombre.equals("") || apellido.equals("") || nacionalidad.equals("Seleccione...") || fechaNacimiento.equals("")) {
+        
+        Date d = new Date();
+        if (nombre.equals("") || apellido.equals("") || nacionalidad.equals("Seleccione...") || fechaNacimiento.equals("")|| this.jDateFechaNacimiento.getDate().after(d)) {
             this.lblDatosIncorrectos.setVisible(true);
             mostrarErrores(nombre, apellido, nacionalidad, fechaNacimiento);
         } else {
@@ -543,7 +545,16 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
     }//GEN-LAST:event_listaNacionalidadItemStateChanged
 
     private void jDateFechaNacimientoPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateFechaNacimientoPropertyChange
-
+        Date d = new Date();
+        if (this.jDateFechaNacimiento.getDate()!=null&&this.jDateFechaNacimiento.getDate().after(d)) {
+            this.jLabelFechaNacInvalida.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
+            this.jLabelFechaNacInvalida.setVisible(true);
+            this.jLabelFechaInvalidaNacimiento.setVisible(true);
+        }else{
+            this.jLabelFechaNacInvalida.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoCorrecto.png")));
+            this.jLabelFechaNacInvalida.setVisible(true);
+            this.jLabelFechaInvalidaNacimiento.setVisible(false);
+        }
     }//GEN-LAST:event_jDateFechaNacimientoPropertyChange
 
     private void btnCerrarSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSistemaActionPerformed
@@ -712,8 +723,9 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
             this.lblValidarNacionalidad.setVisible(true);
             this.lblPaisVacio.setVisible(true);
         }
-
-        if (fechaNacimiento.equals("")) {
+        
+        Date d = new Date();
+        if (fechaNacimiento.equals("")||this.jDateFechaNacimiento.getDate().after(d)) {
             this.jLabelFechaNacInvalida.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
             this.jLabelFechaNacInvalida.setVisible(true);
             this.jLabelFechaInvalidaNacimiento.setVisible(true);

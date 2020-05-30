@@ -773,11 +773,6 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
                 txtNombrePlanFocusLost(evt);
             }
         });
-        txtNombrePlan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombrePlanActionPerformed(evt);
-            }
-        });
         panelElaborarPlan.add(txtNombrePlan);
         txtNombrePlan.setBounds(260, 370, 181, 38);
 
@@ -1273,7 +1268,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
         lblPrincipalesNutrientes.setForeground(new java.awt.Color(255, 255, 255));
         lblPrincipalesNutrientes.setText("Ingrese los principales nutrientes");
 
-        btnIngresarAlimentoASistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fotoConfirmar.png"))); // NOI18N
+        btnIngresarAlimentoASistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fotoConfirmarNuevo.png"))); // NOI18N
         btnIngresarAlimentoASistema.setBorderPainted(false);
         btnIngresarAlimentoASistema.setContentAreaFilled(false);
         btnIngresarAlimentoASistema.addActionListener(new java.awt.event.ActionListener() {
@@ -1854,31 +1849,36 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
     private void btnIngresarAlimentoASistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarAlimentoASistemaActionPerformed
         String nombre = this.txtNombre.getText().trim();
         String tipoAlimento = (String) this.listaTipoAlimentos.getSelectedItem();
-        ArrayList<ComposicionAlimento> listaNutrientesConProporcion = nutrientesSeleccionados();
-        if (nombre.equals("") || tipoAlimento.equals("Seleccione...")) {
-            this.lblDatosIncorrectos.setVisible(true);
-            this.lblDatosIncorrectos2.setVisible(true);
-            mostrarErrores(nombre, tipoAlimento);
+        if (hayNutrientesVacios()) {
+            JOptionPane.showMessageDialog(this, "Hay campos de nutrientes vacios",
+                    "Inane error",JOptionPane.ERROR_MESSAGE);
         } else {
-            this.lblDatosIncorrectos.setVisible(false);
-            this.lblDatosIncorrectos2.setVisible(false);
-            if (imagenRegistrada()) {
-                boolean seAgregoAlimento = this.getSistema().crearAlimento(nombre, tipoAlimento, listaNutrientesConProporcion, fotoDeAlimentoActual);
-                if (seAgregoAlimento) {
-                    this.txtNombre.setText("");
-                    this.listaTipoAlimentos.setSelectedIndex(0);
-                    this.panelAlimentroRegistradoCorrectamente.setVisible(true);
-                    this.btnIngresarAlimento.setEnabled(true);
-                    this.lblValidarNombre.setVisible(false);
-                    this.lblValidarTipoAlimento.setVisible(false);
-                    this.lblTipoAlimentoVacio.setVisible(false);
-                    this.lblNombreVacio.setVisible(false);
-                    ocultarCheckbox();
-                    this.panelIngresarAlimentoAlSistema.setVisible(false);
-                    this.btnIngresarFotoAlimento.setVisible(true);
-                    ImageIcon i = new ImageIcon(getClass().getResource("/Imagenes/agregarFotoUsuario.png"));
-                    this.btnIngresarFotoAlimento.setIcon(i);
-                    this.fotoDeAlimentoActual = new ImageIcon(getClass().getResource("/Imagenes/fotoDelAlimentoEstandar.png"));
+            ArrayList<ComposicionAlimento> listaNutrientesConProporcion = nutrientesSeleccionados();
+            if (nombre.equals("") || tipoAlimento.equals("Seleccione...")) {
+                this.lblDatosIncorrectos.setVisible(true);
+                this.lblDatosIncorrectos2.setVisible(true);
+                mostrarErrores(nombre, tipoAlimento);
+            } else {
+                this.lblDatosIncorrectos.setVisible(false);
+                this.lblDatosIncorrectos2.setVisible(false);
+                if (imagenRegistrada()) {
+                    boolean seAgregoAlimento = this.getSistema().crearAlimento(nombre, tipoAlimento, listaNutrientesConProporcion, fotoDeAlimentoActual);
+                    if (seAgregoAlimento) {
+                        this.txtNombre.setText("");
+                        this.listaTipoAlimentos.setSelectedIndex(0);
+                        this.panelAlimentroRegistradoCorrectamente.setVisible(true);
+                        this.btnIngresarAlimento.setEnabled(true);
+                        this.lblValidarNombre.setVisible(false);
+                        this.lblValidarTipoAlimento.setVisible(false);
+                        this.lblTipoAlimentoVacio.setVisible(false);
+                        this.lblNombreVacio.setVisible(false);
+                        ocultarCheckbox();
+                        this.panelIngresarAlimentoAlSistema.setVisible(false);
+                        this.btnIngresarFotoAlimento.setVisible(true);
+                        ImageIcon i = new ImageIcon(getClass().getResource("/Imagenes/agregarFotoUsuario.png"));
+                        this.btnIngresarFotoAlimento.setIcon(i);
+                        this.fotoDeAlimentoActual = new ImageIcon(getClass().getResource("/Imagenes/fotoDelAlimentoEstandar.png"));
+                    }
                 }
             }
         }
@@ -2122,7 +2122,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
     }//GEN-LAST:event_listaAlimentosEnSistemaValueChanged
 
     private void txtNombrePlanFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombrePlanFocusLost
-        String nombrePlanIngresado = this.txtNombrePlan.getText();
+        String nombrePlanIngresado = this.txtNombrePlan.getText().trim();
         if (nombrePlanIngresado.equals("")) {
             this.lblValidarNombrePlan.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
             this.lblValidarNombrePlan.setVisible(true);
@@ -2133,10 +2133,6 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
             this.lblNombrePlanVacio.setVisible(false);
         }
     }//GEN-LAST:event_txtNombrePlanFocusLost
-
-    private void txtNombrePlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombrePlanActionPerformed
-
-    }//GEN-LAST:event_txtNombrePlanActionPerformed
 
     private void btnAgregarAlPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarAlPlanActionPerformed
         String diaSeleccionado = (String) this.listaDiasDeLaSemana.getSelectedItem();
@@ -2214,7 +2210,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
     }//GEN-LAST:event_btnEliminarDelPlanActionPerformed
 
     private void btnElaborarPlan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElaborarPlan1ActionPerformed
-        String nombreDelPlan = this.txtNombrePlan.getText();
+        String nombreDelPlan = this.txtNombrePlan.getText().trim();
         if (nombreDelPlan.equals("")) {
             this.lblNombrePlanVacio.setVisible(true);
             this.lblValidarNombrePlan.setVisible(true);
@@ -2691,5 +2687,52 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
         this.txtProteínas.setVisible(false);
         this.txtVitaminas.setVisible(false);
         this.txtFibra.setVisible(false);
+    }
+
+    private boolean hayNutrientesVacios() {
+        boolean retorno = false;
+        if (checkFibra.isSelected()) {
+            String proporcionIngresada = txtFibra.getText();
+            if (proporcionIngresada.equals("")) {
+                retorno = true;
+            }
+        }
+        if (checkGlucidos.isSelected()) {
+            String proporcionIngresada = txtGlucidos.getText();
+            if (proporcionIngresada.equals("")) {
+                retorno = true;
+            }
+        }
+        if (checkHidratos.isSelected()) {
+            String proporcionIngresada = txtHidratos.getText();
+            if (proporcionIngresada.equals("")) {
+                retorno = true;
+            }
+        }
+        if (checkLipidos.isSelected()) {
+            String proporcionIngresada = txtLipidos.getText();
+            if (proporcionIngresada.equals("")) {
+                retorno = true;
+            }
+        }
+        if (checkMinerales.isSelected()) {
+            String proporcionIngresada = txtMinerales.getText();
+            if (proporcionIngresada.equals("")) {
+                retorno = true;
+            }
+        }
+        if (checkProteinas.isSelected()) {
+            String proporcionIngresada = txtProteínas.getText();
+            if (proporcionIngresada.equals("")) {
+                retorno = true;
+            }
+        }
+        if (checkVitaminas.isSelected()) {
+            String proporcionIngresada = txtVitaminas.getText();
+            if (proporcionIngresada.equals("")) {
+                retorno = true;
+            }
+        }
+        return retorno;
     }
 }

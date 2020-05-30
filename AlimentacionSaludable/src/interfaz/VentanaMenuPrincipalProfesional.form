@@ -1108,7 +1108,6 @@
               </Properties>
               <Events>
                 <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtNombrePlanFocusLost"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombrePlanActionPerformed"/>
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2491,7 +2490,7 @@
                 <Component class="javax.swing.JButton" name="btnIngresarAlimentoASistema">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Imagenes/fotoConfirmar.png"/>
+                      <Image iconType="3" name="/Imagenes/fotoConfirmarNuevo.png"/>
                     </Property>
                     <Property name="borderPainted" type="boolean" value="false"/>
                     <Property name="contentAreaFilled" type="boolean" value="false"/>

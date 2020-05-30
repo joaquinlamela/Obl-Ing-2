@@ -951,7 +951,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
         lblCambiarPreferencias6.setForeground(new java.awt.Color(255, 255, 255));
         lblCambiarPreferencias6.setText("Preferencias");
 
-        btnAceptarSolicitudPlanAlimentacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fotoConfirmar.png"))); // NOI18N
+        btnAceptarSolicitudPlanAlimentacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fotoConfirmarNuevo.png"))); // NOI18N
         btnAceptarSolicitudPlanAlimentacion.setBorderPainted(false);
         btnAceptarSolicitudPlanAlimentacion.setContentAreaFilled(false);
         btnAceptarSolicitudPlanAlimentacion.addActionListener(new java.awt.event.ActionListener() {
