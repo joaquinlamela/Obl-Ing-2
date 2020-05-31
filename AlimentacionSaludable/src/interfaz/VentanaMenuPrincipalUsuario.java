@@ -1316,7 +1316,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
         String mensaje = this.txtMensajeNuevo.getText().trim();
         if (mensaje == null || mensaje.isEmpty()) {
             JOptionPane.showMessageDialog(this, "El mensaje esta vacio, ingrese un mensaje con texto",
-                    "Inane error",JOptionPane.ERROR_MESSAGE);
+                    "Inane error", JOptionPane.ERROR_MESSAGE);
         } else {
             String profesional = this.profesionalSeleccionado;
             String usuario = this.sistema.getPersonaLogueada().getNombreCompleto();
@@ -1402,20 +1402,57 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
 
     private void btnAceptarSolicitudPlanAlimentacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarSolicitudPlanAlimentacionActionPerformed
         String nombreProfesionalElegido = (String) this.comboProfesionalesEnSistema.getSelectedItem();
+        Profesional p = this.sistema.getProfesionalPorNombre(nombreProfesionalElegido);
+
+        boolean hayPlanPendiente = false;
+        for (String usuarios : this.sistema.getListaPlanesPendientes(p)) {
+            if (usuarios.equals(this.sistema.getPersonaLogueada().getNombreCompleto())) {
+                hayPlanPendiente = true;
+            }
+        }
+
         if (nombreProfesionalElegido.equals("Seleccione...")) {
             this.lblDatosIncorrectos.setVisible(true);
             this.lblDatosIncorrectos1.setVisible(true);
         } else {
-            this.lblDatosIncorrectos.setVisible(false);
-            this.lblDatosIncorrectos1.setVisible(false);
-            Profesional profesionalElegido = sistema.getProfesionalPorNombre(nombreProfesionalElegido);
-            String nombreUsuarioLoguedo = this.sistema.getPersonaLogueada().getNombreCompleto();
-            Usuario usuarioLogueado = this.sistema.getUsuarioPorNombre(nombreUsuarioLoguedo);
-            this.sistema.agregarPlanSolicitado(usuarioLogueado, profesionalElegido);
-            this.panelSolicitarNuevoPlan.setVisible(false);
-            this.panelPlanSolicitadoCorrectamente.setVisible(true);
+            if (!hayPlanPendiente) {
+                this.lblDatosIncorrectos.setVisible(false);
+                this.lblDatosIncorrectos1.setVisible(false);
+                Profesional profesionalElegido = sistema.getProfesionalPorNombre(nombreProfesionalElegido);
+                String nombreUsuarioLoguedo = this.sistema.getPersonaLogueada().getNombreCompleto();
+                Usuario usuarioLogueado = this.sistema.getUsuarioPorNombre(nombreUsuarioLoguedo);
+                this.sistema.agregarPlanSolicitado(usuarioLogueado, profesionalElegido);
+                this.panelSolicitarNuevoPlan.setVisible(false);
+                this.panelPlanSolicitadoCorrectamente.setVisible(true);
+            } else {
+                if (confirmarNuevoPlan()) {
+                    this.lblDatosIncorrectos.setVisible(false);
+                    this.lblDatosIncorrectos1.setVisible(false);
+                    Profesional profesionalElegido = sistema.getProfesionalPorNombre(nombreProfesionalElegido);
+                    String nombreUsuarioLoguedo = this.sistema.getPersonaLogueada().getNombreCompleto();
+                    Usuario usuarioLogueado = this.sistema.getUsuarioPorNombre(nombreUsuarioLoguedo);
+                    this.sistema.agregarPlanSolicitado(usuarioLogueado, profesionalElegido);
+                    this.panelSolicitarNuevoPlan.setVisible(false);
+                    this.panelPlanSolicitadoCorrectamente.setVisible(true);
+                }
+            }
         }
     }//GEN-LAST:event_btnAceptarSolicitudPlanAlimentacionActionPerformed
+
+    private boolean confirmarNuevoPlan() {
+        Object[] options = {"Si", "No"};
+        int n = JOptionPane.showOptionDialog(this,
+                "Ya hay un plan solicitado para este profesional"
+                + "\nSi continua se perdera el plan anterior"
+                + "\nDesea continuar?",
+                "Confirmar edicion",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                options,
+                options[0]);
+        return n == 0;
+    }
 
     private void lblValidarProfesionalPlanFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lblValidarProfesionalPlanFocusGained
 
