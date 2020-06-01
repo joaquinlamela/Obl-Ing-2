@@ -8,10 +8,10 @@ import org.junit.Test;
 
 public final class AlimentoTest {
 
-    private static final String Lipidos= "Lipidos"; 
-    private static final String Verdura= "Verdura"; 
-    private static final String NombreNoIngresado= "Nombre de alimento no ingresado"; 
-    private static final String Papa= "Papa"; 
+    private static final String LIPIDOS= "Lipidos"; 
+    private static final String VERDURA= "Verdura"; 
+    private static final String NOMBRENOINGRESAD= "Nombre de alimento no ingresado"; 
+    private static final String PAPA= "Papa"; 
     
     @Test
     public void testSetsGetsNullTipo() {
@@ -28,33 +28,33 @@ public final class AlimentoTest {
     @Test
     public void testSetsGetsDatosCorrectosNombre() {
         ArrayList<ComposicionAlimento> listaComposicion = new ArrayList<>();
-        listaComposicion.add(new ComposicionAlimento(Lipidos, 2));
-        Alimento alimentoTest = new Alimento(Papa, Verdura, listaComposicion, null);
-        assertEquals(alimentoTest.getNombre(), Papa);
+        listaComposicion.add(new ComposicionAlimento(LIPIDOS, 2));
+        Alimento alimentoTest = new Alimento(PAPA, VERDURA, listaComposicion, null);
+        assertEquals(alimentoTest.getNombre(), PAPA);
     }
 
     @Test
     public void testSetsGetsDatosCorrectosTipo() {
         ArrayList<ComposicionAlimento> listaComposicion = new ArrayList<>();
-        listaComposicion.add(new ComposicionAlimento(Lipidos, 2));
-        Alimento alimentoTest = new Alimento(Papa, Verdura, listaComposicion, null);
-        assertEquals(alimentoTest.getTipoAlimento(), Verdura);
+        listaComposicion.add(new ComposicionAlimento(LIPIDOS, 2));
+        Alimento alimentoTest = new Alimento(PAPA, VERDURA, listaComposicion, null);
+        assertEquals(alimentoTest.getTipoAlimento(), VERDURA);
     }
 
     @Test
     public void testSetsGetsDatosCorrectosNutrientes() {
         ArrayList<ComposicionAlimento> listaComposicion = new ArrayList<>();
-        listaComposicion.add(new ComposicionAlimento(Lipidos, 2));
-        Alimento alimentoTest = new Alimento(Papa, Verdura, listaComposicion, null);
+        listaComposicion.add(new ComposicionAlimento(LIPIDOS, 2));
+        Alimento alimentoTest = new Alimento(PAPA, VERDURA, listaComposicion, null);
         assertEquals(alimentoTest.getListaNutrientesConProporcion(), listaComposicion);
     }
     
     @Test
     public void testSetsGetsDatosCorrectosImagenes() {
         ArrayList<ComposicionAlimento> listaComposicion = new ArrayList<>();
-        listaComposicion.add(new ComposicionAlimento(Lipidos, 2));
+        listaComposicion.add(new ComposicionAlimento(LIPIDOS, 2));
         ImageIcon i = new ImageIcon(getClass().getResource("/Imagenes/fotoDelAlimentoEstandar.png"));
-        Alimento alimentoTest = new Alimento(Papa, Verdura, listaComposicion, i);
+        Alimento alimentoTest = new Alimento(PAPA, VERDURA, listaComposicion, i);
         assertEquals(i, alimentoTest.getFotoDelAlimento());
     }
 
@@ -67,7 +67,7 @@ public final class AlimentoTest {
     @Test
     public void testSetsGetsNombreDatosVacios() {
         Alimento alimentoTest = new Alimento("", "", null, null);
-        assertEquals(alimentoTest.getNombre(), NombreNoIngresado);
+        assertEquals(alimentoTest.getNombre(), NOMBRENOINGRESAD);
     }
 
     @Test
@@ -79,32 +79,32 @@ public final class AlimentoTest {
     @Test
     public void testToStringNullNombre() {
         Alimento alimentoTest = new Alimento("", "", null, null);
-        assertEquals(alimentoTest.getNombre(), NombreNoIngresado);
+        assertEquals(alimentoTest.getNombre(), NOMBRENOINGRESAD);
     }
 
     @Test
     public void testToStringNull() {
         Alimento alimentoTest = new Alimento("", "", null, null);
-        assertEquals(alimentoTest.toString(), NombreNoIngresado);
+        assertEquals(alimentoTest.toString(), NOMBRENOINGRESAD);
     }
 
     @Test
     public void testToStringDatosCorrectos() {
-        Alimento alimentoTest = new Alimento(Papa, "", null, null);
-        assertEquals(alimentoTest.toString(), Papa);
+        Alimento alimentoTest = new Alimento(PAPA, "", null, null);
+        assertEquals(alimentoTest.toString(), PAPA);
     }
 
     @Test
     public void testEqualsIguales() {
-        Alimento alimentoTest = new Alimento(Papa, "", null, null);
-        Alimento alimentoTest2 = new Alimento(Papa, "", null, null);
+        Alimento alimentoTest = new Alimento(PAPA, "", null, null);
+        Alimento alimentoTest2 = new Alimento(PAPA, "", null, null);
         assertEquals(alimentoTest, alimentoTest2);
     }
 
     @Test
     public void testEqualsDiferentes() {
         Alimento alimentoTest = new Alimento("Rabanito", "", null, null);
-        Alimento alimentoTest2 = new Alimento(Papa, "", null, null);
+        Alimento alimentoTest2 = new Alimento(PAPA, "", null, null);
         boolean sonIguales = alimentoTest.equals(alimentoTest2);
         assertFalse(sonIguales);
     }
