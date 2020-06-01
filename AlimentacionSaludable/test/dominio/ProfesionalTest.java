@@ -6,17 +6,23 @@ import org.junit.Test;
 
 public final class ProfesionalTest {
 
+    private static final String MARTIN= "Martin";
+    private static final String GOMEZ= "Gómez";
+    private static final String FECHA= "11/02/98";
+    private static final String DOCTOR= "Doctor"; 
+    private static final String URUGUAY= "Uruguay";
+    private static final String FECHA2= "11/02/2016"; 
     
 
     @Test
     public void testGetsSetsDatosVacioGraduacion() {
-        String nombre = "Martin";
-        String apellido = "Gómez";
-        String fechaNacimiento = "11/02/98";
+        String nombre = MARTIN;
+        String apellido = GOMEZ;
+        String fechaNacimiento = FECHA;
         ImageIcon fotoPerfil = null;
-        String tituloProf = "Doctor";
+        String tituloProf = DOCTOR;
         String fechaGrad = "";
-        String paisGraduacion = "Uruguay";
+        String paisGraduacion = URUGUAY;
         Profesional prof = new Profesional(nombre, apellido, fechaNacimiento, fotoPerfil,
                 tituloProf, fechaGrad, paisGraduacion);
         assertEquals(prof.getFechaGraduacion(), "Fecha no ingresada");
@@ -24,13 +30,13 @@ public final class ProfesionalTest {
     
     @Test
     public void testGetsSetsDatosNullGraduacion() {
-        String nombre = "Martin";
-        String apellido = "Gómez";
-        String fechaNacimiento = "11/02/98";
+        String nombre = MARTIN;
+        String apellido = GOMEZ;
+        String fechaNacimiento = FECHA;
         ImageIcon fotoPerfil = null;
-        String tituloProf = "Doctor";
+        String tituloProf = DOCTOR;
         String fechaGrad = null;
-        String paisGraduacion = "Uruguay";
+        String paisGraduacion = URUGUAY;
         Profesional prof = new Profesional(nombre, apellido, fechaNacimiento, fotoPerfil,
                 tituloProf, fechaGrad, paisGraduacion);
         assertEquals(prof.getFechaGraduacion(), "Fecha no ingresada");
@@ -38,13 +44,13 @@ public final class ProfesionalTest {
     
     @Test
     public void testGetsSetsDatosCorrectosGraduacion() {
-        String nombre = "Martin";
-        String apellido = "Gómez";
-        String fechaNacimiento = "11/02/98";
+        String nombre = MARTIN;
+        String apellido = GOMEZ;
+        String fechaNacimiento = FECHA;
         ImageIcon fotoPerfil = null;
-        String tituloProf = "Doctor";
-        String fechaGrad = "11/02/2016";
-        String paisGraduacion = "Uruguay";
+        String tituloProf = DOCTOR;
+        String fechaGrad = FECHA2;
+        String paisGraduacion = URUGUAY;
         Profesional prof = new Profesional(nombre, apellido, fechaNacimiento, fotoPerfil,
                 tituloProf, fechaGrad, paisGraduacion);
         assertEquals(prof.getFechaGraduacion(), fechaGrad);
@@ -52,12 +58,12 @@ public final class ProfesionalTest {
 
     @Test
     public void testGetsDatosCorrectosPais() {
-        String nombre = "Martin";
-        String apellido = "Gómez";
-        String fechaNacimiento = "11/02/98";
+        String nombre = MARTIN;
+        String apellido = GOMEZ;
+        String fechaNacimiento = FECHA;
         ImageIcon fotoPerfil = null;
-        String tituloProf = "Doctor";
-        String fechaGrad = "11/02/2016";
+        String tituloProf = DOCTOR;
+        String fechaGrad = FECHA2;
         String paisGraduacion = "" + Sistema.Paises.Uruguay;
         Profesional prof = new Profesional(nombre, apellido, fechaNacimiento, fotoPerfil,
                 tituloProf, fechaGrad, paisGraduacion);
@@ -66,12 +72,12 @@ public final class ProfesionalTest {
     
     @Test
     public void testGetsDatosVaciosPais() {
-        String nombre = "Martin";
-        String apellido = "Gómez";
-        String fechaNacimiento = "11/02/98";
+        String nombre = MARTIN;
+        String apellido = GOMEZ;
+        String fechaNacimiento = FECHA;
         ImageIcon fotoPerfil = null;
-        String tituloProf = "Doctor";
-        String fechaGrad = "11/02/2016";
+        String tituloProf = DOCTOR;
+        String fechaGrad = FECHA2;
         String paisGraduacion = "";
         Profesional prof = new Profesional(nombre, apellido, fechaNacimiento, fotoPerfil,
                 tituloProf, fechaGrad, paisGraduacion);
@@ -80,12 +86,12 @@ public final class ProfesionalTest {
     
     @Test
     public void testGetsDatosNullPais() {
-        String nombre = "Martin";
-        String apellido = "Gómez";
-        String fechaNacimiento = "11/02/98";
+        String nombre = MARTIN;
+        String apellido = GOMEZ;
+        String fechaNacimiento = FECHA;
         ImageIcon fotoPerfil = null;
-        String tituloProf = "Doctor";
-        String fechaGrad = "11/02/2016";
+        String tituloProf = DOCTOR;
+        String fechaGrad = FECHA2;
         String paisGraduacion = null;
         Profesional prof = new Profesional(nombre, apellido, fechaNacimiento, fotoPerfil,
                 tituloProf, fechaGrad, paisGraduacion);
@@ -94,13 +100,13 @@ public final class ProfesionalTest {
 
     @Test
     public void testGetsSetsDatosVacioTitulo() {
-        String nombre = "Martin";
-        String apellido = "Gómez";
-        String fechaNacimiento = "11/02/98";
+        String nombre = MARTIN;
+        String apellido = GOMEZ;
+        String fechaNacimiento = FECHA;
         ImageIcon fotoPerfil = null;
         String tituloProf = "";
-        String fechaGrad = "11/02/2016";
-        String paisGraduacion = "Uruguay";
+        String fechaGrad = FECHA2;
+        String paisGraduacion = URUGUAY;
         Profesional prof = new Profesional(nombre, apellido, fechaNacimiento, fotoPerfil,
                 tituloProf, fechaGrad, paisGraduacion);
         assertEquals(prof.getTituloProfesional(), "Titulo no declarado");
@@ -108,13 +114,13 @@ public final class ProfesionalTest {
     
     @Test
     public void testGetsSetsDatoNullTitulo() {
-        String nombre = "Martin";
-        String apellido = "Gómez";
-        String fechaNacimiento = "11/02/98";
+        String nombre = MARTIN;
+        String apellido = GOMEZ;
+        String fechaNacimiento = FECHA;
         ImageIcon fotoPerfil = null;
         String tituloProf = null;
-        String fechaGrad = "11/02/2016";
-        String paisGraduacion = "Uruguay";
+        String fechaGrad = FECHA2;
+        String paisGraduacion = URUGUAY;
         Profesional prof = new Profesional(nombre, apellido, fechaNacimiento, fotoPerfil,
                 tituloProf, fechaGrad, paisGraduacion);
         assertEquals(prof.getTituloProfesional(), "Titulo no declarado");
@@ -122,13 +128,13 @@ public final class ProfesionalTest {
     
     @Test
     public void testGetsSetsDatosCorrectosTitulo() {
-        String nombre = "Martin";
-        String apellido = "Gómez";
-        String fechaNacimiento = "11/02/98";
+        String nombre = MARTIN;
+        String apellido = GOMEZ;
+        String fechaNacimiento = FECHA;
         ImageIcon fotoPerfil = null;
-        String tituloProf = "Doctor";
-        String fechaGrad = "11/02/2016";
-        String paisGraduacion = "Uruguay";
+        String tituloProf = DOCTOR;
+        String fechaGrad = FECHA2;
+        String paisGraduacion = URUGUAY;
         Profesional prof = new Profesional(nombre, apellido, fechaNacimiento, fotoPerfil,
                 tituloProf, fechaGrad, paisGraduacion);
         assertEquals(prof.getTituloProfesional(), tituloProf);
@@ -137,13 +143,13 @@ public final class ProfesionalTest {
     @Test
     public void testSetsGetsDatosCorrectosImagenes() {
         ImageIcon i = new ImageIcon(getClass().getResource("/Imagenes/fotoDeUsuarioStandard.png"));
-        String nombre = "Martin";
-        String apellido = "Gómez";
-        String fechaNacimiento = "11/02/98";
+        String nombre = MARTIN;
+        String apellido = GOMEZ;
+        String fechaNacimiento = FECHA;
         ImageIcon fotoPerfil = i;
-        String tituloProf = "Doctor";
-        String fechaGrad = "11/02/2016";
-        String paisGraduacion = "Uruguay";
+        String tituloProf = DOCTOR;
+        String fechaGrad = FECHA2;
+        String paisGraduacion = URUGUAY;
         Profesional prof = new Profesional(nombre, apellido, fechaNacimiento, fotoPerfil,
                 tituloProf, fechaGrad, paisGraduacion);
         assertEquals(prof.getFotoDePerfil(), i);
@@ -151,13 +157,13 @@ public final class ProfesionalTest {
 
     @Test
     public void testToStringDatosCorrectos() {
-        String nombre = "Martin";
-        String apellido = "Gómez";
-        String fechaNacimiento = "11/02/98";
+        String nombre = MARTIN;
+        String apellido = GOMEZ;
+        String fechaNacimiento = FECHA;
         ImageIcon fotoPerfil = null;
-        String tituloProf = "Doctor";
-        String fechaGrad = "11/02/2016";
-        String paisGraduacion = "Uruguay";
+        String tituloProf = DOCTOR;
+        String fechaGrad = FECHA2;
+        String paisGraduacion = URUGUAY;
         Profesional prof = new Profesional(nombre, apellido, fechaNacimiento, fotoPerfil,
                 tituloProf, fechaGrad, paisGraduacion);
         String toStringEperado = nombre + " " + apellido;
