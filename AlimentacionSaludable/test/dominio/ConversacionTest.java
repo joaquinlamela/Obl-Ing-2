@@ -6,13 +6,16 @@ import static org.junit.Assert.*;
 
 public class ConversacionTest {
 
-    public ConversacionTest() {
-    }
-
+    private static final String PEREZ= "Perez"; 
+    
+    private static final String DIEGO= "Diego"; 
+    
+    private static final String RODRIGUEZ= "Rodriguez";
+    
     @Test
     public void testAgregarMensajeSinIntercambio() {
-        Usuario u = new Usuario("Juan", "Perez", null, null, null, null, null, null);
-        Profesional p = new Profesional("Diego", "Rodriguez", null, null, null, null, null);
+        Usuario u = new Usuario("Juan", PEREZ, null, null, null, null, null, null);
+        Profesional p = new Profesional(DIEGO, RODRIGUEZ, null, null, null, null, null);
         Conversacion c = new Conversacion(u, p, new ArrayList<InformacionMensaje>());
         InformacionMensaje i = new InformacionMensaje(u.getNombreCompleto(), p.getNombreCompleto(), "Hola");
         boolean agregado = c.agregarMensaje("Hola", false);
@@ -26,8 +29,8 @@ public class ConversacionTest {
     
     @Test
     public void testAgregarMensajeConIntercambio() {
-        Usuario u = new Usuario("Juan", "Perez", null, null, null, null, null, null);
-        Profesional p = new Profesional("Diego", "Rodriguez", null, null, null, null, null);
+        Usuario u = new Usuario("Juan", PEREZ, null, null, null, null, null, null);
+        Profesional p = new Profesional(DIEGO, RODRIGUEZ, null, null, null, null, null);
         Conversacion c = new Conversacion(u, p, new ArrayList<InformacionMensaje>());
         InformacionMensaje i = new InformacionMensaje(p.getNombreCompleto(), u.getNombreCompleto(), "Hola");
         boolean agregado = c.agregarMensaje("Hola", true);
@@ -62,8 +65,8 @@ public class ConversacionTest {
     
      @Test
     public void testSetListaMensaje() {
-        Usuario u = new Usuario("Juan", "Perez", null, null, null, null, null, null);
-        Profesional p = new Profesional("Diego", "Rodriguez", null, null, null, null, null);
+        Usuario u = new Usuario("Juan", PEREZ, null, null, null, null, null, null);
+        Profesional p = new Profesional(DIEGO, RODRIGUEZ, null, null, null, null, null);
         Conversacion c = new Conversacion(u, p, new ArrayList<InformacionMensaje>());
         InformacionMensaje i = new InformacionMensaje(u.getNombreCompleto(), p.getNombreCompleto(), "Hola");
         ArrayList<InformacionMensaje> listaMensajes = new ArrayList<>();
@@ -174,8 +177,8 @@ public class ConversacionTest {
     
     @Test
     public void testGetSetsDatosVaciosToString() {
-        Usuario usuario = new Usuario("Juan", "Perez", null, null, null, null, null, null);
-        Profesional profesional = new Profesional("Diego", "Rodriguez", null, null, null, null, null);
+        Usuario usuario = new Usuario("Juan", PEREZ, null, null, null, null, null, null);
+        Profesional profesional = new Profesional(DIEGO, RODRIGUEZ, null, null, null, null, null);
         ArrayList listaMensajes = new ArrayList<>();
         InformacionMensaje i = new InformacionMensaje(usuario.getNombreCompleto(), profesional.getNombreCompleto(), "Hola");
         listaMensajes.add(i);
