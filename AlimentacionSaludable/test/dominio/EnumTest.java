@@ -17,10 +17,6 @@ import org.junit.Test;
  */
 public class EnumTest {
     
-    public EnumTest() {
-
-    }
-    
     @Test
     public void testEnumValuePreferencias() {
         for (Sistema.Preferencias valores : Sistema.Preferencias.values()) {
