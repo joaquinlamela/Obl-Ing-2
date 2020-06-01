@@ -720,11 +720,11 @@ public class SistemaTest {
         sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion3);
         
         sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion, "Hola", true);
-        boolean ok = sistemaATestear.agregarMensajeConversacion("Martin", "Luis", "Hola 2.0", false,false);
         sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion2, "Como estas", true);
         sistemaATestear.crearConversacion(usuarioConversacion2, profesionalConversacion2, "Muy bien", true);
         sistemaATestear.crearConversacion(usuarioConversacion3, profesionalConversacion3, "Me Alegro", true);
         boolean fail = sistemaATestear.agregarMensajeConversacion("", null, "Hola 2.0", false,false);
+        boolean ok = sistemaATestear.agregarMensajeConversacion("Martin", "Luis", "Hola 2.0", false,false);
         
         assertTrue(ok);
         assertFalse(fail);
@@ -756,11 +756,11 @@ public class SistemaTest {
         sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion3);
         
         sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion, "Hola", true);
-        boolean ok = sistemaATestear.agregarMensajeConversacion("Luis", "Martin", "Hola 2.0", false,false);
         sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion2, "Como estas", true);
         sistemaATestear.crearConversacion(usuarioConversacion2, profesionalConversacion2, "Muy bien", true);
         sistemaATestear.crearConversacion(usuarioConversacion3, profesionalConversacion3, "Me Alegro", true);
         boolean fail = sistemaATestear.agregarMensajeConversacion("", null, "Hola 2.0", false,false);
+        boolean ok = sistemaATestear.agregarMensajeConversacion("Luis", "Martin", "Hola 2.0", false,false);
         
         assertTrue(ok);
         assertFalse(fail);
@@ -792,11 +792,11 @@ public class SistemaTest {
         sistemaATestear.agregarProfesionalALaLista((Profesional)profesionalConversacion3);
         
         sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion, "Hola", true);
-        boolean ok = sistemaATestear.agregarMensajeConversacion("Luis", "Martin", "Hola 2.0", true,false);
         sistemaATestear.crearConversacion(usuarioConversacion, profesionalConversacion2, "Como estas", true);
         sistemaATestear.crearConversacion(usuarioConversacion2, profesionalConversacion2, "Muy bien", true);
         sistemaATestear.crearConversacion(usuarioConversacion3, profesionalConversacion3, "Me Alegro", true);
         boolean fail = sistemaATestear.agregarMensajeConversacion("", null, "Hola 2.0", false,false);
+        boolean ok = sistemaATestear.agregarMensajeConversacion("Luis", "Martin", "Hola 2.0", true,false);
         
         assertTrue(ok);
         assertFalse(fail);

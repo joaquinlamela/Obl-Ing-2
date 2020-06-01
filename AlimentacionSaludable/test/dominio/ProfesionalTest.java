@@ -5,7 +5,7 @@ import javax.swing.ImageIcon;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-final public class ProfesionalTest {
+public final class ProfesionalTest {
 
     public ProfesionalTest() {
     }
@@ -60,7 +60,7 @@ final public class ProfesionalTest {
         ImageIcon fotoPerfil = null;
         String tituloProf = "Doctor";
         String fechaGrad = "11/02/2016";
-        String paisGraduacion = ""+Sistema.Paises.Uruguay;
+        String paisGraduacion = "" + Sistema.Paises.Uruguay;
         Profesional prof = new Profesional(nombre, apellido, fechaNacimiento, fotoPerfil,
                 tituloProf, fechaGrad, paisGraduacion);
         assertEquals(prof.getPaisGraduacion(), paisGraduacion);

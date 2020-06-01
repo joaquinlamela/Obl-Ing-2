@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 import javax.swing.ImageIcon;
 
-public final class Alimento implements Serializable {
+final public class Alimento implements Serializable {
 
     private String nombre;
     private String tipoAlimento;
