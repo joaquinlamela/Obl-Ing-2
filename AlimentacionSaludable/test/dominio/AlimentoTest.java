@@ -8,9 +8,8 @@ import org.junit.Test;
 
 public final class AlimentoTest {
 
-    public AlimentoTest() {
-    }
-
+    private String lipidos= "Lipidos"; 
+    
     @Test
     public void testSetsGetsNullTipo() {
         Alimento alimentoTest = new Alimento(null, null, null, null);
@@ -26,7 +25,7 @@ public final class AlimentoTest {
     @Test
     public void testSetsGetsDatosCorrectosNombre() {
         ArrayList<ComposicionAlimento> listaComposicion = new ArrayList<>();
-        listaComposicion.add(new ComposicionAlimento("Lipidos", 2));
+        listaComposicion.add(new ComposicionAlimento(lipidos, 2));
         Alimento alimentoTest = new Alimento("Papa", "Verdura", listaComposicion, null);
         assertEquals(alimentoTest.getNombre(), "Papa");
     }
@@ -34,7 +33,7 @@ public final class AlimentoTest {
     @Test
     public void testSetsGetsDatosCorrectosTipo() {
         ArrayList<ComposicionAlimento> listaComposicion = new ArrayList<>();
-        listaComposicion.add(new ComposicionAlimento("Lipidos", 2));
+        listaComposicion.add(new ComposicionAlimento(lipidos, 2));
         Alimento alimentoTest = new Alimento("Papa", "Verdura", listaComposicion, null);
         assertEquals(alimentoTest.getTipoAlimento(), "Verdura");
     }
@@ -42,7 +41,7 @@ public final class AlimentoTest {
     @Test
     public void testSetsGetsDatosCorrectosNutrientes() {
         ArrayList<ComposicionAlimento> listaComposicion = new ArrayList<>();
-        listaComposicion.add(new ComposicionAlimento("Lipidos", 2));
+        listaComposicion.add(new ComposicionAlimento(lipidos, 2));
         Alimento alimentoTest = new Alimento("Papa", "Verdura", listaComposicion, null);
         assertEquals(alimentoTest.getListaNutrientesConProporcion(), listaComposicion);
     }
@@ -50,7 +49,7 @@ public final class AlimentoTest {
     @Test
     public void testSetsGetsDatosCorrectosImagenes() {
         ArrayList<ComposicionAlimento> listaComposicion = new ArrayList<>();
-        listaComposicion.add(new ComposicionAlimento("Lipidos", 2));
+        listaComposicion.add(new ComposicionAlimento(lipidos, 2));
         ImageIcon i = new ImageIcon(getClass().getResource("/Imagenes/fotoDelAlimentoEstandar.png"));
         Alimento alimentoTest = new Alimento("Papa", "Verdura", listaComposicion, i);
         assertEquals(i, alimentoTest.getFotoDelAlimento());
