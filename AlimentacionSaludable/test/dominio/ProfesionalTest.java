@@ -6,8 +6,7 @@ import org.junit.Test;
 
 public final class ProfesionalTest {
 
-    public ProfesionalTest() {
-    }
+    
 
     @Test
     public void testGetsSetsDatosVacioGraduacion() {
