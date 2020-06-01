@@ -1,6 +1,5 @@
 package dominio;
 
-import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;

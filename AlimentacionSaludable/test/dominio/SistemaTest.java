@@ -1,19 +1,10 @@
 package dominio;
 
-import dominio.Sistema.DiasDeLaSemana;
-import dominio.Sistema.IngestasPorDia;
-import dominio.Sistema.Paises;
-import dominio.Sistema.Preferencias;
-import dominio.Sistema.Restricciones;
 import java.io.BufferedInputStream;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -1048,7 +1039,6 @@ public class SistemaTest {
         try {
             try (FileInputStream f = new FileInputStream("Sistema.data")) {
                 nuevo = (Sistema) new ObjectInputStream(new BufferedInputStream(f)).readObject();
-                f.close();
             }
         } catch (IOException | ClassNotFoundException e) {
             nuevo = new Sistema();
