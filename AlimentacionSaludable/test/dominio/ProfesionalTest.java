@@ -5,7 +5,7 @@ import javax.swing.ImageIcon;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-public class ProfesionalTest {
+final public class ProfesionalTest {
 
     public ProfesionalTest() {
     }

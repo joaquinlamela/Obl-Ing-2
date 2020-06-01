@@ -1048,6 +1048,7 @@ public class SistemaTest {
         try {
             try (FileInputStream f = new FileInputStream("Sistema.data")) {
                 nuevo = (Sistema) new ObjectInputStream(new BufferedInputStream(f)).readObject();
+                f.close();
             }
         } catch (IOException | ClassNotFoundException e) {
             nuevo = new Sistema();
