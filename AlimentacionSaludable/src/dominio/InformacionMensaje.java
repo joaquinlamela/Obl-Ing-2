@@ -29,8 +29,7 @@ public final class InformacionMensaje implements Serializable {
     public void setDestinatario(String elDestinatario) {
         if (elDestinatario == null || elDestinatario.isEmpty()) {
             this.destinatario = "Destinatario no ingresado";
-        }
-        else {
+        } else {
             this.destinatario = elDestinatario;
         }
     }
@@ -42,8 +41,7 @@ public final class InformacionMensaje implements Serializable {
     public void setRemitente(String elRemitente) {
         if (elRemitente == null || elRemitente.isEmpty()) {
             this.remitente = "Remitente no ingresado";
-        }
-        else {
+        } else {
             this.remitente = elRemitente;
         }
     }

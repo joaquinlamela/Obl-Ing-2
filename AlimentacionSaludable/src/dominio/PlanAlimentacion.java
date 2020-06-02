@@ -11,7 +11,8 @@ public final class PlanAlimentacion implements Serializable {
     private boolean fueAtendidoElPlan;
     private String[][] planDiaADia;
 
-    public PlanAlimentacion(String unNombreDelPlan, Usuario unUsuario, Profesional unProfesional, boolean fueAtendido, String[][] unPlan) {
+    public PlanAlimentacion(String unNombreDelPlan, Usuario unUsuario,
+            Profesional unProfesional, boolean fueAtendido, String[][] unPlan) {
         this.setNombreDelPlan(unNombreDelPlan);
         this.setUsuario(unUsuario);
         this.setProfesional(unProfesional);
@@ -26,8 +27,7 @@ public final class PlanAlimentacion implements Serializable {
     public void setUsuario(Usuario unUsuario) {
         if (unUsuario == null) {
             this.usuario = new Usuario(null, null, null, null, null, null, null, null);
-        }
-        else {
+        } else {
             this.usuario = unUsuario;
         }
     }
@@ -59,8 +59,7 @@ public final class PlanAlimentacion implements Serializable {
     public void setPlanDiaADia(String[][] unPlan) {
         if (unPlan == null) {
             this.planDiaADia = new String[0][0];
-        }
-        else {
+        } else {
             this.planDiaADia = unPlan;
         }
     }
@@ -72,10 +71,9 @@ public final class PlanAlimentacion implements Serializable {
     public void setNombreDelPlan(String unNombreDelPlan) {
         if (unNombreDelPlan == null || unNombreDelPlan.isEmpty()) {
             this.nombreDelPlan = "Plan de alimentaci\u00f3n";
-        }
-        else {
+        } else {
             this.nombreDelPlan = unNombreDelPlan;
-        } 
+        }
     }
 
     @Override
@@ -85,19 +83,19 @@ public final class PlanAlimentacion implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj==null){
-            return false; 
-        }else if (this.getClass() != obj.getClass()){
-            return false; 
-        }else{
-        PlanAlimentacion otroPlanAlimentacion = (PlanAlimentacion) obj;
-        return this.getNombreDelPlan().equals(otroPlanAlimentacion.getNombreDelPlan())
-                && this.getUsuario().equals(otroPlanAlimentacion.getUsuario())
-                && this.getProfesional().equals(otroPlanAlimentacion.getProfesional());
+        if (obj == null) {
+            return false;
+        } else if (this.getClass() != obj.getClass()) {
+            return false;
+        } else {
+            PlanAlimentacion otroPlanAlimentacion = (PlanAlimentacion) obj;
+            return this.getNombreDelPlan().equals(otroPlanAlimentacion.getNombreDelPlan())
+                    && this.getUsuario().equals(otroPlanAlimentacion.getUsuario())
+                    && this.getProfesional().equals(otroPlanAlimentacion.getProfesional());
         }
-       
+
     }
-    
+
     @Override
     public int hashCode() {
         int hash = 7;

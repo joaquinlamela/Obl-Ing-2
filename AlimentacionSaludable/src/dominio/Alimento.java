@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 import javax.swing.ImageIcon;
 
-final public class Alimento implements Serializable {
+public final class Alimento implements Serializable {
 
     private String nombre;
     private String tipoAlimento;
@@ -42,8 +42,7 @@ final public class Alimento implements Serializable {
     public void setTipoAlimento(String unTipoAlimento) {
         if (unTipoAlimento == null || unTipoAlimento.isEmpty()) {
             this.tipoAlimento = "No definido";
-        }
-        else {
+        } else {
             this.tipoAlimento = unTipoAlimento;
         }
     }
@@ -70,7 +69,8 @@ final public class Alimento implements Serializable {
 
     public void setFotoDelAlimento(ImageIcon foto) {
         if (foto == null) {
-            this.fotoDelAlimento = new ImageIcon(getClass().getResource("/Imagenes/fotoDelAlimentoEstandar.png"));
+            this.fotoDelAlimento = new ImageIcon(getClass()
+                    .getResource("/Imagenes/fotoDelAlimentoEstandar.png"));
         } else {
             this.fotoDelAlimento = foto;
         }
@@ -83,17 +83,16 @@ final public class Alimento implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null){
-	  return false;
-	}
-        else if (this.getClass() != obj.getClass()){
+        if (obj == null) {
             return false;
-	}else{
+        } else if (this.getClass() != obj.getClass()) {
+            return false;
+        } else {
             Alimento otroAlimento = (Alimento) obj;
-            return this.getNombre().equals(otroAlimento.getNombre());    
+            return this.getNombre().equals(otroAlimento.getNombre());
         }
     }
-    
+
     @Override
     public int hashCode() {
         int hash = 3;
@@ -103,6 +102,5 @@ final public class Alimento implements Serializable {
         hash = 47 * hash + Objects.hashCode(this.fotoDelAlimento);
         return hash;
     }
-    
 
 }

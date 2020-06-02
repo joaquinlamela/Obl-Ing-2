@@ -19,8 +19,7 @@ public final class ComposicionAlimento implements Serializable {
     public void setNutriente(String unNutriente) {
         if (unNutriente == null || unNutriente.isEmpty()) {
             this.nutriente = "No definido";
-        }
-        else {
+        } else {
             this.nutriente = unNutriente;
         }
     }

@@ -21,8 +21,7 @@ public final class Ingesta implements Serializable {
     public void setFechaDeIngesta(String unaFecha) {
         if (unaFecha == null || unaFecha.isEmpty()) {
             this.fechaDeIngesta = "Fecha de ingesta no registrada";
-        }
-        else {
+        } else {
             this.fechaDeIngesta = unaFecha;
         }
     }
@@ -38,8 +37,7 @@ public final class Ingesta implements Serializable {
     public void setListaAlimentosPorFecha(final ArrayList<Alimento> listaAlimentos) {
         if (listaAlimentos == null || listaAlimentos.isEmpty()) {
             this.listaAlimentosPorFecha = new ArrayList<>();
-        }
-        else {
+        } else {
             this.listaAlimentosPorFecha = listaAlimentos;
         }
     }
@@ -55,14 +53,15 @@ public final class Ingesta implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj==null){
+        if (obj == null) {
             return false; 
-        }else if(this.getClass() != obj.getClass()){
+        } else if (this.getClass() != obj.getClass()) { 
             return false; 
-        }else{
+        } else {
         Ingesta otraIngesta = (Ingesta) obj;
         boolean sonIguales = this.getFechaDeIngesta().equals(otraIngesta.getFechaDeIngesta());
-        sonIguales = sonIguales && this.getListaAlimentosPorFecha().equals(otraIngesta.getListaAlimentosPorFecha());
+        sonIguales = sonIguales && this.getListaAlimentosPorFecha()
+                .equals(otraIngesta.getListaAlimentosPorFecha());
         return sonIguales;    
         }
         

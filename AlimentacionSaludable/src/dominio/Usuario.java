@@ -36,8 +36,7 @@ public final class Usuario extends Persona {
     public void setNacionalidad(String unaNacionalidad) {
         if (unaNacionalidad == null || unaNacionalidad.isEmpty()) {
             this.nacionalidad = "Nacionalidad no ingresada";
-        }
-        else {
+        } else {
             this.nacionalidad = unaNacionalidad;
         }
     }
@@ -108,11 +107,13 @@ public final class Usuario extends Persona {
         return super.toString();
     }
 
-    public void actualizarPreferenciasUsuario(final Usuario usuario, final ArrayList<String> preferencias) {
+    public void actualizarPreferenciasUsuario(final Usuario usuario, 
+            final ArrayList<String> preferencias) {
         usuario.setPreferencias(preferencias);
     }
     
-    public void actualizarRestriccionesUsuario(final Usuario usuario, final ArrayList<String> restricciones) {
+    public void actualizarRestriccionesUsuario(final Usuario usuario, 
+            final ArrayList<String> restricciones) {
         usuario.setRestricciones(restricciones);
     }
 }

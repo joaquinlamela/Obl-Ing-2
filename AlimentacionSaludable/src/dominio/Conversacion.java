@@ -65,7 +65,8 @@ public final class Conversacion implements Serializable {
     }
 
     public boolean agregarMensaje(String mensaje, boolean intercambioRemitente) {
-        InformacionMensaje informacion = new InformacionMensaje(getUsuario().getNombreCompleto(), getProfesional().getNombreCompleto(), mensaje);
+        InformacionMensaje informacion = new InformacionMensaje(getUsuario().getNombreCompleto(), 
+                getProfesional().getNombreCompleto(), mensaje);
         if (intercambioRemitente) {
             informacion.intercambiarRemitente();
         }
@@ -75,11 +76,11 @@ public final class Conversacion implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj==null){
+        if (obj == null) {
             return false; 
-        }else if(this.getClass() != obj.getClass()){
+        } else if (this.getClass() != obj.getClass()) {
             return false; 
-        }else{
+        } else {
         final Conversacion conversacionParametro = (Conversacion) obj;
         return getProfesional().equals(conversacionParametro.getProfesional())
                 && getUsuario().equals(conversacionParametro.getUsuario());    
@@ -92,7 +93,8 @@ public final class Conversacion implements Serializable {
         String retorno = "No hay mensajes para mostrar";
         if (!getListaMensajes().isEmpty()) {
             retorno = "";
-            retorno = listaMensajes.stream().map((InformacionMensaje info) -> "\n" + info.getRemitente() + "\n"
+            retorno = listaMensajes.stream().map((InformacionMensaje info) -> "\n" 
+                    + info.getRemitente() + "\n"
                     + info.getMensaje() + "\n").reduce(retorno, String::concat);
         }
         return retorno;
