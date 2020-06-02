@@ -176,7 +176,9 @@ public final class Sistema implements Serializable {
                 objetoASerializar.writeObject(this);
                 objetoASerializar.flush();
             }
-        } catch (IOException e) {}
+        } catch (IOException e) {
+            System.out.println("No se pueden serializar los datos");
+        }
     }
 
     public boolean crearUsuario(String nombre, String apellido, String fechaNacimiento, ImageIcon fotoDePerfil, String nacionalidad, ArrayList<String> preferencias, ArrayList<String> restricciones, ArrayList<Ingesta> alimentosIngeridos) {
@@ -186,7 +188,7 @@ public final class Sistema implements Serializable {
 
     public boolean agregarUsuarioALaLista(Usuario usuarioARegistrar) {
         boolean fueAgregadoUsuario = false;
-        if ((usuarioARegistrar != null) && !getListaUsuarios().contains(usuarioARegistrar)) {
+        if (usuarioARegistrar != null && !getListaUsuarios().contains(usuarioARegistrar)) {
             getListaUsuarios().add(usuarioARegistrar);
             fueAgregadoUsuario = true;
         }
@@ -200,7 +202,7 @@ public final class Sistema implements Serializable {
 
     public boolean agregarProfesionalALaLista(Profesional profesionalARegistrar) {
         boolean fueAgregadoProfesional = false;
-        if ((profesionalARegistrar != null) && !getListaProfesionales().contains(profesionalARegistrar)) {
+        if (profesionalARegistrar != null && !getListaProfesionales().contains(profesionalARegistrar)) {
             getListaProfesionales().add(profesionalARegistrar);
             fueAgregadoProfesional = true;
         }
@@ -327,9 +329,9 @@ public final class Sistema implements Serializable {
     }
 
     private ArrayList copiarLista(ArrayList lista) {
-        ArrayList nueva = new ArrayList();
-        for (int i = 0; i < lista.size(); i++) {
-            nueva.add(lista.get(i));
+        ArrayList nueva = new ArrayList(); 
+        for (Object object : lista) {
+            nueva.add(object); 
         }
         return nueva;
     }

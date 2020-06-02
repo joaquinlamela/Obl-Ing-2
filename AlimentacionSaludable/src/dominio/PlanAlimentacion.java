@@ -91,9 +91,9 @@ public final class PlanAlimentacion implements Serializable {
             return false; 
         }else{
         PlanAlimentacion otroPlanAlimentacion = (PlanAlimentacion) obj;
-        return (this.getNombreDelPlan().equals(otroPlanAlimentacion.getNombreDelPlan())
+        return this.getNombreDelPlan().equals(otroPlanAlimentacion.getNombreDelPlan())
                 && this.getUsuario().equals(otroPlanAlimentacion.getUsuario())
-                && this.getProfesional().equals(otroPlanAlimentacion.getProfesional()));
+                && this.getProfesional().equals(otroPlanAlimentacion.getProfesional());
         }
        
     }
