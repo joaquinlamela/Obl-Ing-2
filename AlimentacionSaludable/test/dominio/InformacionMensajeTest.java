@@ -5,16 +5,15 @@ import static org.junit.Assert.*;
 
 public class InformacionMensajeTest {
 
-    public InformacionMensajeTest() {
-    }
-
+    private static final String REMITENTE_NO_INGRESADO= "Remitente no ingresado"; 
+    
     @Test
     public void testGetsSetsNullRemitente() {
         String remitente = null;
         String destinatario = null;
         String mensaje = null;
         InformacionMensaje info = new InformacionMensaje(remitente, destinatario, mensaje);
-        assertEquals(info.getRemitente(), "Remitente no ingresado");
+        assertEquals(info.getRemitente(), REMITENTE_NO_INGRESADO);
     }
 
     @Test
@@ -40,7 +39,7 @@ public class InformacionMensajeTest {
         String destinatario = null;
         String mensaje = null;
         InformacionMensaje info = new InformacionMensaje(remitente, destinatario, mensaje);
-        String esperadoToString = "Remitente no ingresado" + ": \n" + mensaje;
+        String esperadoToString = REMITENTE_NO_INGRESADO + ": \n" + mensaje;
         assertEquals(info.toString(), esperadoToString);
     }
 
@@ -50,7 +49,7 @@ public class InformacionMensajeTest {
         String destinatario = "";
         String mensaje = "";
         InformacionMensaje info = new InformacionMensaje(remitente, destinatario, mensaje);
-        assertEquals(info.getRemitente(), "Remitente no ingresado");
+        assertEquals(info.getRemitente(), REMITENTE_NO_INGRESADO);
     }
 
     @Test
@@ -77,7 +76,7 @@ public class InformacionMensajeTest {
         String destinatario = "";
         String mensaje = "";
         InformacionMensaje info = new InformacionMensaje(remitente, destinatario, mensaje);
-        String esperadoToString = "Remitente no ingresado" + ": \n" + mensaje;
+        String esperadoToString = REMITENTE_NO_INGRESADO + ": \n" + mensaje;
         assertEquals(info.toString(), esperadoToString);
     }
 

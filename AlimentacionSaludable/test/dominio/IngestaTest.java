@@ -1,22 +1,23 @@
 package dominio;
 
 import java.util.ArrayList;
-import java.util.Objects;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class IngestaTest {
 
-    public IngestaTest() {
-
-    }
+    private static final String LIPIDOS= "Lipidos"; 
+    
+    private static final String VERDURA= "Verdura"; 
+    
+    private static final String FECHA= "11/02/17"; 
     
     @Test
     public void testGetsSetsFechaVaciaListaAlimentos() {
         String fechaDeIngesta = "";
         ArrayList<ComposicionAlimento> listaComposicion = new ArrayList<>();
-        listaComposicion.add(new ComposicionAlimento("Lipidos", 2));
-        Alimento alimento1 = new Alimento("Papa", "Verdura", listaComposicion, null);
+        listaComposicion.add(new ComposicionAlimento(LIPIDOS, 2));
+        Alimento alimento1 = new Alimento("Papa", VERDURA, listaComposicion, null);
         ArrayList<Alimento> listaAlimentosPorFecha = new ArrayList<>();
         listaAlimentosPorFecha.add(alimento1);
         Ingesta ingestaATestear = new Ingesta(fechaDeIngesta, listaAlimentosPorFecha);
@@ -27,8 +28,8 @@ public class IngestaTest {
     public void testGetsSetsFechaNullListaAlimentos() {
         String fechaDeIngesta = null;
         ArrayList<ComposicionAlimento> listaComposicion = new ArrayList<>();
-        listaComposicion.add(new ComposicionAlimento("Lipidos", 2));
-        Alimento alimento1 = new Alimento("Papa", "Verdura", listaComposicion, null);
+        listaComposicion.add(new ComposicionAlimento(LIPIDOS, 2));
+        Alimento alimento1 = new Alimento("Papa", VERDURA, listaComposicion, null);
         ArrayList<Alimento> listaAlimentosPorFecha = new ArrayList<>();
         listaAlimentosPorFecha.add(alimento1);
         Ingesta ingestaATestear = new Ingesta(fechaDeIngesta, listaAlimentosPorFecha);
@@ -37,10 +38,10 @@ public class IngestaTest {
     
     @Test
     public void testGetsSetsDatosValidosListaAlimentos() {
-        String fechaDeIngesta = "11/02/17";
+        String fechaDeIngesta = FECHA;
         ArrayList<ComposicionAlimento> listaComposicion = new ArrayList<>();
-        listaComposicion.add(new ComposicionAlimento("Lipidos", 2));
-        Alimento alimento1 = new Alimento("Papa", "Verdura", listaComposicion, null);
+        listaComposicion.add(new ComposicionAlimento(LIPIDOS, 2));
+        Alimento alimento1 = new Alimento("Papa", VERDURA, listaComposicion, null);
         ArrayList<Alimento> listaAlimentosPorFecha = new ArrayList<>();
         listaAlimentosPorFecha.add(alimento1);
         Ingesta ingestaATestear = new Ingesta(fechaDeIngesta, listaAlimentosPorFecha);
@@ -49,7 +50,7 @@ public class IngestaTest {
 
     @Test
     public void testListaAlimentosVaciaToString() {
-        String fechaDeIngesta = "11/02/17";
+        String fechaDeIngesta = FECHA;
         ArrayList<Alimento> listaAlimentosPorFecha = new ArrayList<>();
         Ingesta ingestaATestear = new Ingesta(fechaDeIngesta, listaAlimentosPorFecha);
         String toStringEsperado = "No hay alimentos ingeridos";
@@ -58,10 +59,10 @@ public class IngestaTest {
     
     @Test
     public void testGetsSetsDatosValidosToString() {
-        String fechaDeIngesta = "11/02/17";
+        String fechaDeIngesta = FECHA;
         ArrayList<ComposicionAlimento> listaComposicion = new ArrayList<>();
-        listaComposicion.add(new ComposicionAlimento("Lipidos", 2));
-        Alimento alimento1 = new Alimento("Papa", "Verdura", listaComposicion, null);
+        listaComposicion.add(new ComposicionAlimento(LIPIDOS, 2));
+        Alimento alimento1 = new Alimento("Papa", VERDURA, listaComposicion, null);
         ArrayList<Alimento> listaAlimentosPorFecha = new ArrayList<>();
         listaAlimentosPorFecha.add(alimento1);
         Ingesta ingestaATestear = new Ingesta(fechaDeIngesta, listaAlimentosPorFecha);
@@ -71,10 +72,10 @@ public class IngestaTest {
 
     @Test
     public void testEqualsIguales() {
-        String fechaDeIngesta = "11/02/17";
+        String fechaDeIngesta = FECHA;
         ArrayList<ComposicionAlimento> listaComposicion = new ArrayList<>();
-        listaComposicion.add(new ComposicionAlimento("Lipidos", 2));
-        Alimento alimento1 = new Alimento("Papa", "Verdura", listaComposicion, null);
+        listaComposicion.add(new ComposicionAlimento(LIPIDOS, 2));
+        Alimento alimento1 = new Alimento("Papa", VERDURA, listaComposicion, null);
         ArrayList<Alimento> listaAlimentosPorFecha = new ArrayList<>();
         listaAlimentosPorFecha.add(alimento1);
         Ingesta ingestaATestear = new Ingesta(fechaDeIngesta, listaAlimentosPorFecha);
@@ -85,11 +86,11 @@ public class IngestaTest {
 
     @Test
     public void testEqualsDistintosFecha() {
-        String fechaDeIngesta = "11/02/17";
+        String fechaDeIngesta = FECHA;
         String fechaDeIngestaComparacion = "12/02/17";
         ArrayList<ComposicionAlimento> listaComposicion = new ArrayList<>();
-        listaComposicion.add(new ComposicionAlimento("Lipidos", 2));
-        Alimento alimento1 = new Alimento("Papa", "Verdura", listaComposicion, null);
+        listaComposicion.add(new ComposicionAlimento(LIPIDOS, 2));
+        Alimento alimento1 = new Alimento("Papa", VERDURA, listaComposicion, null);
         ArrayList<Alimento> listaAlimentosPorFecha = new ArrayList<>();
         listaAlimentosPorFecha.add(alimento1);
         Ingesta ingestaATestear = new Ingesta(fechaDeIngesta, listaAlimentosPorFecha);
@@ -100,10 +101,10 @@ public class IngestaTest {
     
     @Test
     public void testEqualsDistintosListaAlimentos() {
-        String fechaDeIngesta = "11/02/17";
+        String fechaDeIngesta = FECHA;
         ArrayList<ComposicionAlimento> listaComposicion = new ArrayList<>();
-        listaComposicion.add(new ComposicionAlimento("Lipidos", 2));
-        Alimento alimento1 = new Alimento("Papa", "Verdura", listaComposicion, null);
+        listaComposicion.add(new ComposicionAlimento(LIPIDOS, 2));
+        Alimento alimento1 = new Alimento("Papa", VERDURA, listaComposicion, null);
         ArrayList<Alimento> listaAlimentosPorFecha = new ArrayList<>();
         listaAlimentosPorFecha.add(alimento1);
         Ingesta ingestaATestear = new Ingesta(fechaDeIngesta, listaAlimentosPorFecha);
@@ -114,11 +115,11 @@ public class IngestaTest {
     
     @Test
     public void testEqualsDistintosAmbos() {
-        String fechaDeIngesta = "11/02/17";
+        String fechaDeIngesta = FECHA;
         String fechaDeIngestaComparacion = "12/02/17";
         ArrayList<ComposicionAlimento> listaComposicion = new ArrayList<>();
-        listaComposicion.add(new ComposicionAlimento("Lipidos", 2));
-        Alimento alimento1 = new Alimento("Papa", "Verdura", listaComposicion, null);
+        listaComposicion.add(new ComposicionAlimento(LIPIDOS, 2));
+        Alimento alimento1 = new Alimento("Papa", VERDURA, listaComposicion, null);
         ArrayList<Alimento> listaAlimentosPorFecha = new ArrayList<>();
         listaAlimentosPorFecha.add(alimento1);
         Ingesta ingestaATestear = new Ingesta(fechaDeIngesta, listaAlimentosPorFecha);

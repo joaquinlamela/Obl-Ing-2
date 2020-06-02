@@ -17,14 +17,10 @@ import org.junit.Test;
  */
 public class EnumTest {
     
-    public EnumTest() {
-
-    }
-    
     @Test
     public void testEnumValuePreferencias() {
         for (Sistema.Preferencias valores : Sistema.Preferencias.values()) {
-            Assert.assertNotNull(Sistema.Preferencias.valueOf(""+valores));
+            Assert.assertNotNull(Sistema.Preferencias.valueOf("" + valores));
         }
     }
     
@@ -61,7 +57,7 @@ public class EnumTest {
     @Test
     public void testEnumValueRestricciones() {
         for (Sistema.Restricciones valores : Sistema.Restricciones.values()) {
-            Assert.assertNotNull(Sistema.Restricciones.valueOf(""+valores));
+            Assert.assertNotNull(Sistema.Restricciones.valueOf("" + valores));
         }
     }
     
@@ -92,13 +88,12 @@ public class EnumTest {
     @Test
     public void testEnumValueDiasDeLaSemana() {
         for (Sistema.DiasDeLaSemana valores : Sistema.DiasDeLaSemana.values()) {
-            Assert.assertNotNull(Sistema.DiasDeLaSemana.valueOf(""+valores));
+            Assert.assertNotNull(Sistema.DiasDeLaSemana.valueOf("" + valores));
         }
     }
 
     @Test
     public void testEnumDevolverListaDiasDeLaSemana() {
-        Sistema sistemaATestear = new Sistema();
         ArrayList<String> listaEsperada = new ArrayList<>();
         listaEsperada.add("Lunes");
         listaEsperada.add("Martes");
@@ -107,6 +102,7 @@ public class EnumTest {
         listaEsperada.add("Viernes");
         listaEsperada.add("Sabado");
         listaEsperada.add("Domingo");
+        Sistema sistemaATestear = new Sistema();
         assertEquals(sistemaATestear.devolverListaDiasDeLaSemana(), listaEsperada);
     }
     
@@ -155,7 +151,7 @@ public class EnumTest {
     @Test
     public void testEnumValueIngestasDiaDesayuno() {
         for (Sistema.IngestasPorDia valores : Sistema.IngestasPorDia.values()) {
-            Assert.assertNotNull(Sistema.IngestasPorDia.valueOf(""+valores));
+            Assert.assertNotNull(Sistema.IngestasPorDia.valueOf("" + valores));
         }
     }
     
@@ -179,24 +175,23 @@ public class EnumTest {
 
     @Test
     public void testEnumDevolverListaIngestas() {
-        Sistema sistemaATestear = new Sistema();
         ArrayList<String> listaEsperada = new ArrayList<>();
         listaEsperada.add("Desayuno");
         listaEsperada.add("Almuerzo");
         listaEsperada.add("Cena");
+        Sistema sistemaATestear = new Sistema();
         assertEquals(sistemaATestear.devolverListaIngestasDeLaSemana(), listaEsperada);
     }
 
     @Test
     public void testEnumValuePaises() {
         for (Sistema.Paises valores : Sistema.Paises.values()) {
-            Assert.assertNotNull(Sistema.Paises.valueOf(""+valores));
+            Assert.assertNotNull(Sistema.Paises.valueOf("" + valores));
         }
     }
     
     @Test
     public void testEnumListaPaises() {
-        Sistema sistemaATestear = new Sistema();
         ArrayList<String> lstNacionalidades = new ArrayList<>();
         lstNacionalidades.add(Paises.Argentina.toString());
         lstNacionalidades.add(Paises.Bolivia.toString());
@@ -224,6 +219,7 @@ public class EnumTest {
         lstNacionalidades.add(Paises.Surinam.toString());
         lstNacionalidades.add(Paises.Uruguay.toString());
         lstNacionalidades.add(Paises.Venezuela.toString());
+        Sistema sistemaATestear = new Sistema();
         assertEquals(sistemaATestear.devolverListaPaises(), lstNacionalidades);
     }
     
