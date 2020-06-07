@@ -1311,6 +1311,8 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
             ocultarPaneles();
             this.listaElegirProfesionales.setListData(listaNombresProfesionalesSinConversacion.toArray());
             this.panelElegirProfesional.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay profesionales sin conversación");
         }
     }//GEN-LAST:event_btnNuevaConversacionActionPerformed
 

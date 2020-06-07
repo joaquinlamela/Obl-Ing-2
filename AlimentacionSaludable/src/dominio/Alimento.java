@@ -89,7 +89,7 @@ public final class Alimento implements Serializable {
             return false;
         } else {
             Alimento otroAlimento = (Alimento) obj;
-            return this.getNombre().equals(otroAlimento.getNombre());
+            return (this.getNombre().toLowerCase().equals(otroAlimento.getNombre().toLowerCase()));    
         }
     }
 

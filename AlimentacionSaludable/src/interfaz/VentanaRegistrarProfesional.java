@@ -440,7 +440,8 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
                     this.jLabelFechaNacInvalida.setVisible(true);
                     this.jLabelFechaInvalidaNacimiento.setVisible(true);
                 } else {
-                    if (this.jDateFechaGraduacion.getDate().before(this.jDateFechaNacimiento.getDate())) {
+                    if (this.jDateFechaGraduacion.getDate().before(this.jDateFechaNacimiento.getDate())||
+                            this.fechasIguales(this.jDateFechaGraduacion.getDate(), this.jDateFechaNacimiento.getDate())) {
                         this.jLabelFechaGraduacionInvalida.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
                         this.jLabelFechaGraduacionInvalida.setVisible(true);
                         this.jLabelFechaInvalidaGraduacion.setVisible(true);
@@ -454,6 +455,9 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
                                 VentanaMenuPrincipal vPrincipal = new VentanaMenuPrincipal(sistema);
                                 this.setVisible(false);
                                 vPrincipal.setVisible(true);
+                            }else{
+                                JOptionPane.showMessageDialog(this, "Este profesional ya habia sido registrado, ingrese otro nombre",
+                                        "Inane error", JOptionPane.ERROR_MESSAGE);
                             }
                         }
                     }
@@ -587,7 +591,8 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
         Date fechaNac = this.jDateFechaNacimiento.getDate();
         if (this.jDateFechaGraduacion.getDate() != null
                 && this.jDateFechaGraduacion.getDate().after(d)
-                || (fechaNac != null && this.jDateFechaGraduacion.getDate().before(fechaNac))) {
+                || (fechaNac != null && this.jDateFechaGraduacion.getDate().before(fechaNac)
+                || fechaNac != null && this.fechasIguales(fechaNac, this.jDateFechaGraduacion.getDate()))) {
             this.jLabelFechaGraduacionInvalida.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
             this.jLabelFechaGraduacionInvalida.setVisible(true);
             this.jLabelFechaInvalidaGraduacion.setVisible(false);
@@ -598,6 +603,12 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
         }
     }
 
+    private boolean fechasIguales(Date d1, Date d2){
+        return d1.getYear()==d2.getYear() &&
+                d1.getMonth()==d2.getMonth() &&
+                d1.getDay()==d2.getDay(); 
+    }
+    
     private void btnCerrarSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSistemaActionPerformed
         this.sistema.guardarDatosSistema();
         this.dispose();

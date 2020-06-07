@@ -1878,6 +1878,9 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
                         ImageIcon i = new ImageIcon(getClass().getResource("/Imagenes/agregarFotoUsuario.png"));
                         this.btnIngresarFotoAlimento.setIcon(i);
                         this.fotoDeAlimentoActual = new ImageIcon(getClass().getResource("/Imagenes/fotoDelAlimentoEstandar.png"));
+                    }else{
+                        JOptionPane.showMessageDialog(this, "Este alimento ya se ha registrado, ingrese otro nombre",
+                    "Inane error",JOptionPane.ERROR_MESSAGE);
                     }
                 }
             }
