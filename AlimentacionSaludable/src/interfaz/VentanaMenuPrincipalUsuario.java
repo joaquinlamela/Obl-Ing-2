@@ -1290,8 +1290,10 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
         Profesional profesional = (Profesional) this.listaElegirProfesionales.getSelectedValue();
         this.sistema.crearConversacion(this.sistema.getPersonaLogueada(), profesional, "CONVERSACION:", true);
         ocultarPaneles();
-        actualizarConversaciones(profesional.getNombreCompleto());
-        this.panelConsultaConProfesional.setVisible(true);
+        if(profesional!=null){
+            actualizarConversaciones(profesional.getNombreCompleto());
+            this.panelConsultaConProfesional.setVisible(true);   
+        }
     }//GEN-LAST:event_listaElegirProfesionalesValueChanged
 
     private void listaConversacionesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaConversacionesValueChanged
