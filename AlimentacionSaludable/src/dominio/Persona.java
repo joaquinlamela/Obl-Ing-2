@@ -12,7 +12,8 @@ public abstract class Persona implements Serializable {
     private ImageIcon fotoDePerfil;
 
     private static final String NOMBRENOINGRESADO = "Nombre no ingresado";
-
+    private static final String APELLIDONOINGRESADO = "Apellido no ingresado";
+    
     public String getNombre() {
         return this.nombre;
     }
@@ -31,7 +32,7 @@ public abstract class Persona implements Serializable {
 
     public void setApellido(String unApellido) {
         if (unApellido == null || unApellido.isEmpty()) {
-            this.apellido = "Apellido no ingresado";
+            this.apellido = APELLIDONOINGRESADO;
         } else {
             this.apellido = unApellido;
         }
@@ -65,11 +66,11 @@ public abstract class Persona implements Serializable {
     public String getNombreCompleto() {
         String retorno;
         if (getNombre().equals(NOMBRENOINGRESADO)
-                && getApellido().equals("Apellido no ingresado")) {
+                && getApellido().equals(APELLIDONOINGRESADO)) {
             retorno = NOMBRENOINGRESADO;
         } else if (getNombre().equals(NOMBRENOINGRESADO)) {
             retorno = getApellido();
-        } else if (getApellido().equals("Apellido no ingresado")) {
+        } else if (getApellido().equals(APELLIDONOINGRESADO)) {
             retorno = getNombre();
         } else {
             retorno = getNombre() + " " + getApellido();
@@ -90,7 +91,7 @@ public abstract class Persona implements Serializable {
             return false;
         } else {
             Persona otraPersona = (Persona) obj;
-            return this.getNombreCompleto().equals(otraPersona.getNombreCompleto());
+            return this.getNombreCompleto().equalsIgnoreCase(otraPersona.getNombreCompleto());
         }
 
     }

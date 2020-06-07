@@ -24,6 +24,13 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
     private final String[][] planAlimentacion;
 
     private static final String DIALUNES = "Lunes";
+    private static final String IMAGEN= "/Imagenes/fotoDelAlimentoEstandar.png"; 
+    private static final String ERROR="Inane error";
+    private static final String IMAGEN2= "/Imagenes/iconoCampoCorrecto.png";
+    private static final String IMAGEN3="/Imagenes/iconoOK.png";
+    private static final String IMAGEN4= "/Imagenes/iconoCampoIncorrecto.png"; 
+    private static final String SELECCIONE= "Seleccione..."; 
+    private static final String USUARIO= "Usuario";
 
     public VentanaMenuPrincipalProfesional(Sistema unSistema) {
         initComponents();
@@ -35,7 +42,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
         this.diaDeLaSemanaAnterior = DIALUNES;
         this.planAlimentacion = new String[7][3];
         this.diaDeLaSemanaActual = DIALUNES;
-        this.fotoDeAlimentoActual = new ImageIcon(getClass().getResource("/Imagenes/fotoDelAlimentoEstandar.png"));
+        this.fotoDeAlimentoActual = new ImageIcon(getClass().getResource(IMAGEN));
         lblValidarTipoAlimento.setVisible(false);
         lblValidarNombre.setVisible(false);
         lblDatosIncorrectos.setVisible(false);
@@ -1788,14 +1795,14 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
         String mensaje = this.txtMensajeNuevo.getText().trim();
         if (mensaje == null || mensaje.isEmpty()) {
             JOptionPane.showMessageDialog(this, "El mensaje esta vacio, ingrese un mensaje con texto",
-                    "Inane error", JOptionPane.ERROR_MESSAGE);
+                    ERROR, JOptionPane.ERROR_MESSAGE);
         } else {
             String usuario = this.usuarioSeleccionado;
             String profesional = this.sistema.getPersonaLogueada().getNombreCompleto();
             this.sistema.agregarMensajeConversacion(profesional, usuario, mensaje, true, true);
             this.txtMensajeNuevo.setText("");
             this.txtMostrarConversacion.setText("");
-            this.lblNombreUsuario.setText("Usuario");
+            this.lblNombreUsuario.setText(USUARIO);
             this.panelConversacionOk.setVisible(true);
             this.panelConversacion.setVisible(false);
             this.panelMostrarOk.setVisible(true);
@@ -1835,12 +1842,12 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
 
     private void listaTipoAlimentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaTipoAlimentosActionPerformed
         String tipoAlimentoIngresado = (String) this.listaTipoAlimentos.getSelectedItem();
-        if (tipoAlimentoIngresado.equals("Seleccione...")) {
-            this.lblValidarTipoAlimento.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
+        if (tipoAlimentoIngresado.equals(SELECCIONE)) {
+            this.lblValidarTipoAlimento.setIcon(new ImageIcon(getClass().getResource(IMAGEN4)));
             this.lblValidarTipoAlimento.setVisible(true);
             this.lblTipoAlimentoVacio.setVisible(true);
         } else {
-            this.lblValidarTipoAlimento.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoCorrecto.png")));
+            this.lblValidarTipoAlimento.setIcon(new ImageIcon(getClass().getResource(IMAGEN2)));
             this.lblValidarTipoAlimento.setVisible(true);
             this.lblTipoAlimentoVacio.setVisible(false);
         }
@@ -1851,10 +1858,10 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
         String tipoAlimento = (String) this.listaTipoAlimentos.getSelectedItem();
         if (hayNutrientesVacios()) {
             JOptionPane.showMessageDialog(this, "Hay campos de nutrientes vacios",
-                    "Inane error",JOptionPane.ERROR_MESSAGE);
+                    ERROR,JOptionPane.ERROR_MESSAGE);
         } else {
             ArrayList<ComposicionAlimento> listaNutrientesConProporcion = nutrientesSeleccionados();
-            if (nombre.equals("") || tipoAlimento.equals("Seleccione...")) {
+            if (nombre.equals("") || tipoAlimento.equals(SELECCIONE)) {
                 this.lblDatosIncorrectos.setVisible(true);
                 this.lblDatosIncorrectos2.setVisible(true);
                 mostrarErrores(nombre, tipoAlimento);
@@ -1877,10 +1884,10 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
                         this.btnIngresarFotoAlimento.setVisible(true);
                         ImageIcon i = new ImageIcon(getClass().getResource("/Imagenes/agregarFotoUsuario.png"));
                         this.btnIngresarFotoAlimento.setIcon(i);
-                        this.fotoDeAlimentoActual = new ImageIcon(getClass().getResource("/Imagenes/fotoDelAlimentoEstandar.png"));
+                        this.fotoDeAlimentoActual = new ImageIcon(getClass().getResource(IMAGEN));
                     }else{
                         JOptionPane.showMessageDialog(this, "Este alimento ya se ha registrado, ingrese otro nombre",
-                    "Inane error",JOptionPane.ERROR_MESSAGE);
+                    ERROR,JOptionPane.ERROR_MESSAGE);
                     }
                 }
             }
@@ -1888,7 +1895,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
     }//GEN-LAST:event_btnIngresarAlimentoASistemaActionPerformed
 
     private boolean imagenRegistrada() {
-        ImageIcon i = new ImageIcon(getClass().getResource("/Imagenes/fotoDelAlimentoEstandar.png"));
+        ImageIcon i = new ImageIcon(getClass().getResource(IMAGEN));
         int n = 0;
         if (this.fotoDeAlimentoActual.getImage().equals(i.getImage())) {
             Object[] options = {"Si", "No"};
@@ -1998,11 +2005,11 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
     private void txtNombreFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreFocusLost
         String nombreIngresado = txtNombre.getText().trim();
         if (nombreIngresado.equals("")) {
-            lblValidarNombre.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
+            lblValidarNombre.setIcon(new ImageIcon(getClass().getResource(IMAGEN4)));
             lblValidarNombre.setVisible(true);
             this.lblNombreVacio.setVisible(true);
         } else {
-            lblValidarNombre.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoCorrecto.png")));
+            lblValidarNombre.setIcon(new ImageIcon(getClass().getResource(IMAGEN2)));
             lblValidarNombre.setVisible(true);
             this.lblNombreVacio.setVisible(false);
         }
@@ -2127,11 +2134,11 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
     private void txtNombrePlanFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombrePlanFocusLost
         String nombrePlanIngresado = this.txtNombrePlan.getText().trim();
         if (nombrePlanIngresado.equals("")) {
-            this.lblValidarNombrePlan.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
+            this.lblValidarNombrePlan.setIcon(new ImageIcon(getClass().getResource(IMAGEN4)));
             this.lblValidarNombrePlan.setVisible(true);
             this.lblNombrePlanVacio.setVisible(true);
         } else {
-            this.lblValidarNombrePlan.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoCorrecto.png")));
+            this.lblValidarNombrePlan.setIcon(new ImageIcon(getClass().getResource(IMAGEN2)));
             this.lblValidarNombrePlan.setVisible(true);
             this.lblNombrePlanVacio.setVisible(false);
         }
@@ -2654,12 +2661,12 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
 
     private void mostrarErrores(String nombre, String tipoAlimento) {
         if (nombre.equals("")) {
-            this.lblValidarNombre.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
+            this.lblValidarNombre.setIcon(new ImageIcon(getClass().getResource(IMAGEN4)));
             this.lblValidarNombre.setVisible(true);
             this.lblNombreVacio.setVisible(true);
         }
-        if (tipoAlimento.equals("Seleccione...")) {
-            this.lblValidarTipoAlimento.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
+        if (tipoAlimento.equals(SELECCIONE)) {
+            this.lblValidarTipoAlimento.setIcon(new ImageIcon(getClass().getResource(IMAGEN4)));
             this.lblValidarTipoAlimento.setVisible(true);
             this.lblTipoAlimentoVacio.setVisible(true);
         }

@@ -63,6 +63,11 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
         this.lblFechaAlimentoIngerido.setText(formatoFecha.format(fechaActual));
     }
 
+    private static final String IMAGEN= "/Imagenes/iconoCaraTriste.png"; 
+    private static final String IMAGEN2= "/Imagenes/iconoCampoIncorrecto.png"; 
+    private static final String SELECCIONE= "Seleccione..."; 
+    private static final String NOPLANIFICADO= "No planificado"; 
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -1275,7 +1280,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
             ArrayList<Alimento> lstAlimentos = this.sistema.getListaAlimentos();
             DefaultComboBoxModel modelo = new DefaultComboBoxModel();
             this.comboAlimentosEnSistema.setModel(modelo);
-            this.comboAlimentosEnSistema.addItem("Seleccione...");
+            this.comboAlimentosEnSistema.addItem(SELECCIONE);
             for (int i = 0; i < lstAlimentos.size(); i++) {
                 this.comboAlimentosEnSistema.addItem(lstAlimentos.get(i).toString());
             }
@@ -1336,9 +1341,9 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
         ArrayList<Ingesta> listaIngestasDelUsuario = usuarioLogueado.getAlimentosIngeridos();
         String fechaIngesta = this.lblFechaAlimentoIngerido.getText();
         String nuevoAlimento = this.comboAlimentosEnSistema.getSelectedItem().toString();
-        if (nuevoAlimento.equals("Seleccione...")) {
+        if (nuevoAlimento.equals(SELECCIONE)) {
             this.lblDatosIncorrectos2.setVisible(true);
-            this.lblValidarNuevoAlimento.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
+            this.lblValidarNuevoAlimento.setIcon(new ImageIcon(getClass().getResource(IMAGEN2)));
             this.lblValidarNuevoAlimento.setVisible(true);
             this.lblNuevoAlimentoVacio.setVisible(true);
         } else {
@@ -1379,7 +1384,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
         ArrayList<Profesional> lstProfesionales = this.sistema.getListaProfesionales();
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         this.comboProfesionalesEnSistema.setModel(modelo);
-        this.comboProfesionalesEnSistema.addItem("Seleccione...");
+        this.comboProfesionalesEnSistema.addItem(SELECCIONE);
         for (int i = 0; i < lstProfesionales.size(); i++) {
             this.comboProfesionalesEnSistema.addItem(lstProfesionales.get(i).toString());
         }
@@ -1415,7 +1420,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
             }
         }
 
-        if (nombreProfesionalElegido.equals("Seleccione...")) {
+        if (nombreProfesionalElegido.equals(SELECCIONE)) {
             this.lblDatosIncorrectos.setVisible(true);
             this.lblDatosIncorrectos1.setVisible(true);
         } else {
@@ -1465,8 +1470,8 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
     private void comboProfesionalesEnSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProfesionalesEnSistemaActionPerformed
         if (!this.primeraVez) {
             String profesionalElegido = (String) this.comboProfesionalesEnSistema.getSelectedItem();
-            if (profesionalElegido.equals("Seleccione...")) {
-                this.lblValidarProfesionalPlan.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
+            if (profesionalElegido.equals(SELECCIONE)) {
+                this.lblValidarProfesionalPlan.setIcon(new ImageIcon(getClass().getResource(IMAGEN2)));
                 this.lblValidarProfesionalPlan.setVisible(true);
             } else {
                 this.lblValidarProfesionalPlan.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoCorrecto.png")));
@@ -1496,8 +1501,8 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
     private void comboAlimentosEnSistemaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboAlimentosEnSistemaItemStateChanged
         if (!this.primeraIngesta) {
             String alimentoIngresado = (String) this.comboAlimentosEnSistema.getSelectedItem();
-            if (alimentoIngresado.equals("Seleccione...")) {
-                this.lblValidarNuevoAlimento.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
+            if (alimentoIngresado.equals(SELECCIONE)) {
+                this.lblValidarNuevoAlimento.setIcon(new ImageIcon(getClass().getResource(IMAGEN2)));
                 this.lblValidarNuevoAlimento.setVisible(true);
                 this.lblNuevoAlimentoVacio.setVisible(true);
             } else {
@@ -1684,19 +1689,19 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
     private String cargarDatosDelPlan(String[][] planDiaADia, int indiceDia) {
         String actual = "DESAYUNO:" + "\n";
         if (planDiaADia[indiceDia][0] == null || planDiaADia[indiceDia][0].equals("")) {
-            actual += "\n" + "No planificado";
+            actual += "\n" + NOPLANIFICADO;
         } else {
             actual += "\n" + planDiaADia[indiceDia][0];
         }
         actual += "\n" + "\n" + "ALMUERZO:" + "\n";
         if (planDiaADia[indiceDia][1] == null || planDiaADia[indiceDia][1].equals("")) {
-            actual += "\n" + "No planificado";
+            actual += "\n" + NOPLANIFICADO;
         } else {
             actual += "\n" + planDiaADia[indiceDia][1];
         }
         actual += "\n" + "\n" + "CENA:" + "\n";
         if (planDiaADia[indiceDia][2] == null || planDiaADia[indiceDia][2].equals("")) {
-            actual += "\n" + "No planificado";
+            actual += "\n" + NOPLANIFICADO;
         } else {
             actual += "\n" + planDiaADia[indiceDia][2];
         }
