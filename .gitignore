@@ -16,7 +16,6 @@
 *.dmg
 *.gz
 *.iso
-*.jar
 =======
 
 # Created by https://www.gitignore.io/api/java,netbeans
@@ -72,7 +71,6 @@ hs_err_pid*
 **/nbproject/Package-*.bash
 build/
 nbbuild/
-dist/
 nbdist/
 .nb-gradle/
 
