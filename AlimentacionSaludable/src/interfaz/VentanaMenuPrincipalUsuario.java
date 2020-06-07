@@ -1288,10 +1288,12 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
     private void listaElegirProfesionalesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaElegirProfesionalesValueChanged
         this.existeConversacion = true;
         Profesional profesional = (Profesional) this.listaElegirProfesionales.getSelectedValue();
-        this.sistema.crearConversacion(this.sistema.getPersonaLogueada(), profesional, "CONVERSACION:", true);
-        ocultarPaneles();
-        actualizarConversaciones(profesional.getNombreCompleto());
-        this.panelConsultaConProfesional.setVisible(true);
+        if (profesional != null) {
+            this.sistema.crearConversacion(this.sistema.getPersonaLogueada(), profesional, "CONVERSACION:", true);
+            ocultarPaneles();
+            actualizarConversaciones(profesional.getNombreCompleto());
+            this.panelConsultaConProfesional.setVisible(true);
+        }
     }//GEN-LAST:event_listaElegirProfesionalesValueChanged
 
     private void listaConversacionesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaConversacionesValueChanged
@@ -1309,6 +1311,8 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
             ocultarPaneles();
             this.listaElegirProfesionales.setListData(listaNombresProfesionalesSinConversacion.toArray());
             this.panelElegirProfesional.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay profesionales sin conversación");
         }
     }//GEN-LAST:event_btnNuevaConversacionActionPerformed
 

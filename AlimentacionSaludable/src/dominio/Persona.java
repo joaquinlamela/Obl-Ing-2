@@ -89,7 +89,7 @@ public abstract class Persona implements Serializable {
             return false; 
         }else{
         Persona otraPersona = (Persona) obj;
-        return this.getNombreCompleto().equals(otraPersona.getNombreCompleto());    
+        return this.getNombreCompleto().toLowerCase().equals(otraPersona.getNombreCompleto().toLowerCase());    
         }
         
     }

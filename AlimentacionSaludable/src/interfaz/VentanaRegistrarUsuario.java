@@ -455,6 +455,9 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
                     VentanaMenuPrincipal vPrincipal = new VentanaMenuPrincipal(sistema);
                     this.setVisible(false);
                     vPrincipal.setVisible(true);
+                }else{
+                    JOptionPane.showMessageDialog(this, "Este usuario ya habia sido creado, ingrese otro nombre",
+                            "Inane error", JOptionPane.ERROR_MESSAGE);
                 }
             }
         }
