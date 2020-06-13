@@ -2025,7 +2025,7 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
         this.lblNombreUsuario2.setText(usuarioSeleccionado);
         lblFechaNacimiento.setText(usuarioPerfil.getFechaNacimiento());
         lblFotoDeUsuario.setIcon(usuarioPerfil.getFotoDePerfil());
-        if (usuarioPerfil.getArrayAlimentosIngeridos().length > 0) {
+        if (usuarioPerfil.getArrayAlimentosIngeridos().length >= 0) {
             ArrayList<Ingesta> ingeridos = usuarioPerfil.getAlimentosIngeridos();
             ArrayList<String> listaASetear = new ArrayList<>();
             for (int i = 0; i < ingeridos.size(); i++) {
